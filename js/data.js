@@ -415,7 +415,16 @@ DATA.packPages = [
   {slug:"watch-reading",t:"Talks and O'Reilly"},
   {slug:"handoff-evidence",t:"Evidence sittings"},
   {slug:"handoff-video",t:"Video renders"},
-  {slug:"day-plan",t:"Day plan"}
+  {slug:"day-plan",t:"Day plan"},
+  {slug:"nblm-practitioner-working-briefing-domino-data-lab-en",t:"Working briefing"},
+  {slug:"nblm-enterprise-ai-platform-analysis-domino-data-lab-",t:"Mental models"},
+  {slug:"nblm-domino-data-lab-practice-authoring-playbook-arch",t:"Practice playbook"},
+  {slug:"nblm-catalog-of-edge-cases-architectural-traps-and-mi",t:"Edge cases"},
+  {slug:"nblm-executive-decision-packet-enterprise-ai-platform",t:"Decision packet"},
+  {slug:"nblm-executive-briefing-domino-data-lab-enterprise-ai",t:"Executive briefing"},
+  {slug:"nblm-domino-data-lab-enterprise-ai-platform-study-gui",t:"Study guide"},
+  {slug:"nblm-domino-data-lab-claims-and-analysis",t:"Claims table"},
+  {slug:"nblm-domino-ai-platform",t:"NotebookLM mind map"}
 ];
 
 DATA.fromReports = [
@@ -423,7 +432,10 @@ DATA.fromReports = [
   {slug:"claims-debates",title:"Claims and debates",point:"A warrant is the If X then Y that makes a source count. An IL5 sentence does not warrant an ATO. A homepage 6× does not warrant an SLA."},
   {slug:"elicit",title:"Elicit light",point:"E3B run 2026-10-11: no Domino product paper. MLflow 2020 and Albertoni 2023 are nearby work."},
   {slug:"source-ledger",title:"Source ledger",point:"S1–S37. Official architecture and user-guide pages win. Marketing is on the ledger so it can be qualified. Next unused id is 38."},
-  {slug:"mission",title:"Mission",point:"Success is a design-review sketch plus a named refusal, not a tenant tour."}
+  {slug:"mission",title:"Mission",point:"Success is a design-review sketch plus a named refusal, not a tenant tour."},
+  {slug:"nblm-practitioner-working-briefing-domino-data-lab-en",title:"Working briefing",point:"NotebookLM briefing from the pack. Ledger and debates win where they differ."},
+  {slug:"nblm-executive-decision-packet-enterprise-ai-platform",title:"Decision packet",point:"Room-craft packet. UNKNOWN slots stay empty. IL5 and 6× are not contracts."},
+  {slug:"nblm-domino-data-lab-enterprise-ai-platform-study-gui",title:"Study guide",point:"Quiz and glossary from NotebookLM. Check every row against S1–S37."}
 ];
 
 DATA.debateProblem = {

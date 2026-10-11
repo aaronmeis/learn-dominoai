@@ -208,5 +208,75 @@
     "section": "Media",
     "desc": "The six planned shorts with their one-job prompts, and the published videos.",
     "nblm": false
+  },
+  {
+    "slug": "nblm-catalog-of-edge-cases-architectural-traps-and-mi",
+    "title": "Catalog of Edge Cases, Architectural Traps, and Mitigations in Domino Data Lab",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-domino-ai-platform",
+    "title": "Domino AI Platform",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-domino-data-lab-claims-and-analysis",
+    "title": "Domino Data Lab Claims and Analysis",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-domino-data-lab-enterprise-ai-platform-study-gui",
+    "title": "Domino Data Lab Enterprise AI Platform Study Guide",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-domino-data-lab-practice-authoring-playbook-arch",
+    "title": "Domino Data Lab Practice &amp; Authoring Playbook: Architectural Mastery and Competence Evaluation",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-enterprise-ai-platform-analysis-domino-data-lab-",
+    "title": "Enterprise AI Platform Analysis: Domino Data Lab Mental Models, Distinctions, and Failure Modes",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-executive-briefing-domino-data-lab-enterprise-ai",
+    "title": "Executive Briefing: Domino Data Lab Enterprise AI Platform Architecture, Governance, and Positioning",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-executive-decision-packet-enterprise-ai-platform",
+    "title": "Executive Decision Packet: Enterprise AI Platform Placement (Domino Data Lab)",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-practitioner-working-briefing-domino-data-lab-en",
+    "title": "Practitioner Working Briefing: Domino Data Lab Enterprise AI Platform",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
+  },
+  {
+    "slug": "nblm-shorts-manifest",
+    "title": "shorts-manifest",
+    "section": "NotebookLM reports",
+    "desc": "",
+    "nblm": true
   }
 ]
