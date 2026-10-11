@@ -1,7 +1,7 @@
 {
   "name": "Learn Domino AI: Architect Study Console",
   "short_name": "Learn Domino AI",
-  "description": "Domino Data Lab architecture deep dive with a daily placement challenge.",
+  "description": "Domino Data Lab learning deep dive with a daily placement challenge.",
   "start_url": "./#/today",
   "scope": "./",
   "display": "standalone",

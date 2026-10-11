@@ -148,6 +148,22 @@ function renderViews(){
   $$("[data-vt]",el).forEach(b=>b.onclick=()=>{LS.set(KEY+"viewTab",b.dataset.vt);renderViews();});
 }
 
+function renderRefArch(){
+  const el=$("#v-refarch");
+  if(!el) return;
+  el.innerHTML=`<h2 class="vh">Reference architecture</h2>
+  <p class="lead">One control plane records. Data planes run the work. A Project is the unit of work. MLflow is opt-in: no call, no experiment, no model card. ${lib("ref-arch","Open the explainer page")}.</p>
+  <p class="obj">Grounded in ${esc("S2")} architecture, ${esc("S21")} Nexus, ${esc("S41")} control-plane MLflow. Remote Model APIs, Apps, and Datasets are current as of 5.9 / 6.0. Starburst sources and Dataset CLI stay on the local plane.</p>
+  <a href="assets/diagrams/domino-reference-architecture.png" target="_blank" rel="noopener"><img class="diagram" src="assets/diagrams/domino-reference-architecture.png" alt="Domino Data Lab reference architecture: control plane, local data plane, remote Nexus plane, and the Project lifecycle" loading="lazy"></a>
+  <div class="grid" style="margin-top:1rem">
+    <div class="card"><h3>Control plane</h3><p>UI, API, identity, secrets, Mongo/Postgres, Experiment Manager, model registry, image builder. Metadata lives here. The GPU does not.</p></div>
+    <div class="card"><h3>Local data plane</h3><p>Workspaces, Jobs, Apps, Model APIs, Datasets as pods. This is where a hardware tier actually burns money.</p></div>
+    <div class="card"><h3>Remote Nexus plane</h3><p>Compute next to data that cannot move. Same workload types on current versions. Still depends on a live control-plane path.</p></div>
+    <div class="card"><h3>Lifecycle</h3><p>Project → Environment → Workspace or Job → experiment (if code logs to MLflow) → model card → Sentry → App or Model API.</p></div>
+  </div>
+  <div class="note" style="margin-top:1rem"><b>When this picture is the wrong one.</b> Databricks already owns the lakehouse. SageMaker already owns the endpoints. OpenShift AI or Kubeflow already owns the cluster. An IL5 sentence on a homepage is not an ATO.</div>`;
+}
+
 /* ---- Progress map ---- */
 function renderMap(){
   const el=$("#v-map");
@@ -267,7 +283,7 @@ function renderDeck(){
   ${video}
   ${DEEP.youtube?`<p class="obj" style="margin-top:.4rem"><a href="https://www.youtube.com/watch?v=${DEEP.youtube}" target="_blank" rel="noopener">Open the deep-dive cut on YouTube ↗</a></p>`:""}
   <div class="note" style="margin-top:1rem"><b>Opening line.</b> ${esc(C.open||"")}<br><b>Recap.</b> ${esc(C.recap||"")}</div>
-  <p class="obj" style="margin-top:1rem"><b>Downloads:</b> <a href="assets/downloads/odm-dominoai-presentation.pdf" download>NotebookLM deck (PDF)</a> · ${lib("media-slides","Presentation slides")} · ${lib("media-shorts-plan","Shorts plan")} · ${lib("deep-dive","Technical deep dive")}</p>
+  <p class="obj" style="margin-top:1rem"><b>Downloads:</b> <a href="assets/downloads/odm-dominoai-presentation.pdf" download>NotebookLM deck (PDF)</a> · ${lib("media-slides","Presentation slides")} · ${lib("media-shorts-plan","Shorts plan")} · ${lib("deep-dive","Learning deep dive")} · ${lib("ref-arch","Reference architecture")}</p>
   <h3 style="margin:1.6rem 0 .6rem;font-size:1.05rem">Slides</h3>
   <div class="deckrows">`;
   for(let i=1;i<=n;i++){
@@ -524,4 +540,4 @@ function initTheme(){
 function defaultMode(){try{return window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}catch(e){return "dark";}}
 
 /* ---- Init ---- */
-initTheme();renderDashboard();renderCurriculum();renderViews();renderMap();renderFlash();renderDeck();renderQuiz();renderGlossary();renderPrompts();renderCounsel();renderCheat();renderEA();renderLibrary();renderReferences();
+initTheme();renderDashboard();renderCurriculum();renderViews();renderRefArch();renderMap();renderFlash();renderDeck();renderQuiz();renderGlossary();renderPrompts();renderCounsel();renderCheat();renderEA();renderLibrary();renderReferences();

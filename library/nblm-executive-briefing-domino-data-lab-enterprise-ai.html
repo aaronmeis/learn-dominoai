@@ -67,19 +67,7 @@
 <hr />
 <h3>2. Core Platform Primitives &amp; System of Record</h3>
 <p>To evaluate Domino effectively, practitioners must define its structural building blocks independently of vendor terminology before mapping them to platform capabilities:</p>
-<pre><code>[ Project ] (Unit of Work &amp; Access Control)
-    │
-    ├─── [ Workspace ] (Interactive IDE: Jupyter, VS Code, RStudio)
-    │        ├── Booted via ──► [ Compute Environment ] (Docker Image: DSE / DME)
-    │        └── Allocated on ─► [ Hardware Tier ] (CPU / RAM / GPU Resources)
-    │
-    ├─── [ Batch Job / Flow ] (Scheduled / Large-Scale Automation)
-    │        └── Associated with ─► [ Dataset Snapshot ] (Versioned Data Files)
-    │
-    └─── [ MLflow Tracking ] ──► [ Model Registry ] (Model Card System of Record)
-                                       │
-                                       ├──► [ Model API ] (REST Inference Endpoint)
-                                       └──► [ App Hub ] (Streamlit / Dash / Shiny on Port 8888)
+<pre><code>[ Project ] (Unit of Work &amp; Access Control) │ ├─── [ Workspace ] (Interactive IDE: Jupyter, VS Code, RStudio) │ ├── Booted via ──► [ Compute Environment ] (Docker Image: DSE / DME) │ └── Allocated on ─► [ Hardware Tier ] (CPU / RAM / GPU Resources) │ ├─── [ Batch Job / Flow ] (Scheduled / Large-Scale Automation) │ └── Associated with ─► [ Dataset Snapshot ] (Versioned Data Files) │ └─── [ MLflow Tracking ] ──► [ Model Registry ] (Model Card System of Record) │ ├──► [ Model API ] (REST Inference Endpoint) └──► [ App Hub ] (Streamlit / Dash / Shiny on Port 8888)
 </code></pre>
 <ol>
 <li><strong>Project:</strong> The foundational unit of organization, security, and collaboration. A Project bounds all code, data references, execution history, metadata, and user permissions.</li>
@@ -96,25 +84,21 @@
 <h3>3. Governed Model Lifecycle &amp; Production Workflow</h3>
 <p>Domino operationalizes model delivery by establishing structured human-in-the-loop review processes before code transitions into production environments.</p>
 <pre><code>+-----------------------------------------------------------------------------------+
-| DEVELOPMENT (Data Plane)                                                          |
-|  [ Workspace / Job ] ──► Experiment Tracking (MLflow) ──► Model Card Creation      |
+| DEVELOPMENT (Data Plane) |
+| [ Workspace / Job ] ──► Experiment Tracking (MLflow) ──► Model Card Creation |
++-----------------------------------------------------------------------------------+ │ ▼
 +-----------------------------------------------------------------------------------+
-                                          │
-                                          ▼
+| GOVERNANCE &amp; REVIEW (Control Plane / Model Sentry) |
+| Initiate Review ──► Stage Transition Request (e.g., Staging ➔ Pre-Prod ➔ Prod) |
+| │ |
+| Stakeholder Review Cues: ├──► Review Model Card Lineage &amp; Metrics |
+| (Domain Experts, Admins, Security) ├──► Test Endpoint via Embedded API |
+| └──► Open Workspace to Inspect Context |
++-----------------------------------------------------------------------------------+ │ ▼
 +-----------------------------------------------------------------------------------+
-| GOVERNANCE &amp; REVIEW (Control Plane / Model Sentry)                                |
-|  Initiate Review ──► Stage Transition Request (e.g., Staging ➔ Pre-Prod ➔ Prod)   |
-|                                         │                                         |
-|  Stakeholder Review Cues:               ├──► Review Model Card Lineage &amp; Metrics   |
-|   (Domain Experts, Admins, Security)    ├──► Test Endpoint via Embedded API       |
-|                                         └──► Open Workspace to Inspect Context    |
-+-----------------------------------------------------------------------------------+
-                                          │
-                                          ▼
-+-----------------------------------------------------------------------------------+
-| PRODUCTION DEPLOYMENT &amp; MONITORING                                                |
-|  [ Approved Stage Transition ] ──► Deploy REST Model API / Export Container        |
-|                                ──► Continuous Drift &amp; Fairness Monitoring        |
+| PRODUCTION DEPLOYMENT &amp; MONITORING |
+| [ Approved Stage Transition ] ──► Deploy REST Model API / Export Container |
+| ──► Continuous Drift &amp; Fairness Monitoring |
 +-----------------------------------------------------------------------------------+
 </code></pre>
 <h4>Model Governance &amp; Review Lifecycle</h4>
@@ -132,16 +116,8 @@
 <hr />
 <h3>4. Competitive Decision Framework: Platform Placement</h3>
 <p>Domino's strategic value depends entirely on correct workload placement. Attempting to deploy Domino as a universal solution across all analytical use cases leads to architectural friction.</p>
-<pre><code>                                [ Workload Evaluation ]
-                                           │
-       ┌───────────────────┬───────────────┼───────────────┬───────────────────┐
-       ▼                   ▼               ▼               ▼                   ▼
- Need Governed      Data/Registry in    AWS-Native      OpenShift-Native      Visual /
-  Polyglot Lifecycle  Databricks        Ecosystem       Infrastructure       Non-Coder
- (IDEs + Multi-Cloud)      │               │               │                Workbench
-       │                   │               │               │                   │
-       ▼                   ▼               ▼               ▼                   ▼
-[ Select DOMINO ]   [ Select DATABRICKS] [ Select SAGEMAKER] [ Select OPENSHIFT AI] [ Select DATAIKU]
+<pre><code> [ Workload Evaluation ] │ ┌───────────────────┬───────────────┼───────────────┬───────────────────┐ ▼ ▼ ▼ ▼ ▼ Need Governed Data/Registry in AWS-Native OpenShift-Native Visual / Polyglot Lifecycle Databricks Ecosystem Infrastructure Non-Coder (IDEs + Multi-Cloud) │ │ │ Workbench │ │ │ │ │ ▼ ▼ ▼ ▼ ▼
+[ Select DOMINO ] [ Select DATABRICKS] [ Select SAGEMAKER] [ Select OPENSHIFT AI] [ Select DATAIKU]
 </code></pre>
 <table>
 <thead>
@@ -224,26 +200,22 @@
 <h2>Edge Cases, Operational Traps, and Architectural Pitfalls</h2>
 <p>Design reviews and platform evaluations frequently fail due to misinterpretations of platform mechanics. The following matrix details verified operational traps, their observable symptoms, root causes, and technical mitigations:</p>
 <pre><code>+----------------------------------------------------------------------------------+
-| TRAP 1: &quot;Reproducibility Theater&quot;                                                 |
-|  Symptom:    Runs tracked in UI fail to yield identical model outputs later.     |
-|  Root Cause: Code tracked via Git, but runtime Docker image or data unpinned.     |
-|  Mitigation: Enforce custom Compute Environments and pin Dataset snapshots.      |
+| TRAP 1: &quot;Reproducibility Theater&quot; |
+| Symptom: Runs tracked in UI fail to yield identical model outputs later. |
+| Root Cause: Code tracked via Git, but runtime Docker image or data unpinned. |
+| Mitigation: Enforce custom Compute Environments and pin Dataset snapshots. |
++----------------------------------------------------------------------------------+ │ ▼
 +----------------------------------------------------------------------------------+
-                                         │
-                                         ▼
+| TRAP 2: &quot;Idle Compute Drain&quot; |
+| Symptom: Enterprise cloud/GPU bill spikes dramatically. |
+| Root Cause: Interactive Workspaces left running idle on high-tier GPU pods. |
+| Mitigation: Mandate Workspace auto-shutdown policies and batch Jobs for scale. |
++----------------------------------------------------------------------------------+ │ ▼
 +----------------------------------------------------------------------------------+
-| TRAP 2: &quot;Idle Compute Drain&quot;                                                     |
-|  Symptom:    Enterprise cloud/GPU bill spikes dramatically.                      |
-|  Root Cause: Interactive Workspaces left running idle on high-tier GPU pods.      |
-|  Mitigation: Mandate Workspace auto-shutdown policies and batch Jobs for scale.  |
-+----------------------------------------------------------------------------------+
-                                         │
-                                         ▼
-+----------------------------------------------------------------------------------+
-| TRAP 3: &quot;Vendor Lock-in Misconception&quot;                                           |
-|  Symptom:    Teams assume exporting model binaries eliminates platform lock-in.  |
-|  Root Cause: Artifacts export easily, but lineage and metadata stay behind.      |
-|  Mitigation: Treat Domino as the permanent lineage store even if serving elsewhere.|
+| TRAP 3: &quot;Vendor Lock-in Misconception&quot; |
+| Symptom: Teams assume exporting model binaries eliminates platform lock-in. |
+| Root Cause: Artifacts export easily, but lineage and metadata stay behind. |
+| Mitigation: Treat Domino as the permanent lineage store even if serving elsewhere.|
 +----------------------------------------------------------------------------------+
 </code></pre>
 <table>
@@ -305,15 +277,15 @@
 <p>To ensure technical rigor and avoid superficial platform evaluations, architectural review boards and lead engineers should implement the following recommendations:</p>
 <h3>1. Apply the Platform Mastery Falsification Standard</h3>
 <p>Reject any platform design review that presents a basic "feature tour." An evaluation fails the standard of operational mastery unless it explicitly addresses:
-*   The precise definition of the <strong>System of Record</strong> (code + data + environment + parameters).
-*   The functional separation between <strong>Control Plane</strong> and <strong>Data Plane</strong> topology.
-*   A clear, justified statement identifying when a competing platform (e.g., Databricks, SageMaker, OpenShift AI) represents a better workload fit.</p>
+* The precise definition of the <strong>System of Record</strong> (code + data + environment + parameters).
+* The functional separation between <strong>Control Plane</strong> and <strong>Data Plane</strong> topology.
+* A clear, justified statement identifying when a competing platform (e.g., Databricks, SageMaker, OpenShift AI) represents a better workload fit.</p>
 <h3>2. Enforce Strict Lineage Controls</h3>
 <p>A model must not be approved for production deployment unless its associated Model Card contains verifiable links to:
-*   An immutable Git commit hash.
-*   A fully built, pinned Docker image digest (Compute Environment).
-*   A specific, immutable Dataset snapshot ID.
-*   Complete parameter logs captured via MLflow tracking.</p>
+* An immutable Git commit hash.
+* A fully built, pinned Docker image digest (Compute Environment).
+* A specific, immutable Dataset snapshot ID.
+* Complete parameter logs captured via MLflow tracking.</p>
 <h3>3. Implement Governance Gates via Model Sentry</h3>
 <ul>
 <li>Configure custom review stages at the global administrative level (<code>com.cerebro.domino.registeredmodels.stages</code>) to reflect organizational risk frameworks (e.g., <code>Validation</code> $\rightarrow$ <code>Pre-Prod</code> $\rightarrow$ <code>Production</code>).</li>
@@ -331,7 +303,7 @@
 <li>Do not accept marketing statements regarding DoD IL5, HIPAA, or SOC 2 as immediate lab authorizations. Require primary FedRAMP/DISA documentation and complete formal ATO processes prior to processing sensitive data.</li>
 </ul></article>
   <footer class="docfoot">
-    Rendered from <code>Learning\one-day-mastery\dominoai\notebooklm\exports\Executive Briefing_ Domino Data Lab Enterprise AI Platform Architecture, Governa.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    Rendered from <code>Learning/one-day-mastery/dominoai/notebooklm/exports/Executive Briefing_ Domino Data Lab Enterprise AI Platform Architecture, Governa.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
     <div class="prevnext"><a href="nblm-enterprise-ai-platform-analysis-domino-data-lab-.html">&larr; Previous</a><a href="nblm-executive-decision-packet-enterprise-ai-platform.html">Next &rarr;</a></div>
   </footer>
 </main>

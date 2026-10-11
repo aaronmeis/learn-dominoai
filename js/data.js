@@ -291,7 +291,7 @@ const DATA = {
       tables:[{caption:"Placement",headers:["","Domino","Databricks","SageMaker","Kubeflow"],rows:[["Shape","Project lifecycle","Lakehouse","AWS managed","K8s CRDs"],["Record","Model card / MLflow","Unity Catalog","SageMaker registry","Your design"],["Hybrid","Nexus data planes","Regions / Delta Sharing","Accounts / VPC","Clusters you run"]]}]},
     logical:{rule:"How a run moves.",lib:"deep-dive",img:[],
       tables:[{caption:"Lifecycle",headers:["Step","What is recorded"],rows:[["Project","Files and membership"],["Workspace / Job","Environment revision, hardware tier"],["Experiment","Parameters and metrics"],["Registry","Model card lineage"],["Endpoint or App","Who can call it"]]}]},
-    physical:{rule:"Two planes on Kubernetes.",lib:"deep-dive",img:[],
+    physical:{rule:"Two planes on Kubernetes.",lib:"ref-arch",img:["domino-reference-architecture.png"],
       tables:[{caption:"Planes",headers:["Plane","Runs"],rows:[["Control","UI, API, metadata, registry, image builder"],["Data","Workspaces, Jobs, Apps, endpoints as pods"]]}]},
     integration:{rule:"IDEs in, artifacts out.",lib:"block-07-application",img:[],
       tables:[{caption:"Surfaces",headers:["Path","Consumer"],rows:[["Workspace","Practitioner"],["Model API","Another system"],["App port 8888","Person with a browser"],["Export","SageMaker / Snowflake / Databricks / Docker"]]}]},
@@ -363,7 +363,7 @@ DATA.cut = {
     "Slide 11 is when not to use it. Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku. IL5 is not an ATO. Percentages are not an SLA.",
     "Slide 12 is the decision. Sketch the lifecycle. Name the plane, the record, and the tool you refuse. Measure your queue.",
     "Slides 13–15 are extra NotebookLM detailed-deck pages. Ledger and debates win where they differ. IL5 and 6× stay qualifications.",
-    "NotebookLM detailed deck, continued. Vault gallery: Presentation slides.md. PPTX stays under C:\\output.",
+    "NotebookLM detailed deck, continued. Vault gallery: Presentation slides.md. The PowerPoint file stays in heavy output, off the public site.",
     "Last NotebookLM slide. The 12-slide TDD spine is the study cut; this 15-page deck is the W8 export."
   ],
   cards: [
@@ -413,7 +413,8 @@ DATA.books = [
 
 DATA.packPages = [
   {slug:"mission",t:"Mission"},
-  {slug:"deep-dive",t:"Technical deep dive"},
+  {slug:"deep-dive",t:"Learning deep dive"},
+  {slug:"ref-arch",t:"Reference architecture"},
   {slug:"claims-debates",t:"Claims and debates"},
   {slug:"elicit",t:"Elicit light research"},
   {slug:"source-ledger",t:"Source ledger"},
@@ -421,8 +422,6 @@ DATA.packPages = [
   {slug:"quiz-bank",t:"Quiz bank"},
   {slug:"cheatsheet",t:"Cheatsheet"},
   {slug:"watch-reading",t:"Talks and O'Reilly"},
-  {slug:"handoff-evidence",t:"Evidence sittings"},
-  {slug:"handoff-video",t:"Video renders"},
   {slug:"day-plan",t:"Day plan"},
   {slug:"nblm-practitioner-working-briefing-domino-data-lab-en",t:"Working briefing"},
   {slug:"nblm-enterprise-ai-platform-analysis-domino-data-lab-",t:"Mental models"},
@@ -436,7 +435,8 @@ DATA.packPages = [
 ];
 
 DATA.fromReports = [
-  {slug:"deep-dive",title:"Technical deep dive",point:"Control plane records. Data plane runs. Put the GPU and the model card on the correct plane."},
+  {slug:"deep-dive",title:"Learning deep dive",point:"Control plane records. Data plane runs. Put the GPU and the model card on the correct plane."},
+  {slug:"ref-arch",title:"Reference architecture",point:"One control plane, many data planes. Project is the unit of work. MLflow is opt-in."},
   {slug:"claims-debates",title:"Claims and debates",point:"A warrant is the If X then Y that makes a source count. An IL5 sentence does not warrant an ATO. A homepage 6× does not warrant an SLA."},
   {slug:"elicit",title:"Elicit light",point:"E3B run 2026-10-11: no Domino product paper. MLflow 2020 and Albertoni 2023 are nearby work."},
   {slug:"source-ledger",title:"Source ledger",point:"S1–S42. Official architecture and user-guide pages win. Marketing is on the ledger so it can be qualified. Next unused id is 43."},

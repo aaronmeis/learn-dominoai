@@ -14,12 +14,12 @@ const APP_URL="https://aaronmeis.github.io/learn-dominoai/";
 
 /* ---------- Views and groups ---------- */
 const VIEWS = {
-  today:"Today", curriculum:"Curriculum", views:"Architecture views", shorts:"Shorts", deck:"Deck and deep-dive cut", library:"Library",
+  today:"Today", curriculum:"Curriculum", views:"Architecture views", refarch:"Reference architecture", shorts:"Shorts", deck:"Deck and deep-dive cut", library:"Library",
   flash:"Flashcards", quiz:"Quiz", failures:"Failure modes", prompts:"Prompts",
   cheat:"Decision rules", map:"Progress map", glossary:"Glossary", ea:"EA mapping", debates:"Debates", refs:"Source ledger", dashboard:"Overview"
 };
 const GROUPS = {
-  learn:["curriculum","views","shorts","deck","library"],
+  learn:["curriculum","views","refarch","shorts","deck","library"],
   practice:["flash","quiz","failures","prompts"],
   reference:["cheat","map","glossary","ea","debates","refs","dashboard"]
 };
@@ -163,7 +163,7 @@ function show(v,sub){
   pauseHiddenMedia();
   if(v==="today") renderToday();
   if(v==="shorts"){ if(sub) selectShortById(sub,false); renderShorts(); }
-  const paint={glossary:renderGlossary,quiz:renderQuiz,views:renderViews,refs:renderReferences,flash:renderFlash,library:renderLibrary,cheat:renderCheat,failures:renderCounsel,prompts:renderPrompts,ea:renderEA,debates:renderDebates,map:renderMap,dashboard:renderDashboard,curriculum:renderCurriculum,deck:renderDeck};
+  const paint={glossary:renderGlossary,quiz:renderQuiz,views:renderViews,refarch:renderRefArch,refs:renderReferences,flash:renderFlash,library:renderLibrary,cheat:renderCheat,failures:renderCounsel,prompts:renderPrompts,ea:renderEA,debates:renderDebates,map:renderMap,dashboard:renderDashboard,curriculum:renderCurriculum,deck:renderDeck};
   if(changed && paint[v]) paint[v]();
   if(changed){
     const main=$("#main"); if(main) main.scrollTop=0;

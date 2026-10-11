@@ -36,30 +36,16 @@
   },
   {
     "slug": "deep-dive",
-    "title": "Technical deep dive",
+    "title": "Learning deep dive",
     "section": "Plan",
-    "desc": "Technical deep dive for the Domino Data Lab one-day pack. Grounded in the source ledger. Narrated cut is a later sub-run.",
+    "desc": "Learning deep dive for the Domino Data Lab one-day pack. Grounded in the source ledger. Narrated cut is a later sub-run.",
     "nblm": false
   },
   {
-    "slug": "living-console",
-    "title": "Living console",
+    "slug": "ref-arch",
+    "title": "Reference architecture",
     "section": "Plan",
-    "desc": "How later Domino sittings land on the phone console.",
-    "nblm": false
-  },
-  {
-    "slug": "handoff-evidence",
-    "title": "Evidence sittings handoff",
-    "section": "Plan",
-    "desc": "Copy-paste brief for the next agent: complete unrun designed-evidence sittings for Domino, then publish #/debates.",
-    "nblm": false
-  },
-  {
-    "slug": "handoff-video",
-    "title": "Video renders handoff",
-    "section": "Plan",
-    "desc": "Copy-paste brief for the video agent: HyperFrames explainer, Remotion companion, narrated TDD cut, optional Codex study film.",
+    "desc": "Reference architecture for Domino Data Lab. One control plane records. Data planes run the work. Project is the unit of work. MLflow is opt-in.",
     "nblm": false
   },
   {
@@ -67,13 +53,6 @@
     "title": "Elicit light research",
     "section": "Plan",
     "desc": "Elicit light search for the Domino Data Lab one-day pack. Negative for a Domino product paper.",
-    "nblm": false
-  },
-  {
-    "slug": "video-pair",
-    "title": "60-second video pair",
-    "section": "Media",
-    "desc": "Overview of the Domino HyperFrames and Remotion explainer pair. Renders are a sub-run for another agent.",
     "nblm": false
   },
   {
@@ -206,7 +185,7 @@
     "slug": "media-slides",
     "title": "Presentation slides",
     "section": "Media",
-    "desc": "Slide image gallery for Domino Data Lab (Enterprise AI Platform) NotebookLM deck. JPG only; PPTX stays under C:\\output.",
+    "desc": "Slide image gallery for Domino Data Lab (Enterprise AI Platform) NotebookLM deck. JPG only. The PowerPoint file stays in heavy output, off the public site.",
     "nblm": false
   },
   {

@@ -104,17 +104,13 @@
 <p>Domino is architected as a Kubernetes-native application distributed via Helm charts and managed installers. The platform is validated across managed public cloud services (Amazon EKS, Azure AKS, Google GKE) and self-managed on-premise Kubernetes environments (<code>docs 6.2</code>).</p>
 <p>To preserve security boundaries and prevent data exfiltration, Domino enforces a strict architectural separation between administrative control services and worker execution compute:</p>
 <pre><code>+-----------------------------------------------------------------------------------+
-|                                   CONTROL PLANE                                   |
-|   (UI, Management APIs, MongoDB/PostgreSQL Metadata, RabbitMQ, MLflow Registry)    |
+| CONTROL PLANE |
+| (UI, Management APIs, MongoDB/PostgreSQL Metadata, RabbitMQ, MLflow Registry) |
++-----------------------------------------------------------------------------------+ | | Secure Control Channel | (Metadata &amp; Pod Schedulers) v
 +-----------------------------------------------------------------------------------+
-                                          |
-                                          | Secure Control Channel 
-                                          | (Metadata &amp; Pod Schedulers)
-                                          v
-+-----------------------------------------------------------------------------------+
-|                                    DATA PLANE                                     |
-|    (Execution Workloads: Workspaces, Batch Jobs, Distributed Clusters, Endpoints) |
-|    * Dataset Bytes, Raw Feature Payloads, and GPU Worker Memory Localized Here *  |
+| DATA PLANE |
+| (Execution Workloads: Workspaces, Batch Jobs, Distributed Clusters, Endpoints) |
+| * Dataset Bytes, Raw Feature Payloads, and GPU Worker Memory Localized Here * |
 +-----------------------------------------------------------------------------------+
 </code></pre>
 <p>Orchestration signals, status telemetry, and metadata pass exclusively over encrypted Control Plane communication channels. Raw dataset bytes, feature payloads, and deep learning model weights remain entirely localized within the Data Plane Kubernetes pods during processing, ensuring heavy data streams never cross into the Control Plane database layers (<code>docs 6.2</code>).</p>
@@ -138,18 +134,11 @@
 </table>
 <h3>2.2 Hybrid Topology (Domino Nexus)</h3>
 <p>Domino Nexus extends this plane separation by allowing a single centralized Control Plane to govern multiple execution Data Planes distributed across multi-cloud regions, VPCs, and on-premise data centers (<code>docs 6.2</code>).</p>
-<pre><code>                    +--------------------------------+
-                    |    Central Control Plane       |
-                    |  (Unified System of Record)    |
-                    +--------------------------------+
-                                    |
-        +---------------------------+---------------------------+
-        |                           |                           |
-        v                           v                           v
-+-------------------+       +-------------------+       +-------------------+
-| Data Plane 1      |       | Data Plane 2      |       | Data Plane 3      |
-| On-Prem Cluster   |       | AWS EKS VPC       |       | Azure AKS VPC     |
-+-------------------+       +-------------------+       +-------------------+
+<pre><code> +--------------------------------+ | Central Control Plane | | (Unified System of Record) | +--------------------------------+ | +---------------------------+---------------------------+ | | | v v v
++-------------------+ +-------------------+ +-------------------+
+| Data Plane 1 | | Data Plane 2 | | Data Plane 3 |
+| On-Prem Cluster | | AWS EKS VPC | | Azure AKS VPC |
++-------------------+ +-------------------+ +-------------------+
 </code></pre>
 <blockquote>
 <p><strong>Explicit System Silence &amp; Version Warning:</strong> Remote data planes historically or version-dependently may lack complete feature parity with local data planes—specifically regarding localized Model API hosting, direct App Hub publishing, or local Dataset storage (<code>docs 6.2</code>). System architects must verify the capability matrix against their exact platform release (<code>docs 6.2</code>) during cross-cluster architectural design reviews (<code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code>).</p>
@@ -157,14 +146,11 @@
 <h3>2.3 The System of Record Claim</h3>
 <p>Domino operates as an enterprise <strong>System of Record</strong> for AI assets, establishing a clear architectural boundary between transient code execution (e.g., local Jupyter notebooks) and immutable, auditable lineage management.</p>
 <p>The platform enforces technical auditability through a strict four-part reconstructable run equation:</p>
-<div class="callout info" markdown="0"><div class="callout-title">System of Record Execution Equation</div><p>$$\text{Reconstructable Run} = \text{Code (Git commit)} + \text{Data Snapshot} + \text{Environment Revision (Docker Image)} + \text{Parameters}$$</p></div>
-
-<p>By automatically binding these four vectors at execution time, Domino creates an immutable record that allows any historical experiment, job, or deployment to be precisely reconstructed and verified for governance audits.</p>
+<div class="callout info" markdown="0"><div class="callout-title">System of Record Execution Equation</div><p>$$\text{Reconstructable Run} = \text{Code (Git commit)} + \text{Data Snapshot} + \text{Environment Revision (Docker Image)} + \text{Parameters}$$</p></div> <p>By automatically binding these four vectors at execution time, Domino creates an immutable record that allows any historical experiment, job, or deployment to be precisely reconstructed and verified for governance audits.</p>
 <hr />
 <h2>3. The Governed Model Lifecycle (Project to Production)</h2>
 <h3>3.1 Step-by-Step Lifecycle Sequence</h3>
-<pre><code>[Step 1: Workspace Dev] ---&gt; [Step 2: Training &amp; Jobs] ---&gt; [Step 3: Registration &amp; Card]
-                                                                        |
+<pre><code>[Step 1: Workspace Dev] ---&gt; [Step 2: Training &amp; Jobs] ---&gt; [Step 3: Registration &amp; Card] |
 [Step 5: Production Deploy] &lt;--- [Step 4: Governance &amp; Sentry] &lt;--------+
 </code></pre>
 <h4>Step 1: Project Initialization &amp; Workspace Setup</h4>
@@ -382,7 +368,7 @@
 <li><strong>Live Tenant Data:</strong> Packet captures, live API responses, active tenant screenshots, and custom Docker build scripts are out of scope and silent in the source context.</li>
 </ul></article>
   <footer class="docfoot">
-    Rendered from <code>Learning\one-day-mastery\dominoai\notebooklm\exports\Practitioner Working Briefing_ Domino Data Lab Enterprise AI Platform.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    Rendered from <code>Learning/one-day-mastery/dominoai/notebooklm/exports/Practitioner Working Briefing_ Domino Data Lab Enterprise AI Platform.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
     <div class="prevnext"><a href="nblm-executive-decision-packet-enterprise-ai-platform.html">&larr; Previous</a><a href="nblm-shorts-manifest.html">Next &rarr;</a></div>
   </footer>
 </main>

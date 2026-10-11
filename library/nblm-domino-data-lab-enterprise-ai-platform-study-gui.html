@@ -47,20 +47,13 @@
 <hr />
 <h3>2. Domino Data Lab Core Architecture &amp; Constructs</h3>
 <p>Domino Data Lab is a Kubernetes-native enterprise AI platform distributed as containerized applications managed via Helm charts and installer scripts. It is validated across cloud-managed Kubernetes services (EKS, AKS, GKE) and self-managed private data center infrastructure.</p>
-<pre><code>       +-----------------------------------------------------------+
-       |                      CONTROL PLANE                        |
-       |  (UI, APIs, Metadata, RabbitMQ, Experiment Logs, Registry)|
-       +-----------------------------------------------------------+
-                                     |
-           +-------------------------+-------------------------+
-           |                                                   |
-           v                                                   v
-+-----------------------+                           +-----------------------+
-|  DATA PLANE A (Cloud) |                           | DATA PLANE B (On-Prem)|
-| - GPU Workspaces      |                           | - Distributed Jobs    |
-| - REST Model APIs     |                           | - Model Training Pods |
-| - Interactive Apps    |                           | - Local Datasets      |
-+-----------------------+                           +-----------------------+
+<pre><code> +-----------------------------------------------------------+ | CONTROL PLANE | | (UI, APIs, Metadata, RabbitMQ, Experiment Logs, Registry)| +-----------------------------------------------------------+ | +-------------------------+-------------------------+ | | v v
++-----------------------+ +-----------------------+
+| DATA PLANE A (Cloud) | | DATA PLANE B (On-Prem)|
+| - GPU Workspaces | | - Distributed Jobs |
+| - REST Model APIs | | - Model Training Pods |
+| - Interactive Apps | | - Local Datasets |
++-----------------------+ +-----------------------+
 </code></pre>
 <h4>Core Components &amp; Terminology</h4>
 <ul>
@@ -79,11 +72,10 @@
 <h3>3. Key Architectural &amp; Operational Mental Models</h3>
 <h4>Control Plane vs. Data Plane</h4>
 <p>Domino separates administration from execution:
-*   <strong>Control Plane</strong>: Hosts administrative services, platform APIs, user interfaces, metadata databases, message queues (e.g., RabbitMQ), and central governance logs.
-*   <strong>Data Plane</strong>: Hosts user execution workloads—interactive Workspaces, background Jobs, distributed training pods, hosted Model APIs, and published Apps where active compute bytes and GPU cycles run.</p>
+* <strong>Control Plane</strong>: Hosts administrative services, platform APIs, user interfaces, metadata databases, message queues (e.g., RabbitMQ), and central governance logs.
+* <strong>Data Plane</strong>: Hosts user execution workloads—interactive Workspaces, background Jobs, distributed training pods, hosted Model APIs, and published Apps where active compute bytes and GPU cycles run.</p>
 <h4>Domino Nexus (Hybrid Architecture)</h4>
-<p>Domino Nexus extends platform architecture to support a single, unified Control Plane orchestrating multiple local or remote Data Planes across cloud regions, on-premise data centers, or hybrid cloud environments. Compute workloads are dispatched directly to where the data resides. 
-*   <em>Architectural Caveat</em>: Remote data planes historically lacked feature parity with local data planes (e.g., local availability of Model APIs, Apps, or local Datasets). Exact capability matrices must be verified against installed release documentation.</p>
+<p>Domino Nexus extends platform architecture to support a single, unified Control Plane orchestrating multiple local or remote Data Planes across cloud regions, on-premise data centers, or hybrid cloud environments. Compute workloads are dispatched directly to where the data resides. * <em>Architectural Caveat</em>: Remote data planes historically lacked feature parity with local data planes (e.g., local availability of Model APIs, Apps, or local Datasets). Exact capability matrices must be verified against installed release documentation.</p>
 <h4>System of Record (SoR)</h4>
 <p>The core product capability of Domino is its <strong>System of Record</strong>, not merely hosting cloud IDEs. Complete run reconstruction requires binding four distinct vectors together:
 $$\text{Reconstructable Run} = \text{Code Commit} + \text{Data Version Snapshot} + \text{Compute Environment Revision} + \text{Hyperparameters}$$</p>
@@ -256,7 +248,7 @@ $$\text{Reconstructable Run} = \text{Code Commit} + \text{Data Version Snapshot}
 </tbody>
 </table></article>
   <footer class="docfoot">
-    Rendered from <code>Learning\one-day-mastery\dominoai\notebooklm\exports\Domino Data Lab Enterprise AI Platform Study Guide.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    Rendered from <code>Learning/one-day-mastery/dominoai/notebooklm/exports/Domino Data Lab Enterprise AI Platform Study Guide.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
     <div class="prevnext"><a href="nblm-domino-data-lab-claims-and-analysis.html">&larr; Previous</a><a href="nblm-domino-data-lab-practice-authoring-playbook-arch.html">Next &rarr;</a></div>
   </footer>
 </main>
