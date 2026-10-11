@@ -373,11 +373,56 @@
 <td>D5</td>
 <td>Competitor. Installs onto one OpenShift cluster via an operator. Model registry needs external MySQL plus S3. Added 2026-10-11 (E5B).</td>
 </tr>
+<tr>
+<td>38</td>
+<td>FedRAMP Marketplace, product search "Domino"</td>
+<td>https://www.fedramp.gov/marketplace/products/?q=Domino&amp;view=cards</td>
+<td>gov</td>
+<td>high</td>
+<td>D3</td>
+<td>Checked 2026-10-11 in a browser: "0 results found." Same search for "Databricks" returned 5, so the search works. Marketplace shows no Domino listing under that name. Added 2026-10-11 (E3A).</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Iron Bank overview</td>
+<td>https://docs-ironbank.dso.mil/overview/</td>
+<td>gov</td>
+<td>high</td>
+<td>D3</td>
+<td>Hardened containers have no Certificate to Field or ATO. Iron Bank supplies a baseline and findings; the program still authorizes. Does not list Domino. Added 2026-10-11 (E3A).</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Domino backup and restore overview</td>
+<td>https://docs.dominodatalab.com/en/latest/admin_guide/08fbb4/backup-and-restore-overview/</td>
+<td>docs</td>
+<td>high</td>
+<td>D2</td>
+<td>Backup bundle holds Mongo (primary application DB), Git, Keycloak Postgres, Vault Postgres, MLflow Postgres (experiment tracking), model secrets. Object storage, shared storage, external registry are not in the bundle. Added 2026-10-11 (E2B).</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Domino architecture overview (6.3)</td>
+<td>https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/index</td>
+<td>docs</td>
+<td>high</td>
+<td>D2, D5</td>
+<td>Experiment Manager and Model Registry are built on MLflow in the control plane. Same Mongo/Postgres wording as [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]. Added 2026-10-11 (E2B).</td>
+</tr>
+<tr>
+<td>42</td>
+<td>SageMaker AI Components for Kubeflow Pipelines</td>
+<td>https://docs.aws.amazon.com/en_us/sagemaker/latest/dg/kubernetes-sagemaker-components-for-kubeflow-pipelines.html</td>
+<td>docs</td>
+<td>high</td>
+<td>D5</td>
+<td>Competitor. Kubeflow Pipelines components run on worker nodes of the Kubernetes cluster running Kubeflow. SageMaker shown as a managed service the pipeline calls. Not a SageMaker architecture page. Added 2026-10-11 (E5B).</td>
+</tr>
 </tbody>
 </table>
 <p>Elicit light search is in <a href="elicit.html">elicit-light-research</a>. No Domino Data Lab product paper in that pass. Existing landscape notes under <code>Learning/Enterprise-AI-Platforms/</code> are secondary until a URL from them is promoted here.</p>
 <p>Corrections filed 2026-10-11: [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>] is the 5.7/6.2 page; its remote-plane gap list is superseded by [<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/core-concepts/data-plane" target="_blank" rel="noopener" title="Data Planes (concept page, current docs)">S20</a>] [<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture" target="_blank" rel="noopener" title="Nexus hybrid architecture (6.3)">S21</a>] [<a class="cite" href="https://docs.dominodatalab.com/release_notes/5-9-0/" target="_blank" rel="noopener" title="Domino 5.9.0 release notes (Dec 2023)">S22</a>] [<a class="cite" href="https://docs.dominodatalab.com/release_notes/6-0-0/" target="_blank" rel="noopener" title="Domino 6.0.0 release notes (Nov 2024)">S23</a>]. [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>] no longer carries the four percentages; they sit on [<a class="cite" href="https://domino.ai/" target="_blank" rel="noopener" title="Domino home page (marketing stat block)">S18</a>]. [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>] names SageMaker, NVIDIA Fleet Command, Snowflake, and a container export. It does not name Databricks.</p>
-<p>Do not renumber. Next unused id is <strong>38</strong>.</p></article>
+<p>Do not renumber. Next unused id is <strong>43</strong>.</p></article>
   <footer class="docfoot">
     Rendered from <code>Learning\one-day-mastery\dominoai\reference\source-ledger.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
     <div class="prevnext"><a href="quiz-bank.html">&larr; Previous</a><a href="claims-debates.html">Next &rarr;</a></div>

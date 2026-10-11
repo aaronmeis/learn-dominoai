@@ -259,13 +259,15 @@ function renderDeck(){
   const n=labels.length||slides.length||12;
   const video=DEEP.youtube
     ?`<iframe class="wide-player" src="${ytSrc(DEEP.youtube)}" title="Domino deep dive cut" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy" style="border:0"></iframe>`
-    :`<video class="wide-player" controls preload="metadata" poster="assets/slides/slide-01.jpg" src="${esc(DEEP.file||"media/deep-dive-cut.mp4")}"></video>`;
+    : DEEP.file
+    ? `<video class="wide-player" controls preload="metadata" poster="assets/slides/slide-01.jpg" src="${esc(DEEP.file)}"></video>`
+    : `<p class="note">Narrated TDD cut waits on the video agent. Flip the 15 NotebookLM slides below. Six shorts are on the Shorts view.</p>`;
   let h=`<h2 class="vh">Deck and deep-dive cut</h2>
-  <p class="lead">Twelve NotebookLM slides and the narrated cut. Each slide has its narration line and the question the cut asks before it. Amber outlines mark claims the source ledger does not support.</p>
+  <p class="lead">Fifteen NotebookLM slides from the W8 detailed deck. The 12-slide TDD spine is the study cut; HyperFrames and Remotion wait on the other agent. Amber outlines mark claims the source ledger does not support.</p>
   ${video}
-  ${DEEP.youtube?`<p class="obj" style="margin-top:.4rem"><a href="https://www.youtube.com/watch?v=${DEEP.youtube}" target="_blank" rel="noopener">Open the deep-dive cut on YouTube ↗</a></p>`:`<p class="obj" style="margin-top:.4rem">The cut plays from this site. ${lib("media-cut-script","Cut script")}</p>`}
+  ${DEEP.youtube?`<p class="obj" style="margin-top:.4rem"><a href="https://www.youtube.com/watch?v=${DEEP.youtube}" target="_blank" rel="noopener">Open the deep-dive cut on YouTube ↗</a></p>`:""}
   <div class="note" style="margin-top:1rem"><b>Opening line.</b> ${esc(C.open||"")}<br><b>Recap.</b> ${esc(C.recap||"")}</div>
-  <p class="obj" style="margin-top:1rem"><b>Downloads:</b> <a href="assets/downloads/duckdb-architecture-blueprint.pdf" download>Architecture blueprint (PDF)</a> · <a href="assets/downloads/duckdb-presentation.pptx" download>NotebookLM deck (PowerPoint)</a> · ${lib("media-cut-script","Cut script: narration and question cards")} · ${lib("media-shorts-plan","Shorts plan")} · ${lib("deep-dive","Technical deep dive")}</p>
+  <p class="obj" style="margin-top:1rem"><b>Downloads:</b> <a href="assets/downloads/odm-dominoai-presentation.pdf" download>NotebookLM deck (PDF)</a> · ${lib("media-slides","Presentation slides")} · ${lib("media-shorts-plan","Shorts plan")} · ${lib("deep-dive","Technical deep dive")}</p>
   <h3 style="margin:1.6rem 0 .6rem;font-size:1.05rem">Slides</h3>
   <div class="deckrows">`;
   for(let i=1;i<=n;i++){

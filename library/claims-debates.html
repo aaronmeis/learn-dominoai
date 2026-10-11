@@ -315,9 +315,11 @@
 - Warrant holds for entry and artifact export. What travels is runnable code plus Environment, not the system of record. Claim A text corrected (Databricks removed).</p>
 <p><strong>E2B — what stays in Domino stores (run 2026-10-11).</strong>
 - Result: <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code> names MongoDB/PostgreSQL for Projects, users, organizations, and references to blob storage. Object storage holds logs, container images, backups, user data. Git revisions project files. The page does <em>not</em> say where runs, Environments, the model registry, lineage, or audit live. Exported images are first registered in Domino's internal image registry <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/models/integrate-ci-cd-workflows" target="_blank" rel="noopener" title="Integrate with CI/CD (Model Export API)">S28</a>]</code>.
-- Warrant partly supported. Project, user, org metadata stay behind. The claim that lineage and registry metadata live only in Mongo/Postgres is unverified from docs. Open question for a tenant admin.</p>
+- Follow-up (run 2026-10-11): The backup docs answer the open part. The backup bundle holds the Mongo archive of the primary application database, Git, Keycloak Postgres (users), Vault Postgres, <strong>MLflow Postgres (experiment tracking database)</strong>, and model secrets <code>[<a class="cite" href="https://docs.dominodatalab.com/en/latest/admin_guide/08fbb4/backup-and-restore-overview/" target="_blank" rel="noopener" title="Domino backup and restore overview">S40</a>]</code>. The 6.3 architecture page puts the Experiment Manager and Model Registry on MLflow in the control plane <code>[<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/index" target="_blank" rel="noopener" title="Domino architecture overview (6.3)">S41</a>]</code>. So runs and registry records sit in the MLflow Postgres database; Environment images, project blobs, logs, and Datasets sit in object or shared storage and an internal Docker registry, outside the bundle <code>[<a class="cite" href="https://docs.dominodatalab.com/en/latest/admin_guide/08fbb4/backup-and-restore-overview/" target="_blank" rel="noopener" title="Domino backup and restore overview">S40</a>]</code>.
+- Warrant supported with a sharper claim. The state a move would leave behind is: Mongo (projects, users, orgs, application metadata), MLflow Postgres (runs, registry), Vault, Git history, and the blob/registry stores. Exit cost still unmeasured. Which store holds lineage links specifically is inferred (MLflow DB plus Mongo), not stated.</p>
 <p><strong>E3A — primary compliance / DISA / FedRAMP page (run 2026-10-11).</strong>
-- Result: No primary page found. The docs security page points to the Trust Center for SOC 2 Type II, ISO 27001, HIPAA, GDPR/CCPA, PCI/NIST mappings and does not mention IL5, DISA, or FedRAMP <code>[<a class="cite" href="https://docs.domino.ai/cloud/admin/security-and-compliance/index" target="_blank" rel="noopener" title="Security at Domino (docs, Trust Center pointer)">S16</a>]</code>. The public-sector page says "deployed in DoD IL5 environments and available through Iron Bank," "runs where agencies already have authorization," CMMC Level 1, and gives no PA letter, FedRAMP listing, or STIG text <code>[<a class="cite" href="https://domino.ai/solutions/public-sector" target="_blank" rel="noopener" title="Domino for government / public sector (marketing)">S17</a>]</code>. A 2023 press release says Domino announced intent to <em>pursue</em> FedRAMP (not cited, vendor). A 2026 NVIDIA reference design repeats the vendor wording. Direct lookup of the FedRAMP Marketplace was not completed in this pass (JS-driven listing); do it before saying "not listed."
+- Result: No primary page found. The docs security page points to the Trust Center for SOC 2 Type II, ISO 27001, HIPAA, GDPR/CCPA, PCI/NIST mappings and does not mention IL5, DISA, or FedRAMP <code>[<a class="cite" href="https://docs.domino.ai/cloud/admin/security-and-compliance/index" target="_blank" rel="noopener" title="Security at Domino (docs, Trust Center pointer)">S16</a>]</code>. The public-sector page says "deployed in DoD IL5 environments and available through Iron Bank," "runs where agencies already have authorization," CMMC Level 1, and gives no PA letter, FedRAMP listing, or STIG text <code>[<a class="cite" href="https://domino.ai/solutions/public-sector" target="_blank" rel="noopener" title="Domino for government / public sector (marketing)">S17</a>]</code>. A 2023 press release says Domino announced intent to <em>pursue</em> FedRAMP (not cited, vendor). A 2026 NVIDIA reference design repeats the vendor wording. 
+- Follow-up (run 2026-10-11): FedRAMP Marketplace product search for "Domino" returned <strong>0 results</strong> in a browser check; the same search for "Databricks" returned 5, so the search works <code>[<a class="cite" href="https://www.fedramp.gov/marketplace/products/?q=Domino&amp;view=cards" target="_blank" rel="noopener" title="FedRAMP Marketplace, product search &quot;Domino&quot;">S38</a>]</code>. The Marketplace shows no Domino listing under that name. That fits the 2023 "intent to pursue" wording, but a listing under another name is not ruled out. Iron Bank hardened containers carry no Certificate to Field and no ATO; they supply a baseline and findings that support a program's own authorization <code>[<a class="cite" href="https://docs-ironbank.dso.mil/overview/" target="_blank" rel="noopener" title="Iron Bank overview">S39</a>]</code>. "Available through Iron Bank" therefore is not an authorization, and I did not find Domino's own Iron Bank entry (the catalog needs a Repo1 account).
 - Warrant: Claim B stands. "Deployed in IL5 environments" is not shown to be a DISA PA held by Domino. Treat as a qualification until a PA letter, Marketplace entry, or Iron Bank page is seen. <code>[<a class="cite" href="https://docs.domino.ai/cloud/admin/security-and-compliance/index" target="_blank" rel="noopener" title="Security at Domino (docs, Trust Center pointer)">S16</a>]</code> <code>[<a class="cite" href="https://domino.ai/solutions/public-sector" target="_blank" rel="noopener" title="Domino for government / public sector (marketing)">S17</a>]</code> added to the ledger; <code>[<a class="cite" href="https://domino.ai/solutions/public-sector" target="_blank" rel="noopener" title="Domino for government / public sector (marketing)">S17</a>]</code> is vendor, not a compliance authority.</p>
 <p><strong>E3B — run 2026-10-11 (earlier).</strong> Elicit light: no Domino product eval. <code>[<a class="cite" href="https://doi.org/10.1145/3399579.3399867" target="_blank" rel="noopener" title="Developments in MLflow (DEEM@SIGMOD 2020)">S14</a>]</code> <code>[<a class="cite" href="https://doi.org/10.48550/arXiv.2302.12691" target="_blank" rel="noopener" title="Reproducibility of Machine Learning (Albertoni et al. 2023)">S15</a>]</code> stay labeled nearby work.</p>
 <p><strong>E3W — remote-plane gaps vs IL5 isolation (run 2026-10-11).</strong>
@@ -333,8 +335,9 @@
 - Result: Workspaces, Jobs, Apps, and endpoints launch on any data plane via the hardware tier; the one named gap is Starburst-powered sources; Datasets work on configured remote planes, CLI access to Datasets is local only <code>[<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/core-concepts/data-plane" target="_blank" rel="noopener" title="Data Planes (concept page, current docs)">S20</a>]</code> <code>[<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture" target="_blank" rel="noopener" title="Nexus hybrid architecture (6.3)">S21</a>]</code>. Release notes: Model APIs, Apps, Launchers on remote planes since 5.9.0 <code>[<a class="cite" href="https://docs.dominodatalab.com/release_notes/5-9-0/" target="_blank" rel="noopener" title="Domino 5.9.0 release notes (Dec 2023)">S22</a>]</code>; Datasets since 6.0.0 <code>[<a class="cite" href="https://docs.dominodatalab.com/release_notes/6-0-0/" target="_blank" rel="noopener" title="Domino 6.0.0 release notes (Nov 2024)">S23</a>]</code>. The older "Troubleshoot data issues" archive page still lists Model APIs, Apps, Datasets as local-only; that page is stale.
 - Warrant: Claim B's "remote planes historically could not run Model APIs, Apps, or Datasets" is historical. Update the debate to the Starburst and CLI gaps. Verify on the installed version.</p>
 <p><strong>E5B — competitor one-cluster defaults (run 2026-10-11, partial).</strong>
-- Result: Databricks: one Unity Catalog metastore per region, workspaces assigned to the regional metastore, cross-region by sharing <code>[<a class="cite" href="https://docs.databricks.com/gcp/en/lakehouse-architecture/deployment-guide/unity-catalog" target="_blank" rel="noopener" title="Databricks: design Unity Catalog architecture">S36</a>]</code>. OpenShift AI: operator installs onto one OpenShift cluster, with external MySQL and S3 for the model registry <code>[<a class="cite" href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4/html/installing_and_uninstalling_openshift_ai_self-managed/installing-and-deploying-openshift-ai_install" target="_blank" rel="noopener" title="Red Hat OpenShift AI: installing and deploying (3.4)">S37</a>]</code>. SageMaker and Kubeflow pages were not retrieved. So the default for these two is regional or single-cluster; multi-region is an add-on pattern.
-- Warrant: supports Claim B in part. Nexus's distinct claim is one control plane over several clusters. Not tested against SageMaker or Kubeflow.</p>
+- Result: Databricks: one Unity Catalog metastore per region, workspaces assigned to the regional metastore, cross-region by sharing <code>[<a class="cite" href="https://docs.databricks.com/gcp/en/lakehouse-architecture/deployment-guide/unity-catalog" target="_blank" rel="noopener" title="Databricks: design Unity Catalog architecture">S36</a>]</code>. OpenShift AI: operator installs onto one OpenShift cluster, with external MySQL and S3 for the model registry <code>[<a class="cite" href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4/html/installing_and_uninstalling_openshift_ai_self-managed/installing-and-deploying-openshift-ai_install" target="_blank" rel="noopener" title="Red Hat OpenShift AI: installing and deploying (3.4)">S37</a>]</code>. So the default for these two is regional or single-cluster; multi-region is an add-on pattern.
+- Follow-up (run 2026-10-11): Kubeflow Pipelines runs each step's container on the worker nodes of the Kubernetes cluster that runs Kubeflow, which is a single-cluster default <code>[<a class="cite" href="https://docs.aws.amazon.com/en_us/sagemaker/latest/dg/kubernetes-sagemaker-components-for-kubeflow-pipelines.html" target="_blank" rel="noopener" title="SageMaker AI Components for Kubeflow Pipelines">S42</a>]</code>. For SageMaker, the AWS page shows it as a managed service that a pipeline calls; no SageMaker domain, account, or region architecture page was retrieved, so SageMaker stays unsupported by a primary architecture page.
+- Warrant: supports Claim B for Databricks, OpenShift AI, and Kubeflow. Nexus's distinct claim is one control plane over several clusters. SageMaker still open.</p>
 <p><strong>E6A — Launchpad vs project Deployments (run 2026-10-11).</strong>
 - Result: In the 6.3 docs the global list is <strong>Deploy &gt; Apps</strong> and the project view is <strong>Deployments &gt; Apps &amp; Agents</strong>. "Launchpad" survives in older docs (<code>Show in Launchpad</code>). Edit rights inherit from the Project; view rights are set on the App: Restricted (named users plus collaborators; optionally globally discoverable with Request access) or Anyone in Domino. Discovery and viewing are separate. Draft Apps do not appear in lists. Access is enforced at the proxy <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/apps/authentication-and-identity/app-security" target="_blank" rel="noopener" title="App security and identity (6.3)">S33</a>]</code>. Agents share the same path.
 - Warrant: holds. The "who sees what" answer is per-App view mode plus project edit rights. The pack's word "Launchpad" is the older UI name.</p>
@@ -388,7 +391,7 @@
 <td>2</td>
 <td>B</td>
 <td>desk</td>
-<td><strong>run 2026-10-11</strong> (projects/users/orgs named; runs/registry/lineage store not named)</td>
+<td><strong>run 2026-10-11</strong> (projects/users/orgs in Mongo; runs and registry in MLflow Postgres; blobs and images outside the backup bundle)</td>
 </tr>
 <tr>
 <td>E2W</td>
@@ -402,7 +405,7 @@
 <td>3</td>
 <td>A</td>
 <td>desk</td>
-<td><strong>run 2026-10-11</strong> (no primary DISA/FedRAMP page found)</td>
+<td><strong>run 2026-10-11</strong> (no primary DISA/FedRAMP page; Marketplace search for Domino: 0 results)</td>
 </tr>
 <tr>
 <td>E3B</td>
@@ -451,7 +454,7 @@
 <td>5</td>
 <td>B</td>
 <td>desk</td>
-<td><strong>run 2026-10-11</strong> (partial: Databricks, OpenShift AI)</td>
+<td><strong>run 2026-10-11</strong> (Databricks, OpenShift AI, Kubeflow support one-cluster defaults; SageMaker open)</td>
 </tr>
 <tr>
 <td>E5W</td>
@@ -483,7 +486,7 @@
 </tr>
 </tbody>
 </table>
-<p>Desk tests are all filed. Open desk follow-ups: FedRAMP Marketplace lookup (E3A), SageMaker and Kubeflow architecture pages (E5B), where runs/registry/lineage are stored (E2B). Lab waits for a tenant GO.</p>
+<p>Desk tests are all filed and the three follow-ups are closed (2026-10-11). One desk gap remains: a SageMaker architecture page for E5B. Lab waits for a tenant GO.</p>
 <h2>Changelog</h2>
 <table>
 <thead>
@@ -503,6 +506,11 @@
 <td>2026-10-11</td>
 <td>claude</td>
 <td>Desk evidence sitting: ran 12 desk tests (E1A E1W E2A E2B E3A E3W E4A E4B E5A E5B E6A E6B), added ledger S16–S37, corrected Claim A (Databricks) and the Nexus gap history. Lab IDs stay unrun.</td>
+</tr>
+<tr>
+<td>2026-10-11</td>
+<td>claude</td>
+<td>Closed desk follow-ups: FedRAMP Marketplace search (0 results for Domino), Iron Bank scope, backup docs naming the MLflow Postgres and Mongo stores, Kubeflow single-cluster page. Ledger S38–S42. SageMaker architecture page still open.</td>
 </tr>
 </tbody>
 </table></article>

@@ -203,6 +203,13 @@
     "nblm": false
   },
   {
+    "slug": "media-slides",
+    "title": "Presentation slides",
+    "section": "Media",
+    "desc": "Slide image gallery for Domino Data Lab (Enterprise AI Platform) NotebookLM deck. JPG only; PPTX stays under C:\\output.",
+    "nblm": false
+  },
+  {
     "slug": "media-shorts-plan",
     "title": "Shorts plan",
     "section": "Media",

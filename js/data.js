@@ -35,7 +35,12 @@ const SOURCES = [
   {n:34,g:"Official docs",t:"Domino endpoint security (6.3)",u:"https://docs.domino.ai/6.3/platform-capabilities/features/model-deployment/security",type:"docs",trust:"high",b:"7"},
   {n:35,g:"Official docs",t:"Deploy models at REST (4.3)",u:"https://docs.dominodatalab.com/en/4.3/user_guide/8dbc91/deploy-models-at-rest/",type:"docs",trust:"medium",b:"7"},
   {n:36,g:"Competitors",t:"Databricks: Unity Catalog architecture",u:"https://docs.databricks.com/gcp/en/lakehouse-architecture/deployment-guide/unity-catalog",type:"docs",trust:"high",b:"8"},
-  {n:37,g:"Competitors",t:"Red Hat OpenShift AI: installing and deploying (3.4)",u:"https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4/html/installing_and_uninstalling_openshift_ai_self-managed/installing-and-deploying-openshift-ai_install",type:"docs",trust:"high",b:"8"}
+  {n:37,g:"Competitors",t:"Red Hat OpenShift AI: installing and deploying (3.4)",u:"https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4/html/installing_and_uninstalling_openshift_ai_self-managed/installing-and-deploying-openshift-ai_install",type:"docs",trust:"high",b:"8"},
+  {n:38,g:"Gov",t:"FedRAMP Marketplace, product search Domino",u:"https://www.fedramp.gov/marketplace/products/?q=Domino&view=cards",type:"gov",trust:"high",b:"9"},
+  {n:39,g:"Gov",t:"Iron Bank overview",u:"https://docs-ironbank.dso.mil/overview/",type:"gov",trust:"high",b:"9"},
+  {n:40,g:"Official docs",t:"Domino backup and restore overview",u:"https://docs.dominodatalab.com/en/latest/admin_guide/08fbb4/backup-and-restore-overview/",type:"docs",trust:"high",b:"6"},
+  {n:41,g:"Official docs",t:"Domino architecture overview (6.3)",u:"https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/index",type:"docs",trust:"high",b:"8"},
+  {n:42,g:"Competitors",t:"SageMaker AI Components for Kubeflow Pipelines",u:"https://docs.aws.amazon.com/en_us/sagemaker/latest/dg/kubernetes-sagemaker-components-for-kubeflow-pipelines.html",type:"docs",trust:"high",b:"8"}
 ];
 
 const DATA = {
@@ -343,7 +348,7 @@ const DATA = {
 };
 
 DATA.cut = {
-  labels: ["Title","What it is","ML primitives","Project","Workspace and Environment","Control vs data plane","Jobs and experiments","Registry and cards","Endpoint vs App","Nexus hybrid","When not to use it","Decision packet"],
+  labels: ["Title","What it is","ML primitives","Project","Workspace and Environment","Control vs data plane","Jobs and experiments","Registry and cards","Endpoint vs App","Nexus hybrid","When not to use it","Decision packet","NBLM 13","NBLM 14","NBLM 15"],
   slides: [
     "Slide 1 titles the cut. Domino Data Lab: a governed lifecycle, not a hosted notebook. Planes, the system of record, and the competitor that already owns the job.",
     "Slide 2 is the placement. Domino is an enterprise AI platform. A Project is the unit of work. The product home prints speed and IL5 lines; those stay qualified.",
@@ -356,7 +361,10 @@ DATA.cut = {
     "Slide 9 is how it reaches users. Model API for another system. App on port 8888 for a person. App Hub is the homepage name.",
     "Slide 10 is Nexus. One control plane, many data planes, optional. Remote planes may lack local-plane features. Re-read the installed page.",
     "Slide 11 is when not to use it. Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku. IL5 is not an ATO. Percentages are not an SLA.",
-    "Slide 12 is the decision. Sketch the lifecycle. Name the plane, the record, and the tool you refuse. Measure your queue."
+    "Slide 12 is the decision. Sketch the lifecycle. Name the plane, the record, and the tool you refuse. Measure your queue.",
+    "Slides 13–15 are extra NotebookLM detailed-deck pages. Ledger and debates win where they differ. IL5 and 6× stay qualifications.",
+    "NotebookLM detailed deck, continued. Vault gallery: Presentation slides.md. PPTX stays under C:\\output.",
+    "Last NotebookLM slide. The 12-slide TDD spine is the study cut; this 15-page deck is the W8 export."
   ],
   cards: [
     {question:"What is the unit of work?",detail:"A Project, not the IDE window.",why:"The reconstructable unit is the recorded context.",example:"Files, Environment, experiments, models, Apps.",cardSlide:2},
@@ -431,7 +439,7 @@ DATA.fromReports = [
   {slug:"deep-dive",title:"Technical deep dive",point:"Control plane records. Data plane runs. Put the GPU and the model card on the correct plane."},
   {slug:"claims-debates",title:"Claims and debates",point:"A warrant is the If X then Y that makes a source count. An IL5 sentence does not warrant an ATO. A homepage 6× does not warrant an SLA."},
   {slug:"elicit",title:"Elicit light",point:"E3B run 2026-10-11: no Domino product paper. MLflow 2020 and Albertoni 2023 are nearby work."},
-  {slug:"source-ledger",title:"Source ledger",point:"S1–S37. Official architecture and user-guide pages win. Marketing is on the ledger so it can be qualified. Next unused id is 38."},
+  {slug:"source-ledger",title:"Source ledger",point:"S1–S42. Official architecture and user-guide pages win. Marketing is on the ledger so it can be qualified. Next unused id is 43."},
   {slug:"mission",title:"Mission",point:"Success is a design-review sketch plus a named refusal, not a tenant tour."},
   {slug:"nblm-practitioner-working-briefing-domino-data-lab-en",title:"Working briefing",point:"NotebookLM briefing from the pack. Ledger and debates win where they differ."},
   {slug:"nblm-executive-decision-packet-enterprise-ai-platform",title:"Decision packet",point:"Room-craft packet. UNKNOWN slots stay empty. IL5 and 6× are not contracts."},
