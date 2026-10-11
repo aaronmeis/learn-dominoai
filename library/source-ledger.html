@@ -65,7 +65,7 @@
 <td>docs</td>
 <td>high</td>
 <td>2, 5, 7</td>
-<td>Control plane + many data planes. Remote planes historically lacked Model APIs, Apps, Datasets (check current 6.2 page before repeating).</td>
+<td>Control plane + many data planes. Remote planes historically lacked Model APIs, Apps, Datasets. <strong>Superseded 2026-10-11:</strong> see [<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/core-concepts/data-plane" target="_blank" rel="noopener" title="Data Planes (concept page, current docs)">S20</a>]–[<a class="cite" href="https://docs.dominodatalab.com/release_notes/6-0-0/" target="_blank" rel="noopener" title="Domino 6.0.0 release notes (Nov 2024)">S23</a>]; only Starburst sources are named as unavailable on remote planes.</td>
 </tr>
 <tr>
 <td>4</td>
@@ -128,7 +128,7 @@
 <td>vendor</td>
 <td>medium</td>
 <td>5, 7</td>
-<td>"Operating system for AI outcomes." 50% / 6× / 40% / 75% and "deployed in DoD IL5 environments" live here. Not an SLA and not a PA letter.</td>
+<td>"Operating system for AI outcomes." "Deployed in DoD IL5 environments" lives here. The 50% / 6× / 40% / 75% block moved to [<a class="cite" href="https://domino.ai/" target="_blank" rel="noopener" title="Domino home page (marketing stat block)">S18</a>] (checked 2026-10-11). Not an SLA and not a PA letter.</td>
 </tr>
 <tr>
 <td>11</td>
@@ -175,10 +175,209 @@
 <td>5</td>
 <td>Nearby terminology for reproducibility. Not a Domino eval.</td>
 </tr>
+<tr>
+<td>16</td>
+<td>Security at Domino (docs, Trust Center pointer)</td>
+<td>https://docs.domino.ai/cloud/admin/security-and-compliance/index</td>
+<td>docs</td>
+<td>high</td>
+<td>D3</td>
+<td>Lists what the Trust Center holds: SOC 2 Type II, ISO 27001, HIPAA, GDPR/CCPA, PCI/NIST mappings. Does not mention IL5, DISA, or FedRAMP. Added 2026-10-11 (E3A).</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Domino for government / public sector (marketing)</td>
+<td>https://domino.ai/solutions/public-sector</td>
+<td>vendor</td>
+<td>medium</td>
+<td>D3</td>
+<td>"Deployed in DoD IL5 environments and available through Iron Bank." "Runs where agencies already have authorization." No PA letter, FedRAMP listing, or STIG text on the page. CMMC Level 1. Added 2026-10-11 (E3A).</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Domino home page (marketing stat block)</td>
+<td>https://domino.ai/</td>
+<td>vendor</td>
+<td>medium</td>
+<td>D4</td>
+<td>Where 50% / 6X / 40% / 75% sit as of 2026-10-11, with no footnote, source, or study link. They are no longer on /platform ([<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]). Added 2026-10-11 (E4B).</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Forrester TEI of Domino (commissioned), press release</td>
+<td>https://www.businesswire.com/news/home/20210318005267/en/Domino-Data-Lab-Platform-Can-Generate-a-542-Percent-Return-on-Investment-According-to-Global-Market-Research-Firm</td>
+<td>vendor</td>
+<td>medium</td>
+<td>D4</td>
+<td>2021-03-18. Composite of six interviewed customers. 542% ROI. Not the source of 6× / 40% / 50% / 75%. Report itself not read. Added 2026-10-11 (E4B).</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Data Planes (concept page, current docs)</td>
+<td>https://docs.domino.ai/cloud/platform-capabilities/core-concepts/data-plane</td>
+<td>docs</td>
+<td>high</td>
+<td>D5</td>
+<td>Hardware tier is attached to one data plane. Workspaces, Jobs, Apps, endpoints launch on any plane. Starburst/Trino sources local only. Dataset CLI local only. Added 2026-10-11 (E5A).</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Nexus hybrid architecture (6.3)</td>
+<td>https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture</td>
+<td>docs</td>
+<td>high</td>
+<td>D5</td>
+<td>Current version of [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]. One named remote-plane gap: Starburst-powered data sources. Added 2026-10-11 (E5A).</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Domino 5.9.0 release notes (Dec 2023)</td>
+<td>https://docs.dominodatalab.com/release_notes/5-9-0/</td>
+<td>docs</td>
+<td>high</td>
+<td>D5</td>
+<td>"Model APIs, Apps, and Launchers can now be deployed on remote data planes." Added 2026-10-11 (E5A).</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Domino 6.0.0 release notes (Nov 2024)</td>
+<td>https://docs.dominodatalab.com/release_notes/6-0-0/</td>
+<td>docs</td>
+<td>high</td>
+<td>D5, D2</td>
+<td>Datasets supported on data planes. Deploy models to SageMaker. Added 2026-10-11 (E5A).</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Track and monitor experiments (6.3)</td>
+<td>https://docs.domino.ai/6.3/platform-capabilities/features/development/track-monitor</td>
+<td>docs</td>
+<td>high</td>
+<td>D1</td>
+<td>Experiments exist only if code calls MLflow. UI creates none. Added 2026-10-11 (E1W).</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Domino Reproducibility Engine</td>
+<td>https://docs.domino.ai/cloud/platform-capabilities/core-concepts/reproducibility</td>
+<td>docs</td>
+<td>high</td>
+<td>D1</td>
+<td>Records materials at Job run, Workspace sync, endpoint publish. Separate from MLflow experiments. Added 2026-10-11 (E1W).</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Deploy models (6.3)</td>
+<td>https://docs.domino.ai/6.3/platform-capabilities/features/models</td>
+<td>docs</td>
+<td>high</td>
+<td>D2, D6</td>
+<td>Endpoints, batch Jobs, export to SageMaker, NVIDIA Fleet Command, Snowflake, CI/CD. Added 2026-10-11 (E2A).</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Export models to SageMaker</td>
+<td>https://archive.docs.dominodatalab.com/en/latest/user_guide/02ec6d/export-models-to-sagemaker/</td>
+<td>docs</td>
+<td>high</td>
+<td>D2</td>
+<td>Builds and exports a container image only. Does not deploy. Archive copy. Added 2026-10-11 (E2A).</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Integrate with CI/CD (Model Export API)</td>
+<td>https://docs.domino.ai/6.3/platform-capabilities/features/models/integrate-ci-cd-workflows</td>
+<td>docs</td>
+<td>high</td>
+<td>D2</td>
+<td>Image bundles environment, project files, Flask/Plumber harness, auth and load-balancing layer. Added 2026-10-11 (E2A).</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Export models to NVIDIA Fleet Command</td>
+<td>https://docs.dominodatalab.com/en/5.1/user_guide/5cef47/export-models-to-nvidia-fleet-command/</td>
+<td>docs</td>
+<td>high</td>
+<td>D2</td>
+<td>Image plus Helm chart. Model cannot use anything Domino-specific. Version 5.1. Added 2026-10-11 (E2A).</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Manage Workspaces (6.3)</td>
+<td>https://docs.domino.ai/6.3/platform-capabilities/core-concepts/workspaces/manage-workspaces</td>
+<td>docs</td>
+<td>high</td>
+<td>D4</td>
+<td>Stop/resume. Only <code>/mnt</code> persists. Storage cost continues while stopped. Auto-delete after 10 + 30 days if enabled. Added 2026-10-11 (E4A).</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Configure long-running Workspaces (5.11)</td>
+<td>https://docs.dominodatalab.com/en/5.11/user_guide/815d95/configure-long-running-workspaces/</td>
+<td>docs</td>
+<td>high</td>
+<td>D4</td>
+<td>Auto-shutdown counts from startup, not idleness. Auto-commits on shutdown. Version 5.11. Added 2026-10-11 (E4A).</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Autoscaling Apps</td>
+<td>https://docs.domino.ai/cloud/platform-capabilities/features/apps/app-logs-and-versioning/autoscaling-apps</td>
+<td>docs</td>
+<td>high</td>
+<td>D4</td>
+<td>Kubernetes HPA v2. CPU/memory targets, max pods, scale delays, session affinity. No scale-to-zero stated. Added 2026-10-11 (E4A).</td>
+</tr>
+<tr>
+<td>33</td>
+<td>App security and identity (6.3)</td>
+<td>https://docs.domino.ai/6.3/platform-capabilities/features/apps/authentication-and-identity/app-security</td>
+<td>docs</td>
+<td>high</td>
+<td>D6</td>
+<td>Restricted / Anyone in Domino. Discovery vs viewing. Basic, enhanced, extended identity. Added 2026-10-11 (E6A, E6B).</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Domino endpoint security (6.3)</td>
+<td>https://docs.domino.ai/6.3/platform-capabilities/features/model-deployment/security</td>
+<td>docs</td>
+<td>high</td>
+<td>D6</td>
+<td>Restricted vs unrestricted endpoints, access tokens, basic auth (sync) and bearer (async). Added 2026-10-11 (E6B).</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Deploy models at REST (4.3)</td>
+<td>https://docs.dominodatalab.com/en/4.3/user_guide/8dbc91/deploy-models-at-rest/</td>
+<td>docs</td>
+<td>medium</td>
+<td>D6</td>
+<td>Model API process model: Flask/Plumber harness, script sourced once at publish, function per request. Old version. Added 2026-10-11 (E6B).</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Databricks: design Unity Catalog architecture</td>
+<td>https://docs.databricks.com/gcp/en/lakehouse-architecture/deployment-guide/unity-catalog</td>
+<td>docs</td>
+<td>high</td>
+<td>D5</td>
+<td>Competitor. One metastore per region; cross-region via sharing. Added 2026-10-11 (E5B).</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Red Hat OpenShift AI: installing and deploying (3.4)</td>
+<td>https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4/html/installing_and_uninstalling_openshift_ai_self-managed/installing-and-deploying-openshift-ai_install</td>
+<td>docs</td>
+<td>high</td>
+<td>D5</td>
+<td>Competitor. Installs onto one OpenShift cluster via an operator. Model registry needs external MySQL plus S3. Added 2026-10-11 (E5B).</td>
+</tr>
 </tbody>
 </table>
 <p>Elicit light search is in <a href="elicit.html">elicit-light-research</a>. No Domino Data Lab product paper in that pass. Existing landscape notes under <code>Learning/Enterprise-AI-Platforms/</code> are secondary until a URL from them is promoted here.</p>
-<p>Do not renumber. Next unused id is <strong>16</strong>.</p></article>
+<p>Corrections filed 2026-10-11: [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>] is the 5.7/6.2 page; its remote-plane gap list is superseded by [<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/core-concepts/data-plane" target="_blank" rel="noopener" title="Data Planes (concept page, current docs)">S20</a>] [<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture" target="_blank" rel="noopener" title="Nexus hybrid architecture (6.3)">S21</a>] [<a class="cite" href="https://docs.dominodatalab.com/release_notes/5-9-0/" target="_blank" rel="noopener" title="Domino 5.9.0 release notes (Dec 2023)">S22</a>] [<a class="cite" href="https://docs.dominodatalab.com/release_notes/6-0-0/" target="_blank" rel="noopener" title="Domino 6.0.0 release notes (Nov 2024)">S23</a>]. [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>] no longer carries the four percentages; they sit on [<a class="cite" href="https://domino.ai/" target="_blank" rel="noopener" title="Domino home page (marketing stat block)">S18</a>]. [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>] names SageMaker, NVIDIA Fleet Command, Snowflake, and a container export. It does not name Databricks.</p>
+<p>Do not renumber. Next unused id is <strong>38</strong>.</p></article>
   <footer class="docfoot">
     Rendered from <code>Learning\one-day-mastery\dominoai\reference\source-ledger.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
     <div class="prevnext"><a href="quiz-bank.html">&larr; Previous</a><a href="claims-debates.html">Next &rarr;</a></div>

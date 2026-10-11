@@ -90,7 +90,7 @@
 </tr>
 <tr>
 <td>Evidence that would change the picture</td>
-<td><strong>Support A (unrun, desk then lab):</strong> from official docs, list every field a model card stores; then, with a tenant GO, rebuild a run from a card alone. <strong>Support B (unrun, lab):</strong> time-to-first-notebook versus time-to-first-registered-model for a new user. <strong>Weaken both (unrun, desk):</strong> find a documented path where a Workspace run is <em>not</em> associated with an experiment.</td>
+<td><strong>Support A (E1A run 2026-10-11, desk; lab rebuild unrun):</strong> from official docs, list every field a model card stores; then, with a tenant GO, rebuild a run from a card alone. <strong>Support B (E1B unrun, lab):</strong> time-to-first-notebook versus time-to-first-registered-model for a new user. <strong>Weaken both (E1W run 2026-10-11, desk):</strong> find a documented path where a Workspace run is <em>not</em> associated with an experiment. Results below.</td>
 </tr>
 </tbody>
 </table>
@@ -105,7 +105,7 @@
 <tbody>
 <tr>
 <td>Claim A</td>
-<td>Domino is an open host: bring Jupyter, R, SAS, MATLAB, Spark, Ray, Dash, Streamlit. Export models to SageMaker, Snowflake, Databricks, or a Docker image. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</code></td>
+<td>Domino is an open host: bring Jupyter, R, SAS, MATLAB, Spark, Ray, Dash, Streamlit. Export models to SageMaker, Snowflake, NVIDIA Fleet Command, or a container image (Databricks removed 2026-10-11: no docs page names it as an export target). <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</code> <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/models" target="_blank" rel="noopener" title="Deploy models (6.3)">S26</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</code></td>
 </tr>
 <tr>
 <td>Claim B</td>
@@ -129,7 +129,7 @@
 </tr>
 <tr>
 <td>Evidence that would change the picture</td>
-<td><strong>Support A (unrun, desk):</strong> from docs, list export formats and which lineage travels with them. <strong>Support B (unrun, desk):</strong> list what is <em>only</em> in Domino metadata stores (Mongo/Postgres per <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code>). <strong>Weaken both (unrun, lab):</strong> export one Model API to SageMaker and run inference; record what broke.</td>
+<td><strong>Support A (E2A run 2026-10-11, desk):</strong> from docs, list export formats and which lineage travels with them. <strong>Support B (E2B run 2026-10-11, desk):</strong> list what is <em>only</em> in Domino metadata stores (Mongo/Postgres per <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code>). <strong>Weaken both (E2W unrun, lab-compare):</strong> export one Model API to SageMaker and run inference; record what broke. Results below.</td>
 </tr>
 </tbody>
 </table>
@@ -168,7 +168,7 @@
 </tr>
 <tr>
 <td>Evidence that would change the picture</td>
-<td><strong>Support A (unrun, desk):</strong> find a primary compliance or DISA page; add <code>[S#]</code> only if it is primary. <strong>Support B (run 2026-10-11, desk):</strong> Elicit returned no Domino product eval; keep <code>[<a class="cite" href="https://doi.org/10.1145/3399579.3399867" target="_blank" rel="noopener" title="Developments in MLflow (DEEM@SIGMOD 2020)">S14</a>]</code> <code>[<a class="cite" href="https://doi.org/10.48550/arXiv.2302.12691" target="_blank" rel="noopener" title="Reproducibility of Machine Learning (Albertoni et al. 2023)">S15</a>]</code> labeled nearby work. <strong>Weaken both (unrun, desk):</strong> compare remote data-plane feature gaps <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code> with an IL5 isolation story.</td>
+<td><strong>Support A (E3A run 2026-10-11, desk):</strong> find a primary compliance or DISA page; add <code>[S#]</code> only if it is primary. <strong>Support B (run 2026-10-11, desk):</strong> Elicit returned no Domino product eval; keep <code>[<a class="cite" href="https://doi.org/10.1145/3399579.3399867" target="_blank" rel="noopener" title="Developments in MLflow (DEEM@SIGMOD 2020)">S14</a>]</code> <code>[<a class="cite" href="https://doi.org/10.48550/arXiv.2302.12691" target="_blank" rel="noopener" title="Reproducibility of Machine Learning (Albertoni et al. 2023)">S15</a>]</code> labeled nearby work. <strong>Weaken both (E3W run 2026-10-11, desk):</strong> compare remote data-plane feature gaps <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code> with an IL5 isolation story. Results below.</td>
 </tr>
 </tbody>
 </table>
@@ -203,7 +203,7 @@
 </tr>
 <tr>
 <td>Evidence that would change the picture</td>
-<td><strong>Support A (unrun, desk):</strong> from docs, describe pause/resume and autoscaling Apps. <strong>Support B (unrun, desk):</strong> find the study behind 6× / 40% or mark unverified. <strong>Weaken both (unrun, lab):</strong> leave a GPU Workspace idle and read the cost dashboard.</td>
+<td><strong>Support A (E4A run 2026-10-11, desk):</strong> from docs, describe pause/resume and autoscaling Apps. <strong>Support B (E4B run 2026-10-11, desk):</strong> find the study behind 6× / 40% or mark unverified. <strong>Weaken both (E4W unrun, lab-local):</strong> leave a GPU Workspace idle and read the cost dashboard. Results below.</td>
 </tr>
 </tbody>
 </table>
@@ -242,7 +242,7 @@
 </tr>
 <tr>
 <td>Evidence that would change the picture</td>
-<td><strong>Support A (unrun, desk):</strong> current 6.2 Nexus page: which workloads run on remote planes. <strong>Support B (unrun, desk):</strong> competitor architecture pages for one-cluster defaults. <strong>Weaken both (unrun, lab):</strong> attach a second plane and publish an App there; record what the UI forbids.</td>
+<td><strong>Support A (E5A run 2026-10-11, desk):</strong> current Nexus page: which workloads run on remote planes. <strong>Support B (E5B run 2026-10-11, desk, partial):</strong> competitor architecture pages for one-cluster defaults. <strong>Weaken both (E5W unrun, lab-local):</strong> attach a second plane and publish an App there; record what the UI forbids. Results below.</td>
 </tr>
 </tbody>
 </table>
@@ -281,7 +281,7 @@
 </tr>
 <tr>
 <td>Evidence that would change the picture</td>
-<td><strong>Support A (unrun, desk):</strong> Launchpad vs project Deployments: who sees what. <strong>Support B (unrun, desk):</strong> Model API vs App: process model and auth. <strong>Weaken both (unrun, lab):</strong> publish a Streamlit App and a Model API from one Project; compare isolation.</td>
+<td><strong>Support A (E6A run 2026-10-11, desk):</strong> Launchpad vs project Deployments: who sees what. <strong>Support B (E6B run 2026-10-11, desk):</strong> Model API vs App: process model and auth. <strong>Weaken both (E6W unrun, lab-local):</strong> publish a Streamlit App and a Model API from one Project; compare isolation. Results below.</td>
 </tr>
 </tbody>
 </table>
@@ -301,7 +301,47 @@
 <li>Any Elicit deep report; only the light search exists.</li>
 <li>App Hub as a separate product from Domino Apps without a current primary docs page that splits them.</li>
 </ul>
-<p>Designed tests stay <strong>unrun</strong> until a sitting logs results. Job ticket: <a href="handoff-evidence.html">AGENT-HANDOFF - Evidence sittings</a>. Follow-on: <code>research-craft</code> step 7 → this note → <code>/learn-console</code> (<code>#/debates</code>).</p>
+<p>Lab tests stay <strong>unrun</strong> until a tenant GO; desk tests were filed 2026-10-11. Job ticket: <a href="handoff-evidence.html">AGENT-HANDOFF - Evidence sittings</a>. Follow-on: <code>research-craft</code> step 7 → this note → <code>/learn-console</code> (<code>#/debates</code>).</p>
+<h2>Results — desk evidence sitting 2026-10-11</h2>
+<p>Method: Perplexity search plus page fetches of official docs. Docs now live at docs.domino.ai (6.3 is the newest tree seen). The ledger's older docs.dominodatalab.com URLs stay, with newer pages added as <code>[<a class="cite" href="https://docs.domino.ai/cloud/admin/security-and-compliance/index" target="_blank" rel="noopener" title="Security at Domino (docs, Trust Center pointer)">S16</a>]</code>–<code>[<a class="cite" href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4/html/installing_and_uninstalling_openshift_ai_self-managed/installing-and-deploying-openshift-ai_install" target="_blank" rel="noopener" title="Red Hat OpenShift AI: installing and deploying (3.4)">S37</a>]</code>. No tenant, no login, no capture.</p>
+<p><strong>E1A — model card fields (run 2026-10-11).</strong>
+- Result: Automatic: code, Environment, workspace settings, datasets and data sources per experiment, plus version name, description, status, stage, logged params and model artifact, downstream usage, discoverability. Manual: techniques, limitations, performance, fairness, explainability, custom markdown, MLflow tags <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</code> (the current 6.3 page carries the same wording). Not enumerated in docs: hardware tier, the data <em>version</em> (only "datasets or data sources used"), which metrics are auto-captured.
+- Warrant holds with a gap. The "recorded context" claim is supported for code, Environment, workspace settings. Whether the card pins the data version is not shown. Lab rebuild still unrun.</p>
+<p><strong>E1W — Workspace run with no experiment (run 2026-10-11).</strong>
+- Result: Yes, a documented path exists. Domino creates no experiments from the UI. They exist only when code calls MLflow (<code>mlflow.set_experiment</code>, <code>start_run</code>), and the Experiments page is empty until a run is logged <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/development/track-monitor" target="_blank" rel="noopener" title="Track and monitor experiments (6.3)">S24</a>]</code>. The UI registration path needs a completed experiment run <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</code>. A Workspace with no MLflow calls therefore leaves no experiment and no model-card lineage. The Reproducibility Engine still records materials at Job run, Workspace sync, and endpoint publish <code>[<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/core-concepts/reproducibility" target="_blank" rel="noopener" title="Domino Reproducibility Engine">S25</a>]</code>, but that is a separate record from the card.
+- Warrant weakened for Claim A as stated. "Governance is the product" holds for work that logs to MLflow, not for all Workspace work. Model-card lineage is opt-in by code.</p>
+<p><strong>E2A — export formats and what travels (run 2026-10-11).</strong>
+- Result: Container image export to any registry via the Model Export API <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/models/integrate-ci-cd-workflows" target="_blank" rel="noopener" title="Integrate with CI/CD (Model Export API)">S28</a>]</code>; SageMaker image (adds <code>/invocations</code>, <code>/ping</code>, port 8080; builds and exports only, does not deploy) <code>[<a class="cite" href="https://archive.docs.dominodatalab.com/en/latest/user_guide/02ec6d/export-models-to-sagemaker/" target="_blank" rel="noopener" title="Export models to SageMaker">S27</a>]</code>; NVIDIA Fleet Command image plus Helm chart, and "the model cannot use anything Domino-specific like … domino datasets" <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.1/user_guide/5cef47/export-models-to-nvidia-fleet-command/" target="_blank" rel="noopener" title="Export models to NVIDIA Fleet Command">S29</a>]</code>; Snowflake in-database scoring <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/models" target="_blank" rel="noopener" title="Deploy models (6.3)">S26</a>]</code>. The image carries the Environment, project files, a Flask/Plumber harness, and an auth and load-balancing layer <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/models/integrate-ci-cd-workflows" target="_blank" rel="noopener" title="Integrate with CI/CD (Model Export API)">S28</a>]</code>. Docs do not say that the model card or lineage record travels. Databricks is not named as an export target.
+- Warrant holds for entry and artifact export. What travels is runnable code plus Environment, not the system of record. Claim A text corrected (Databricks removed).</p>
+<p><strong>E2B — what stays in Domino stores (run 2026-10-11).</strong>
+- Result: <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code> names MongoDB/PostgreSQL for Projects, users, organizations, and references to blob storage. Object storage holds logs, container images, backups, user data. Git revisions project files. The page does <em>not</em> say where runs, Environments, the model registry, lineage, or audit live. Exported images are first registered in Domino's internal image registry <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/models/integrate-ci-cd-workflows" target="_blank" rel="noopener" title="Integrate with CI/CD (Model Export API)">S28</a>]</code>.
+- Warrant partly supported. Project, user, org metadata stay behind. The claim that lineage and registry metadata live only in Mongo/Postgres is unverified from docs. Open question for a tenant admin.</p>
+<p><strong>E3A — primary compliance / DISA / FedRAMP page (run 2026-10-11).</strong>
+- Result: No primary page found. The docs security page points to the Trust Center for SOC 2 Type II, ISO 27001, HIPAA, GDPR/CCPA, PCI/NIST mappings and does not mention IL5, DISA, or FedRAMP <code>[<a class="cite" href="https://docs.domino.ai/cloud/admin/security-and-compliance/index" target="_blank" rel="noopener" title="Security at Domino (docs, Trust Center pointer)">S16</a>]</code>. The public-sector page says "deployed in DoD IL5 environments and available through Iron Bank," "runs where agencies already have authorization," CMMC Level 1, and gives no PA letter, FedRAMP listing, or STIG text <code>[<a class="cite" href="https://domino.ai/solutions/public-sector" target="_blank" rel="noopener" title="Domino for government / public sector (marketing)">S17</a>]</code>. A 2023 press release says Domino announced intent to <em>pursue</em> FedRAMP (not cited, vendor). A 2026 NVIDIA reference design repeats the vendor wording. Direct lookup of the FedRAMP Marketplace was not completed in this pass (JS-driven listing); do it before saying "not listed."
+- Warrant: Claim B stands. "Deployed in IL5 environments" is not shown to be a DISA PA held by Domino. Treat as a qualification until a PA letter, Marketplace entry, or Iron Bank page is seen. <code>[<a class="cite" href="https://docs.domino.ai/cloud/admin/security-and-compliance/index" target="_blank" rel="noopener" title="Security at Domino (docs, Trust Center pointer)">S16</a>]</code> <code>[<a class="cite" href="https://domino.ai/solutions/public-sector" target="_blank" rel="noopener" title="Domino for government / public sector (marketing)">S17</a>]</code> added to the ledger; <code>[<a class="cite" href="https://domino.ai/solutions/public-sector" target="_blank" rel="noopener" title="Domino for government / public sector (marketing)">S17</a>]</code> is vendor, not a compliance authority.</p>
+<p><strong>E3B — run 2026-10-11 (earlier).</strong> Elicit light: no Domino product eval. <code>[<a class="cite" href="https://doi.org/10.1145/3399579.3399867" target="_blank" rel="noopener" title="Developments in MLflow (DEEM@SIGMOD 2020)">S14</a>]</code> <code>[<a class="cite" href="https://doi.org/10.48550/arXiv.2302.12691" target="_blank" rel="noopener" title="Reproducibility of Machine Learning (Albertoni et al. 2023)">S15</a>]</code> stay labeled nearby work.</p>
+<p><strong>E3W — remote-plane gaps vs IL5 isolation (run 2026-10-11).</strong>
+- Result: The only named remote-plane gap is Starburst-powered data sources <code>[<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture" target="_blank" rel="noopener" title="Nexus hybrid architecture (6.3)">S21</a>]</code>. Dataset CLI access works only in the local plane <code>[<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/core-concepts/data-plane" target="_blank" rel="noopener" title="Data Planes (concept page, current docs)">S20</a>]</code>. Control-plane services (RabbitMQ, Vault, Docker Registry, Domino API) must be reachable from data planes <code>[<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture" target="_blank" rel="noopener" title="Nexus hybrid architecture (6.3)">S21</a>]</code>. Workspaces connect directly to the data plane, not through the control plane <code>[<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture" target="_blank" rel="noopener" title="Nexus hybrid architecture (6.3)">S21</a>]</code>. Isolation story: a data plane is separable, but it depends on a live path to a control plane that also holds metadata.
+- Warrant: weakens "Nexus gap" worries, strengthens "control plane is a dependency." Air-gap needs that control-plane path to be inside the boundary. Nothing here is IL5 evidence.</p>
+<p><strong>E4A — pause/resume and autoscaling Apps (run 2026-10-11).</strong>
+- Result: Workspaces stop and resume; only <code>/mnt</code> persists, installed packages and memory do not, and storage cost continues while stopped <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/core-concepts/workspaces/manage-workspaces" target="_blank" rel="noopener" title="Manage Workspaces (6.3)">S30</a>]</code>. Auto-shutdown fires after a period measured <em>from startup</em>, not idleness, and auto-commits first <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.11/user_guide/815d95/configure-long-running-workspaces/" target="_blank" rel="noopener" title="Configure long-running Workspaces (5.11)">S31</a>]</code>. Optional auto-delete after 10 days stopped plus 30 grace <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/core-concepts/workspaces/manage-workspaces" target="_blank" rel="noopener" title="Manage Workspaces (6.3)">S30</a>]</code>. Apps autoscale with Kubernetes HPA v2: CPU/memory targets, max pods, scale delays, session affinity <code>[<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/features/apps/app-logs-and-versioning/autoscaling-apps" target="_blank" rel="noopener" title="Autoscaling Apps">S32</a>]</code>. Docs do not state scale-to-zero. Marketing says apps "suspend when not in use" (FinOps page, vendor). An old 5.0 page said Apps do not scale horizontally; superseded.
+- Warrant: the mechanism exists. The hidden assumption "people stop idle Workspaces" is replaced by a runtime cap, not idle detection. A GPU Workspace left open runs until the cap.</p>
+<p><strong>E4B — study behind 50% / 6× / 40% / 75% (run 2026-10-11).</strong>
+- Result: <strong>Unverified.</strong> The four figures sit on the home page with no footnote, source, or study link <code>[<a class="cite" href="https://domino.ai/" target="_blank" rel="noopener" title="Domino home page (marketing stat block)">S18</a>]</code> (not on /platform now). Domino reuses the numbers with different labels: 6× is "faster model development" on the home page, "quicker model deployment" on the financial-services page, and Moody's "deployed models 6x faster" in a blog; 40% is "reduction in infrastructure costs" attributed to a Fortune 100 pharma customer quote; 75% is "faster onboarding" on the home page and "reduction in model deployment time" for the U.S. Navy. The commissioned Forrester TEI (2021, composite of six customers, 542% ROI, onboarding one day vs two weeks) is the only study found and does not produce these four figures <code>[<a class="cite" href="https://www.businesswire.com/news/home/20210318005267/en/Domino-Data-Lab-Platform-Can-Generate-a-542-Percent-Return-on-Investment-According-to-Global-Market-Research-Firm" target="_blank" rel="noopener" title="Forrester TEI of Domino (commissioned), press release">S19</a>]</code>. The report itself was not read.
+- Warrant: Claim B stands. Percentages are customer anecdotes without a method. Do not repeat as a figure.</p>
+<p><strong>E5A — which workloads run on remote planes (run 2026-10-11).</strong>
+- Result: Workspaces, Jobs, Apps, and endpoints launch on any data plane via the hardware tier; the one named gap is Starburst-powered sources; Datasets work on configured remote planes, CLI access to Datasets is local only <code>[<a class="cite" href="https://docs.domino.ai/cloud/platform-capabilities/core-concepts/data-plane" target="_blank" rel="noopener" title="Data Planes (concept page, current docs)">S20</a>]</code> <code>[<a class="cite" href="https://docs.domino.ai/6.3/admin/architecture-and-deployment/architecture/nexus-hybrid-architecture" target="_blank" rel="noopener" title="Nexus hybrid architecture (6.3)">S21</a>]</code>. Release notes: Model APIs, Apps, Launchers on remote planes since 5.9.0 <code>[<a class="cite" href="https://docs.dominodatalab.com/release_notes/5-9-0/" target="_blank" rel="noopener" title="Domino 5.9.0 release notes (Dec 2023)">S22</a>]</code>; Datasets since 6.0.0 <code>[<a class="cite" href="https://docs.dominodatalab.com/release_notes/6-0-0/" target="_blank" rel="noopener" title="Domino 6.0.0 release notes (Nov 2024)">S23</a>]</code>. The older "Troubleshoot data issues" archive page still lists Model APIs, Apps, Datasets as local-only; that page is stale.
+- Warrant: Claim B's "remote planes historically could not run Model APIs, Apps, or Datasets" is historical. Update the debate to the Starburst and CLI gaps. Verify on the installed version.</p>
+<p><strong>E5B — competitor one-cluster defaults (run 2026-10-11, partial).</strong>
+- Result: Databricks: one Unity Catalog metastore per region, workspaces assigned to the regional metastore, cross-region by sharing <code>[<a class="cite" href="https://docs.databricks.com/gcp/en/lakehouse-architecture/deployment-guide/unity-catalog" target="_blank" rel="noopener" title="Databricks: design Unity Catalog architecture">S36</a>]</code>. OpenShift AI: operator installs onto one OpenShift cluster, with external MySQL and S3 for the model registry <code>[<a class="cite" href="https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4/html/installing_and_uninstalling_openshift_ai_self-managed/installing-and-deploying-openshift-ai_install" target="_blank" rel="noopener" title="Red Hat OpenShift AI: installing and deploying (3.4)">S37</a>]</code>. SageMaker and Kubeflow pages were not retrieved. So the default for these two is regional or single-cluster; multi-region is an add-on pattern.
+- Warrant: supports Claim B in part. Nexus's distinct claim is one control plane over several clusters. Not tested against SageMaker or Kubeflow.</p>
+<p><strong>E6A — Launchpad vs project Deployments (run 2026-10-11).</strong>
+- Result: In the 6.3 docs the global list is <strong>Deploy &gt; Apps</strong> and the project view is <strong>Deployments &gt; Apps &amp; Agents</strong>. "Launchpad" survives in older docs (<code>Show in Launchpad</code>). Edit rights inherit from the Project; view rights are set on the App: Restricted (named users plus collaborators; optionally globally discoverable with Request access) or Anyone in Domino. Discovery and viewing are separate. Draft Apps do not appear in lists. Access is enforced at the proxy <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/apps/authentication-and-identity/app-security" target="_blank" rel="noopener" title="App security and identity (6.3)">S33</a>]</code>. Agents share the same path.
+- Warrant: holds. The "who sees what" answer is per-App view mode plus project edit rights. The pack's word "Launchpad" is the older UI name.</p>
+<p><strong>E6B — Model API vs App (run 2026-10-11).</strong>
+- Result: Model API: Domino packages project files with a Flask or Plumber harness; the script is sourced once at publish and the function runs per request <code>[<a class="cite" href="https://docs.dominodatalab.com/en/4.3/user_guide/8dbc91/deploy-models-at-rest/" target="_blank" rel="noopener" title="Deploy models at REST (4.3)">S35</a>]</code> (4.3 page). Auth: restricted endpoints need an access token (basic auth with token as user and password for sync, bearer for async) or unrestricted <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/model-deployment/security" target="_blank" rel="noopener" title="Domino endpoint security (6.3)">S34</a>]</code>. App: arbitrary web server, access by view mode, identity via <code>domino-username</code>, signed JWT, or extended identity that acts as the viewer with consent; by default the App acts as its publisher <code>[<a class="cite" href="https://docs.domino.ai/6.3/platform-capabilities/features/apps/authentication-and-identity/app-security" target="_blank" rel="noopener" title="App security and identity (6.3)">S33</a>]</code>.
+- Warrant: holds. Person in a browser inside the identity domain → App. System caller → endpoint or export. App default of acting as the publisher is a hidden assumption to flag.</p>
+<p><strong>Cross-cutting changes from this sitting.</strong> (1) Debate 5 Claim B is now mostly history. (2) Debate 1 Claim A needs "when code logs to MLflow." (3) The percentages stay briefing color. (4) The IL5 line stays an unverified qualification pending a PA, Marketplace, or Iron Bank page.</p>
 <h2>Evidence tracker</h2>
 <p>IDs are stable. Desk tests need no tenant. Lab tests wait for a tenant / install GO (original study day is explain-and-sketch).</p>
 <table>
@@ -320,7 +360,7 @@
 <td>1</td>
 <td>A</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (fields listed; data version and hardware not enumerated)</td>
 </tr>
 <tr>
 <td>E1B</td>
@@ -334,21 +374,21 @@
 <td>1</td>
 <td>weaken</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (path exists: no MLflow call, no experiment)</td>
 </tr>
 <tr>
 <td>E2A</td>
 <td>2</td>
 <td>A</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (image travels; card/lineage not shown to travel)</td>
 </tr>
 <tr>
 <td>E2B</td>
 <td>2</td>
 <td>B</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (projects/users/orgs named; runs/registry/lineage store not named)</td>
 </tr>
 <tr>
 <td>E2W</td>
@@ -362,7 +402,7 @@
 <td>3</td>
 <td>A</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (no primary DISA/FedRAMP page found)</td>
 </tr>
 <tr>
 <td>E3B</td>
@@ -376,21 +416,21 @@
 <td>3</td>
 <td>weaken</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong></td>
 </tr>
 <tr>
 <td>E4A</td>
 <td>4</td>
 <td>A</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong></td>
 </tr>
 <tr>
 <td>E4B</td>
 <td>4</td>
 <td>B</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (unverified; no study behind the four figures)</td>
 </tr>
 <tr>
 <td>E4W</td>
@@ -404,14 +444,14 @@
 <td>5</td>
 <td>A</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (gap now Starburst + Dataset CLI)</td>
 </tr>
 <tr>
 <td>E5B</td>
 <td>5</td>
 <td>B</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong> (partial: Databricks, OpenShift AI)</td>
 </tr>
 <tr>
 <td>E5W</td>
@@ -425,14 +465,14 @@
 <td>6</td>
 <td>A</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong></td>
 </tr>
 <tr>
 <td>E6B</td>
 <td>6</td>
 <td>B</td>
 <td>desk</td>
-<td>unrun</td>
+<td><strong>run 2026-10-11</strong></td>
 </tr>
 <tr>
 <td>E6W</td>
@@ -443,7 +483,7 @@
 </tr>
 </tbody>
 </table>
-<p>Next sitting: E3A, E4B, E5A (desk). Lab waits for a tenant GO.</p>
+<p>Desk tests are all filed. Open desk follow-ups: FedRAMP Marketplace lookup (E3A), SageMaker and Kubeflow architecture pages (E5B), where runs/registry/lineage are stored (E2B). Lab waits for a tenant GO.</p>
 <h2>Changelog</h2>
 <table>
 <thead>
@@ -458,6 +498,11 @@
 <td>2026-10-11</td>
 <td>grok</td>
 <td>First draft from the ledger, architecture page, Nexus, registry, Apps, and Elicit light. E3B already run.</td>
+</tr>
+<tr>
+<td>2026-10-11</td>
+<td>claude</td>
+<td>Desk evidence sitting: ran 12 desk tests (E1A E1W E2A E2B E3A E3W E4A E4B E5A E5B E6A E6B), added ledger S16–S37, corrected Claim A (Databricks) and the Nexus gap history. Lab IDs stay unrun.</td>
 </tr>
 </tbody>
 </table></article>
