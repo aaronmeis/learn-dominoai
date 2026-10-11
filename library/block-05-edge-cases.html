@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 5: Edge cases | Learn Domino AI</title>
+<meta name="description" content="Block 5 — Edge cases. Traps that fail a design review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Day blocks</div>
+  <h1 class="doctitle">Block 5: Edge cases</h1>
+  <p class="lead">Block 5 — Edge cases. Traps that fail a design review.</p>
+  
+  <article>
+<p><strong>Time:</strong> 45 minutes<br />
+<strong>Goal:</strong> Name the traps<br />
+<strong>Pack:</strong> Domino Data Lab (<code>dominoai</code>)</p>
+<h2>Focus</h2>
+<ul>
+<li>Reproducibility theater: tracking files without pinning Environment and data</li>
+<li>Idle GPU / hardware-tier cost while a workspace sits open</li>
+<li>"Any tool, no lock-in" versus the platform as the place work actually lives</li>
+<li>Exporting a model does not make SageMaker / Snowflake / Databricks into Domino</li>
+<li>IL5 / HIPAA / SOC 2 / 21 CFR Part 11 pages are a <em>program</em>, not an authorization for this lab</li>
+<li>Vendor percentages are briefing lines, not an SLA</li>
+<li>Remote Nexus planes may lack local-plane features [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>] Nexus, [<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>] Environments, [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>] deploy, [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>] marketing, <a href="elicit.html">elicit-light-research</a>, Debates 2–5</li>
+</ul>
+<h2>Actions</h2>
+<ol>
+<li>For each trap: tell, root cause, fix. Use the cheatsheet table.</li>
+<li>Write one sentence: "deployed in DoD IL5 environments" is not a PA.</li>
+<li>Write one sentence: Elicit found no Domino product paper.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Question</div><p>What would make the IL5 sentence into something a design review can accept?</p></div>
+
+<p>%% fold answer after attempt %%</p>
+<div class="callout success" markdown="0"><div class="callout-title">Answer cues</div><p>A primary DISA PA or FedRAMP page for a named offering, plus this program's ATO. E3A still unrun.</p></div>
+
+<h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Four traps with tell / fix</li>
+<li class="task"><input type="checkbox" disabled> IL5 and percentages qualified</li>
+<li class="task"><input type="checkbox" disabled> Remote-plane gap named as version-check, not folklore</li>
+</ul></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\blocks\05-edge-cases.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="block-04-teach-it.html">&larr; Previous</a><a href="block-06-spaced-review.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

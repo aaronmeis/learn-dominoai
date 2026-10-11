@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 3: Active practice | Learn Domino AI</title>
+<meta name="description" content="Block 3 — Active practice. Paper lifecycle sketch. No tenant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Day blocks</div>
+  <h1 class="doctitle">Block 3: Active practice</h1>
+  <p class="lead">Block 3 — Active practice. Paper lifecycle sketch. No tenant.</p>
+  
+  <article>
+<p><strong>Time:</strong> 90 minutes<br />
+<strong>Goal:</strong> Produce the sketch you will defend<br />
+<strong>Pack:</strong> Domino Data Lab (<code>dominoai</code>)</p>
+<h2>Focus</h2>
+<p>On paper (or a vault canvas): Project → Workspace / Job → Experiment → Registry → Endpoint or App. Annotate where compute runs and what is recorded. From official docs, label one page as architecture and one page as a compliance <em>claim</em>.</p>
+<h2>Sources</h2>
+<ul>
+<li>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>] architecture, [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>] registry, [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>] train, [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>] deploy, [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>] Apps, [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>] marketing (claim, not contract)</li>
+</ul>
+<h2>Actions</h2>
+<ol>
+<li>Draw the lifecycle. Boxes: Project, Workspace, Job, Experiment, model card, Model API, App.</li>
+<li>On each box, write <strong>plane</strong> (control / data / either) and <strong>record</strong> (what lands on the card or in metadata).</li>
+<li>Open [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>] and [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]. Write "architecture" on one URL and "claim" on the other.</li>
+<li>Optional: from [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>], list model-card fields you can see without a tenant (starts E1A).</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Question</div><p>Where does a Streamlit App run, and what port must it serve?</p></div>
+
+<p>%% fold answer after attempt %%</p>
+<div class="callout success" markdown="0"><div class="callout-title">Answer cues</div><p>Data plane pod, hardware tier may target a plane. Port 8888 [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>].</p></div>
+
+<h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Annotated lifecycle sketch</li>
+<li class="task"><input type="checkbox" disabled> One architecture URL and one claim URL labeled</li>
+<li class="task"><input type="checkbox" disabled> Endpoint vs App distinguished</li>
+</ul></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\blocks\03-active-practice.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="block-02-mental-models.html">&larr; Previous</a><a href="block-04-teach-it.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

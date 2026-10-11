@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 2: Mental models | Learn Domino AI</title>
+<meta name="description" content="Block 2 — Mental models. Planes, system of record, hybrid, competitors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Day blocks</div>
+  <h1 class="doctitle">Block 2: Mental models</h1>
+  <p class="lead">Block 2 — Mental models. Planes, system of record, hybrid, competitors.</p>
+  
+  <article>
+<p><strong>Time:</strong> 45 minutes<br />
+<strong>Goal:</strong> Named models you can apply<br />
+<strong>Pack:</strong> Domino Data Lab (<code>dominoai</code>)</p>
+<h2>Focus</h2>
+<ul>
+<li>System of record: code + data + Environment + parameters reconstruct the run [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</li>
+<li>Control plane vs data plane [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</li>
+<li>Hybrid / Nexus: same Project story, compute moves to the data [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</li>
+<li>Model factory vs App Hub: build/govern vs scale apps to users [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>] [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</li>
+<li>"Any tool" is a claim: the platform hosts IDEs; it does not erase their semantics [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>]</li>
+<li>Comparison set: Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>] architecture, [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>] Nexus, [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>] registry, [<a class="cite" href="https://www.youtube.com/watch?v=Cr0K48Iw7n4" target="_blank" rel="noopener" title="Nick Elprin, RevX 2024 keynote">S12</a>] Elprin, [<a class="cite" href="https://www.youtube.com/watch?v=nWYtj1Rj6GQ" target="_blank" rel="noopener" title="Jarrod Vawdrey, RevX 2025 MLOps">S13</a>] Vawdrey, <a href="claims-debates.html">CLAIMS-AND-DEBATES</a></li>
+</ul>
+<h2>Actions</h2>
+<ol>
+<li>Draw two boxes: control plane (what is recorded) and data plane (what runs).</li>
+<li>For each competitor, write one job it wins.</li>
+<li>Read Debate 1 warrant. Write it as <em>If X, then Y</em>.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Question</div><p>If a GPU is in another region, which plane is that, and what product name covers extra planes?</p></div>
+
+<p>%% fold answer after attempt %%</p>
+<div class="callout success" markdown="0"><div class="callout-title">Answer cues</div><p>Data plane. Nexus is the optional hybrid of one control plane + many data planes [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>].</p></div>
+
+<h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Two-plane sketch exists</li>
+<li class="task"><input type="checkbox" disabled> One sentence on system of record vs IDE</li>
+<li class="task"><input type="checkbox" disabled> Five competitor "wins when" lines</li>
+</ul></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\blocks\02-mental-models.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="block-01-core-concepts.html">&larr; Previous</a><a href="block-03-active-practice.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

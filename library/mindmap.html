@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mind map | Learn Domino AI</title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Plan</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Plan</div>
+  <h1 class="doctitle">Mind map</h1>
+  
+  
+  <article><h1>Mind map — Domino Data Lab (domino.ai)</h1>
+<div class="callout info" markdown="0"><div class="callout-title">Approved 2026-10-11</div><p>Mode B mind map. Aaron replied GO. Later edits still belong here; do not silently replace this file.</p></div>
+
+<h2>Domino Data Lab</h2>
+<ul>
+<li><strong>Day outcome:</strong> By the end of the day, explain Domino from zero and sketch one governed model lifecycle you could defend in a design review. The sketch names what a project contains, where compute runs, where the system of record lives, and when Databricks, SageMaker, OpenShift AI, Kubeflow, or Dataiku is the better placement. Success is a short written explanation plus that sketch, with one named failure mode.</li>
+<li><strong>Depth:</strong> Working fluency across the platform. Enough to sketch project → experiment → registry → endpoint or App Hub and say why the platform claims that path is reproducible. Later day: App Hub, hybrid control plane, or IL5.</li>
+<li><strong>Prior knowledge:</strong> Assume zero. Define a model, training versus inference, an experiment, a registry, serving, MLOps, governance, and Kubernetes at outline level before any Domino term.</li>
+<li><strong>Boundaries:</strong> Must include: what Domino is, project and workspace, Environment and hardware tier, datasets, jobs and experiments, model registry and model cards, endpoints / Model APIs, App Hub, reproducibility and lineage, hybrid / on-prem / cloud at sketch level, and when not to use Domino.</li>
+</ul>
+<p>Out of scope: production deploy, tenant lab, packet capture, treating IL5 / HIPAA / SOC 2 as authorization, building custom Environments as a lab, multi-week academy.</p>
+<ul>
+<li>Core concepts (define these without Domino first)</li>
+<li>A model, training versus inference, an experiment</li>
+<li>A registry, serving / an endpoint, MLOps</li>
+<li>Governance, lineage, reproducibility, an audit trail</li>
+<li>Kubernetes at outline level (cluster, pod, image)</li>
+<li>Then Domino: a Project as the unit of work</li>
+<li>Workspace (Jupyter, RStudio, VS Code, SAS, MATLAB, Cursor) on a hardware tier</li>
+<li>Environment (the image / packages the workspace boots)</li>
+<li>Dataset, Job, Experiment tracking</li>
+<li>Model registry and model card</li>
+<li>Model API / endpoint, and App Hub as the application surface</li>
+<li>Mental models</li>
+<li>System of record: code + data + Environment + parameters should reconstruct the run</li>
+<li>Control plane versus data plane: who schedules work versus where bytes and GPUs live</li>
+<li>Hybrid: the same Project story on-prem, in a cloud, or both</li>
+<li>Model factory versus App Hub: build and govern models versus scale apps to users</li>
+<li>"Any tool" is a claim: the platform hosts IDEs and frameworks; it does not erase their semantics</li>
+<li>Comparison set: Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku. Each wins a different job.</li>
+<li>Active practice targets</li>
+<li>On paper, define model, experiment, registry, serving, and lineage in your own sentences</li>
+<li>Sketch one lifecycle: Project → Workspace / Job → Experiment → Registry → Endpoint or App Hub</li>
+<li>Annotate the sketch with where compute runs and what is recorded</li>
+<li>From official docs, label one page as architecture and one page as a compliance <em>claim</em></li>
+<li>Teach-back angle</li>
+<li>Five minutes to someone who has trained a notebook model on a laptop</li>
+<li>Must include one sentence on why a system of record is the product, not the IDE</li>
+<li>Must include one sentence on a job Domino should refuse (or lose to a competitor)</li>
+<li>Edge cases / traps</li>
+<li>Reproducibility theater: tracking files without pinning Environment and data</li>
+<li>Idle GPU / hardware-tier cost while a workspace sits open</li>
+<li>"Any tool, no lock-in" versus the platform as the place work actually lives</li>
+<li>Exporting a model to SageMaker / Snowflake / Databricks does not make those platforms Domino</li>
+<li>IL5 / HIPAA / SOC 2 / 21 CFR Part 11 pages are evidence of a <em>program</em>, not an authorization for this lab</li>
+<li>Vendor percentages (lifecycle time, 6×, 40% infra) are briefing lines, not an SLA</li>
+<li>Application task</li>
+<li>Written explanation from zero, plus one defended lifecycle sketch</li>
+<li>The sketch names Project contents, compute, system of record, and the tool you would not pick</li>
+<li>Name one failure mode (reproducibility gap, cost, wrong platform, or compliance overclaim)</li>
+<li>Claims and debates (required after the ledger)</li>
+<li>At least three live debates with warrants and designed counter-evidence (research-craft / NEXUS 72)</li>
+<li>Default competitor voices: Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku</li>
+<li>Designed tests stay unrun (no tenant). Desk tests can run from docs. Lab waits for an install / tenant GO</li>
+<li>Video pair and TDD cut (required, <strong>other agent</strong>)</li>
+<li>HyperFrames: HTML explainer of the lifecycle sketch</li>
+<li>Remotion: React companion, same beats</li>
+<li>Narrated tech-deep-dive cut: 12 NotebookLM slides + question cards (<code>tech_deep_dive video</code>)</li>
+<li>Optional Codex study film</li>
+<li>This pack writes AGENT-HANDOFF tickets; this agent does not render</li>
+<li>Phone console</li>
+<li>Public site <code>aaronmeis/learn-dominoai</code>, prefix <code>lda:</code>, hash routes, <code>#/debates</code> from CLAIMS-AND-DEBATES</li>
+<li>Vault first, then <code>js/data.js</code> and library HTML</li>
+</ul></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\intake\mindmap.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="day-plan.html">&larr; Previous</a><a href="deep-dive.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

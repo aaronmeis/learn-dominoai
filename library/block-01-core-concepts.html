@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Block 1: Core concepts | Learn Domino AI</title>
+<meta name="description" content="Block 1 — Core concepts. Vocabulary from zero, then Domino terms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Day blocks</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Day blocks</div>
+  <h1 class="doctitle">Block 1: Core concepts</h1>
+  <p class="lead">Block 1 — Core concepts. Vocabulary from zero, then Domino terms.</p>
+  
+  <article>
+<p><strong>Time:</strong> 60 minutes<br />
+<strong>Goal:</strong> Lock vocabulary before any vendor tour<br />
+<strong>Pack:</strong> Domino Data Lab (<code>dominoai</code>)</p>
+<h2>Focus</h2>
+<p>Define these without Domino first: model, training vs inference, experiment, registry, serving / endpoint, MLOps, governance, lineage, reproducibility, audit trail, Kubernetes (cluster, pod, image). Then Domino: Project, Workspace, Environment, hardware tier, Dataset, Job, model registry, model card, Model API, App.</p>
+<h2>Sources</h2>
+<ul>
+<li><a href="source-ledger.html">source-ledger</a> [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>] overview, [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>] architecture, [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>] registry, [<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>] Environments, [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>] develop/train</li>
+</ul>
+<h2>Actions</h2>
+<ol>
+<li>Write one sentence each for the zero-prior list. No Domino words yet.</li>
+<li>Open [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>] and [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>]. Map each Domino term onto one sentence from step 1.</li>
+<li>Mark three terms you cannot yet explain. They become glossary rows after the block.</li>
+</ol>
+<h2>Retrieval check</h2>
+<div class="callout question" markdown="0"><div class="callout-title">Question</div><p>What is a Project, and how is a Workspace different from an Environment?</p></div>
+
+<p>%% fold answer after attempt %%</p>
+<div class="callout success" markdown="0"><div class="callout-title">Answer cues</div><p>Project = unit of work. Workspace = hosted IDE on a hardware tier [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>]. Environment = the Docker image that IDE boots [<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>].</p></div>
+
+<h2>Exit criteria</h2>
+<ul>
+<li class="task"><input type="checkbox" disabled> Zero-prior list written in your own words</li>
+<li class="task"><input type="checkbox" disabled> Project / Workspace / Environment / hardware tier distinguished</li>
+<li class="task"><input type="checkbox" disabled> Three weak terms listed for the glossary</li>
+</ul></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\blocks\01-core-concepts.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><span></span><a href="block-02-mental-models.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

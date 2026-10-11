@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheatsheet — Domino Data Lab | Learn Domino AI</title>
+<meta name="description" content="One-page decision card for the Domino Data Lab study day.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">Cheatsheet — Domino Data Lab</h1>
+  <p class="lead">One-page decision card for the Domino Data Lab study day.</p>
+  
+  <article>
+<table>
+<thead>
+<tr>
+<th>Choose</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domino</td>
+<td>You need a governed lifecycle (Project → experiment → registry → endpoint or App) across IDEs, and compute may sit in more than one cluster. [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>] [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>] [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</td>
+</tr>
+<tr>
+<td>Databricks</td>
+<td>The lakehouse and Unity Catalog already own the data and the registry. Nexus is a second control plane. Debate 5.</td>
+</tr>
+<tr>
+<td>SageMaker</td>
+<td>The account is AWS-native and endpoints already exist. Export from Domino is a handoff, not a second home. [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</td>
+</tr>
+<tr>
+<td>OpenShift AI</td>
+<td>The estate is already OpenShift and the team will operate that stack.</td>
+</tr>
+<tr>
+<td>Kubeflow</td>
+<td>The team will own CRDs and does not want a commercial control plane.</td>
+</tr>
+<tr>
+<td>Dataiku</td>
+<td>The users are analysts on a visual workbench, not IDE-first scientists.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>Tell</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hosted Jupyter is the product</td>
+<td>People never open a model card</td>
+<td>The reconstructable unit is the card. [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</td>
+</tr>
+<tr>
+<td>Reproducibility theater</td>
+<td>Files tracked, Environment revision missing</td>
+<td>Pin Environment + data version. [<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>] [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</td>
+</tr>
+<tr>
+<td>Idle GPU</td>
+<td>Workspace left open on a GPU tier</td>
+<td>Stop the Workspace. Chargeback is a policy, not a feature. [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>]</td>
+</tr>
+<tr>
+<td>Any-tool = no lock-in</td>
+<td>"We can always export"</td>
+<td>Export the artifact. The metadata stores stay. [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>] [<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>]</td>
+</tr>
+<tr>
+<td>IL5 logo = ATO</td>
+<td>Homepage sentence</td>
+<td>Demand a PA / ATO page. [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</td>
+</tr>
+<tr>
+<td>Briefing percentages</td>
+<td>50% / 6× / 40% / 75%</td>
+<td>Teach the mechanism. Measure your queue. [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</td>
+</tr>
+<tr>
+<td>Remote plane = local plane</td>
+<td>Publish an App on a remote plane</td>
+<td>Read the installed Nexus page. [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</td>
+</tr>
+<tr>
+<td>App Hub vs Apps</td>
+<td>Pitch deck name</td>
+<td>Contract is Publish Apps, port 8888. [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</td>
+</tr>
+</tbody>
+</table>
+<p>Lifecycle sketch to defend:</p>
+<p><code>Project → Workspace / Job → Experiment → Registry (model card) → Endpoint or App</code></p>
+<p>Annotate: where the pod runs (which data plane), what is recorded (card fields), and the competitor you would pick instead.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\reference\cheatsheet.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="glossary.html">&larr; Previous</a><a href="quiz-bank.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

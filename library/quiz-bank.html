@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz bank — Domino Data Lab | Learn Domino AI</title>
+<meta name="description" content="Quiz bank mirrored on the Learn Domino AI console.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">Quiz bank — Domino Data Lab</h1>
+  <p class="lead">Quiz bank mirrored on the Learn Domino AI console.</p>
+  
+  <article>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Section</th>
+<th>Question</th>
+<th>Answer</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Placement</td>
+<td>What is Domino's unit of work?</td>
+<td>A Project. Files, Environments, datasets, experiments, models, and Apps live there.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Placement</td>
+<td>What is a Workspace?</td>
+<td>A hosted IDE (Jupyter, VS Code, RStudio, and others) on a hardware tier.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Engine</td>
+<td>What is an Environment?</td>
+<td>A Docker-image abstraction. Every Workspace, Job, App, and Model boots a container.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Engine</td>
+<td>Where does the control plane live versus the data plane?</td>
+<td>Control plane: UI, API, metadata, orchestration. Data plane: Workspaces, Jobs, Apps, endpoints as ephemeral pods.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Engine</td>
+<td>What does a model card record?</td>
+<td>Lineage: code, Environment, workspace settings, datasets.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Engine</td>
+<td>What is Domino's model registry based on?</td>
+<td>MLflow. Chen 2020 is the nearby paper, not a Domino eval.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>] [<a class="cite" href="https://doi.org/10.1145/3399579.3399867" target="_blank" rel="noopener" title="Developments in MLflow (DEEM@SIGMOD 2020)">S14</a>]</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Limits</td>
+<td>What is Nexus?</td>
+<td>One control plane plus many data planes. Optional. Remote planes may lack features the local plane has.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Limits</td>
+<td>Is "deployed in DoD IL5 environments" an ATO?</td>
+<td>No. It is a marketing sentence. A PA or ATO is a named authorization for a named offering.</td>
+<td>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Limits</td>
+<td>What are 50% / 6× / 40% / 75%?</td>
+<td>Briefing lines on the platform page. Not an SLA.</td>
+<td>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Placement</td>
+<td>When is Databricks the better placement?</td>
+<td>When the work already lives on that lakehouse and Unity Catalog is the system of record.</td>
+<td>Debate 5</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Engine</td>
+<td>What port must a Domino App serve?</td>
+<td>8888.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Engine</td>
+<td>How is a Model API packaged?</td>
+<td>Flask for Python, Plumber for R, from Project files.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Limits</td>
+<td>What did Elicit return for a Domino product paper?</td>
+<td>Nothing. Nearby MLflow and reproducibility papers only.</td>
+<td>E3B</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Engine</td>
+<td>What is Model Sentry?</td>
+<td>Human-in-the-loop review before production.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Placement</td>
+<td>Name three deployment offerings.</td>
+<td>Managed SaaS, self-managed VPC, on-prem. Nexus data planes are optional.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/cece0f/deployment-offerings/" target="_blank" rel="noopener" title="Deployment offerings">S9</a>]</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Engine</td>
+<td>What is Launchpad?</td>
+<td>The catalog where users find published Apps.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Limits</td>
+<td>What historically did remote data planes lack?</td>
+<td>Model APIs, Apps, Datasets, Starburst. Check the installed 6.2 page before repeating.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Warrants</td>
+<td>Why is a hosted Jupyter not the product?</td>
+<td>If the reconstructable unit is the recorded context, the IDE is a client of that unit.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>] [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Warrants</td>
+<td>Why is "any tool" not "no lock-in"?</td>
+<td>Exporting an artifact is not exporting Environments, hardware tiers, and the metadata stores.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>] [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Warrants</td>
+<td>What test would weaken both "Nexus replaces a lakehouse" and "one cluster is always enough"?</td>
+<td>Attach a second plane and publish an App there; record what the UI forbids.</td>
+<td>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</td>
+</tr>
+</tbody>
+</table>
+<p>NotebookLM quiz rows, when they arrive, stay in section 4 and stay secondary.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\reference\quiz-bank.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="cheatsheet.html">&larr; Previous</a><a href="source-ledger.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

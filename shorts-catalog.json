@@ -1,0 +1,15 @@
+{
+  "notebook_alias": "odm-dominoai",
+  "title": "Learn Domino AI - shorts",
+  "deep_dive": {"file": "media/deep-dive-cut.mp4", "youtube": ""},
+  "total": 6,
+  "ready": 0,
+  "items": [
+    {"id": "01-core-claim", "name": "01-core-claim", "title": "The product is the record", "tag": "Block 1", "pillar": "Placement", "keywords": ["project", "model card", "jupyter"], "duration": 0, "poster": "", "file": "", "youtube": "", "status": "pending"},
+    {"id": "02-key-distinction", "name": "02-key-distinction", "title": "Control plane vs data plane", "tag": "Block 4", "pillar": "Hybrid", "keywords": ["control plane", "data plane", "nexus"], "duration": 0, "poster": "", "file": "", "youtube": "", "status": "pending"},
+    {"id": "03-mechanism", "name": "03-mechanism", "title": "The governed lifecycle", "tag": "Block 3", "pillar": "Lifecycle", "keywords": ["workspace", "experiment", "registry"], "duration": 0, "poster": "", "file": "", "youtube": "", "status": "pending"},
+    {"id": "04-failure-mode", "name": "04-failure-mode", "title": "Reproducibility theater", "tag": "Block 5", "pillar": "Trust", "keywords": ["environment", "revision", "lineage"], "duration": 0, "poster": "", "file": "", "youtube": "", "status": "pending"},
+    {"id": "05-practice-rule", "name": "05-practice-rule", "title": "Name the competitor that wins", "tag": "Block 11", "pillar": "Placement", "keywords": ["databricks", "sagemaker", "kubeflow"], "duration": 0, "poster": "", "file": "", "youtube": "", "status": "pending"},
+    {"id": "06-edge-or-next", "name": "06-edge-or-next", "title": "A logo is not an ATO", "tag": "Block 9", "pillar": "Trust", "keywords": ["il5", "ato", "soc 2"], "duration": 0, "poster": "", "file": "", "youtube": "", "status": "pending"}
+  ]
+}

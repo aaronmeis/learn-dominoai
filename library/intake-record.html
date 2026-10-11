@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intake record | Learn Domino AI</title>
+<meta name="description" content="Intake for one-day mastery of Domino Data Lab (Enterprise AI Platform).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Plan</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Plan</div>
+  <h1 class="doctitle">Intake record</h1>
+  <p class="lead">Intake for one-day mastery of Domino Data Lab (Enterprise AI Platform).</p>
+  
+  <article><h1>Intake — Domino Data Lab (Enterprise AI Platform)</h1>
+<p><strong>Date:</strong> 2026-10-11<br />
+<strong>Mode:</strong> A (mind map provided)</p>
+<h2>Mission snapshot</h2>
+<ul>
+<li><strong>Outcome:</strong> By the end of the day, explain Domino Data Lab from zero and sketch one governed model lifecycle you could defend in a design review. The sketch names what a project contains, where compute runs, where the system of record lives, and when Databricks, SageMaker, OpenShift AI, Kubeflow, or Dataiku is the better placement. Success is a short written explanation plus that sketch, with one named failure mode.</li>
+<li><strong>Audience:</strong> Self-study. Own fluency so Aaron can place Domino in an architecture conversation. Not an exam and not a customer deliverable today. The teach-it block is practice for that conversation.</li>
+<li><strong>Depth:</strong> Working fluency across the platform, not a survey of every UI click and not a single-subsystem deep dive. Enough to sketch a project → experiment → registry → endpoint or App Hub path and say why the platform claims that path is reproducible. A later day can go deep on one slice (App Hub, hybrid control plane, or IL5).</li>
+<li><strong>Constraints:</strong> Eight hours available. The pack's focused blocks are about 5.5 hours. Extra time is source reading. Prefer official docs (domino.ai), at least one primary architecture or security page, and at least two named talks. Default competitor set for debates: Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku. Elicit light is required. No cluster build and no tenant lab is required.</li>
+</ul>
+<p>This agent: intake through research-craft, W8 <strong>prepare</strong>, vault-file after downloads exist, and <code>learn-dominoai</code>. NotebookLM execute waits on <code>nlm login</code> (this agent does not run W8 unless asked later). All video renders go to another agent.</p>
+<h2>Coverage matrix (mind map → blocks)</h2>
+<table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Title</th>
+<th>Coverage</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Core concepts</td>
+<td>mapped</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mental models</td>
+<td>mapped</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Active practice</td>
+<td>mapped</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Teach it</td>
+<td>mapped</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Edge cases</td>
+<td>mapped</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Spaced review</td>
+<td>mapped</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Application</td>
+<td>mapped</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="callout question" markdown="0"><div class="callout-title">Falsification check</div><p>The day is a waste if it is a feature tour of workspaces and App Hub that never says how a system of record, reproducibility, and hybrid control-plane versus data-plane change a placement, and never names when Databricks, SageMaker, OpenShift AI, Kubeflow, or Dataiku is the better tool. Vendor speed or cost percentages (50% lifecycle, 6× faster, 40% infra) are briefing lines until measured or qualified. An IL5 or compliance logo is not an ATO.</p></div>
+
+<h2>Interview answers</h2>
+<h3>outcome</h3>
+<p>By the end of the day, explain Domino Data Lab from zero and sketch one governed model lifecycle you could defend in a design review. The sketch names what a project contains, where compute runs, where the system of record lives, and when Databricks, SageMaker, OpenShift AI, Kubeflow, or Dataiku is the better placement. Success is a short written explanation plus that sketch, with one named failure mode.</p>
+<h3>audience</h3>
+<p>Self-study. Own fluency so Aaron can place Domino in an architecture conversation. Not an exam and not a customer deliverable today. The teach-it block is practice for that conversation.</p>
+<h3>prior_knowledge</h3>
+<p>Assume zero. Define a model, training versus inference, an experiment, a registry, serving, MLOps, governance, and Kubernetes at outline level before any Domino-specific term. Do not assume workspaces, hardware tiers, Environments, App Hub, or IL5.</p>
+<h3>boundaries</h3>
+<p>Must include: what Domino is (enterprise AI / MLOps platform at domino.ai), project and workspace, Environment and hardware tier, datasets, jobs and experiments, model registry and model cards, endpoints / Model APIs, App Hub, reproducibility and lineage as the system-of-record claim, hybrid / on-prem / cloud at sketch level, and when not to use Domino.</p>
+<p>Full platform in scope: workspaces, compute, datasets, experiments, model registry, endpoints, App Hub, governance.</p>
+<p>Also required: a video pair and a narrated tech-deep-dive cut (12 slides + question cards). Those renders are <strong>sub-runs for another agent</strong>. This agent writes the pack, ledger, CLAIMS-AND-DEBATES, blocks, W8 prep, and <code>learn-dominoai</code>. Paste-ready AGENT-HANDOFF notes cover HyperFrames, Remotion, Codex study film, and the narrated cut.</p>
+<p>Out of scope: a production deploy, a live tenant or trial lab, capturing packets, treating IL5 / HIPAA / SOC 2 pages as an authorization, building custom Docker Environments as a lab, and multi-week academy depth. No local lab is required today.</p>
+<p>Existing vault landscape notes under <code>Learning/Enterprise-AI-Platforms/</code> are secondary until a primary URL is on this pack's ledger.</p>
+<h3>depth</h3>
+<p>Working fluency across the platform, not a survey of every UI click and not a single-subsystem deep dive. Enough to sketch a project → experiment → registry → endpoint or App Hub path and say why the platform claims that path is reproducible. A later day can go deep on one slice (App Hub, hybrid control plane, or IL5).</p>
+<h3>constraints</h3>
+<p>Eight hours available. The pack's focused blocks are about 5.5 hours. Extra time is source reading. Prefer official docs (domino.ai), at least one primary architecture or security page, and at least two named talks. Default competitor set for debates: Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku. Elicit light is required. No cluster build and no tenant lab is required.</p>
+<p>This agent: intake through research-craft, W8 <strong>prepare</strong>, vault-file after downloads exist, and <code>learn-dominoai</code>. NotebookLM execute waits on <code>nlm login</code> (this agent does not run W8 unless asked later). All video renders go to another agent.</p>
+<h3>falsifiers</h3>
+<p>The day is a waste if it is a feature tour of workspaces and App Hub that never says how a system of record, reproducibility, and hybrid control-plane versus data-plane change a placement, and never names when Databricks, SageMaker, OpenShift AI, Kubeflow, or Dataiku is the better tool. Vendor speed or cost percentages (50% lifecycle, 6× faster, 40% infra) are briefing lines until measured or qualified. An IL5 or compliance logo is not an ATO.</p>
+<h2>Next</h2>
+<ol>
+<li>Review <a href="mindmap.html">mindmap</a></li>
+<li>Fill <a href="source-ledger.html">source-ledger</a> (≥3 URLs)</li>
+<li><code>python -m one_day_mastery blocks --slug dominoai</code></li>
+<li>Human gate on <a href="day-plan.html">day-plan</a> before W8</li>
+</ol></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\intake\2026-10-11 - Intake.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="mission.html">&larr; Previous</a><a href="day-plan.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

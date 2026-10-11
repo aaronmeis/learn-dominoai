@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical deep dive | Learn Domino AI</title>
+<meta name="description" content="Technical deep dive for the Domino Data Lab one-day pack. Grounded in the source ledger. Narrated cut is a later sub-run.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Plan</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Plan</div>
+  <h1 class="doctitle">Technical deep dive</h1>
+  <p class="lead">Technical deep dive for the Domino Data Lab one-day pack. Grounded in the source ledger. Narrated cut is a later sub-run.</p>
+  
+  <article><h1>Mastery Deep Dive — Domino Data Lab</h1>
+<p><strong>Ledger:</strong> <a href="source-ledger.html">source-ledger</a> · <strong>Debates:</strong> <a href="claims-debates.html">CLAIMS-AND-DEBATES</a> · <strong>Video ticket:</strong> <a href="handoff-video.html">AGENT-HANDOFF - Video renders</a></p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Domino is easy to describe as "hosted Jupyter on GPUs." That description fails the day's falsifier. This note is the sketch you would defend: what a Project contains, where compute runs, what is recorded, and when another platform is better.</p></div>
+
+<h2>1. What it is</h2>
+<p>Domino Data Lab is an enterprise AI / MLOps platform. The user-guide overview lists languages, IDEs, data sources, and an Environment catalog [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>]. The architecture page is Kubernetes-native, Helm-installed, on EKS / AKS / GKE or self-managed [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]. Deployment offerings: managed SaaS, self-managed VPC, on-prem, optional Nexus data planes [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/cece0f/deployment-offerings/" target="_blank" rel="noopener" title="Deployment offerings">S9</a>].</p>
+<p>The product home calls it an "operating system for AI outcomes" and prints 50% / 6× / 40% / 75% plus "deployed in DoD IL5 environments" [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]. Those lines stay qualified. They are not the contract.</p>
+<h2>2. Two planes</h2>
+<p><strong>Control plane</strong> [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]: Domino UI (Node.js/React), Secrets Vault, Domino API, RabbitMQ, Identity, MongoDB/PostgreSQL metadata, Experiment Manager, Environment Image Builder, Model Registry. Clients reach it over HTTPS.</p>
+<p><strong>Data plane</strong> [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]: data plane agent, Cluster Autoscaler, Workspaces, Apps, endpoints, Jobs, distributed compute clusters. Workloads are ephemeral pods. Long-term files sit on external object storage or file shares. Git and an Environment registry sit outside.</p>
+<p>This split is the first sentence of a design review. "Where does the GPU live?" is a data-plane question. "Where is the model card?" is a control-plane question.</p>
+<h2>3. Nexus</h2>
+<p>Nexus is optional hybrid: one control plane, many data planes, any cloud / region / on-prem [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>] [<a class="cite" href="https://domino.ai/nexus" target="_blank" rel="noopener" title="Domino Nexus (product page)">S11</a>] [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/cece0f/deployment-offerings/" target="_blank" rel="noopener" title="Deployment offerings">S9</a>]. The local data plane (in the control-plane cluster) historically had the full feature set. Remote planes historically lacked Model APIs, Apps, Datasets, Starburst. <strong>Re-read the installed 6.2 page before repeating that gap</strong> (desk test E5A).</p>
+<p>Warrant: if data cannot move, moving the workspace to that plane is the point. If data already sits next to a lakehouse, the extra plane is coordination cost (Debate 5).</p>
+<h2>4. The unit of work</h2>
+<p>A <strong>Project</strong> holds files, Environments, datasets, experiments, models, and Apps [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>].</p>
+<p>A <strong>Workspace</strong> is Jupyter / JupyterLab / VS Code / RStudio / SAS / MATLAB / Cursor on a <strong>hardware tier</strong> [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>]. That is what users feel. It is a client of the Project, not the system of record (Debate 1).</p>
+<p>An <strong>Environment</strong> is a Docker-image abstraction (DSE vs DME). Every Workspace, Job, App, and Model boots a container. Edits rebuild a revision [<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>]. If the revision that trained the model is gone, the card cannot reconstruct the run.</p>
+<p>A <strong>Job</strong> is the non-interactive path. Automate what you just did in the Workspace [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>].</p>
+<h2>5. System of record</h2>
+<p>The model registry is MLflow-based [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]. Chen et al. 2020 is the nearby paper [<a class="cite" href="https://doi.org/10.1145/3399579.3399867" target="_blank" rel="noopener" title="Developments in MLflow (DEEM@SIGMOD 2020)">S14</a>], not a Domino eval.</p>
+<p>A <strong>model card</strong> tracks lineage: code, Environment, workspace settings, datasets [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]. The day's claim: the reconstructable unit is that context. Evidence still unrun: list every field the card stores (E1A); rebuild a run from a card (E1B, tenant).</p>
+<p><strong>Model Sentry</strong> is HITL review before production. <strong>Model Monitoring</strong> is drift after deploy. Separate data planes for Dev / Staging / Prod are a <em>recommendation</em>, not a law of physics [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>].</p>
+<h2>6. How it reaches users</h2>
+<p><strong>Model API:</strong> package Project files as Flask (Python) or Plumber (R) [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]. Consumer is another system.</p>
+<p><strong>App:</strong> Dash / Flask / Streamlit / Shiny / any HTTP on port 8888. Launchpad. HPA, always ≥1 pod. Hardware tier can target a data plane [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]. Consumer is a person with a browser.</p>
+<p><strong>App Hub</strong> on the homepage [<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>] is the product name. The contract is Publish Apps [<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>].</p>
+<p>Export targets named in deploy-to-production include SageMaker, Snowflake, Databricks, or a Docker image [<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]. Exporting an artifact is not exporting the platform (Debate 2).</p>
+<h2>7. Compliance and speed claims</h2>
+<p>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>] states ISO 27001, ISO 9001, SOC 2, HIPAA, GDPR, support for 21 CFR Part 11 / Annex 11, and "deployed in DoD IL5 environments."</p>
+<p>This pack has no DISA PA letter, no FedRAMP package, and no docs.dominodatalab.com IL5 architecture page. Elicit light found no Domino product paper (E3B run 2026-10-11). Nearby TEE / reproducibility papers do not transfer.</p>
+<p>50% lifecycle, 6× development, 40% infra, 75% onboarding are briefing lines. Teach self-serve Environments and elastic hardware. Repeat a percentage only after measuring your queue (Debate 4).</p>
+<h2>8. When another platform is better</h2>
+<table>
+<thead>
+<tr>
+<th>Competitor</th>
+<th>Wins when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Databricks</td>
+<td>Lakehouse + Unity Catalog already own data and registry.</td>
+</tr>
+<tr>
+<td>SageMaker</td>
+<td>AWS-native account, endpoints already exist.</td>
+</tr>
+<tr>
+<td>OpenShift AI</td>
+<td>Estate is already OpenShift.</td>
+</tr>
+<tr>
+<td>Kubeflow</td>
+<td>Team will operate CRDs and does not want a commercial control plane.</td>
+</tr>
+<tr>
+<td>Dataiku</td>
+<td>Users are analysts on a visual workbench.</td>
+</tr>
+</tbody>
+</table>
+<p>The day's refusal is specific. "We already standardized on X" is a legitimate warrant. "Domino does not do notebooks" is not.</p>
+<h2>9. Failure modes to name</h2>
+<ul>
+<li>Reproducibility theater: files tracked, Environment revision and data version missing.</li>
+<li>Idle GPU Workspace.</li>
+<li>Treating "any tool" as zero exit cost.</li>
+<li>Treating an IL5 sentence as an ATO.</li>
+<li>Assuming a remote Nexus plane has local-plane features.</li>
+<li>Calling App Hub a separate product from Apps without a current docs split.</li>
+</ul>
+<h2>10. Falsifier</h2>
+<p>A feature tour that never names the system of record, never splits control plane from data plane, and never names when Databricks, SageMaker, OpenShift AI, Kubeflow, or Dataiku is better.</p>
+<h2>Spine for the later narrated cut (12 slides)</h2>
+<ol>
+<li>Title — governed lifecycle, not a notebook host</li>
+<li>ML primitives from zero</li>
+<li>Project as unit of work</li>
+<li>Workspace, hardware tier, Environment</li>
+<li>Control plane vs data plane</li>
+<li>Jobs, experiments, datasets</li>
+<li>Registry and model cards</li>
+<li>Model API vs App (port 8888)</li>
+<li>Nexus hybrid</li>
+<li>Compliance logos vs ATO</li>
+<li>Competitor map</li>
+<li>Decision packet — in, out, measure</li>
+</ol>
+<p>W8 has not been executed. Slide JPGs and the MP4 wait on <a href="handoff-video.html">AGENT-HANDOFF - Video renders</a>.</p></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\Mastery Deep Dive — Domino Data Lab.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="mindmap.html">&larr; Previous</a><a href="living-console.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claims and debates | Learn Domino AI</title>
+<meta name="description" content="Live debates, warrants, hidden assumptions, and designed counter-evidence for Domino Data Lab as a product an architect has to place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+<script>try{var p=JSON.parse(localStorage.getItem("appPalette"))||"github",m=JSON.parse(localStorage.getItem("appMode"))||"dark";document.documentElement.setAttribute("data-theme",p+"-"+m);}catch(e){document.documentElement.setAttribute("data-theme","github-dark");}</script>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="home">&larr; Learn Domino AI console</a>
+  <span class="crumb">Library ┬╖ Reference</span>
+  <a href="index.html" class="home">All pages</a>
+</header>
+<main class="doc">
+  <div class="kicker">Reference</div>
+  <h1 class="doctitle">Claims and debates</h1>
+  <p class="lead">Live debates, warrants, hidden assumptions, and designed counter-evidence for Domino Data Lab as a product an architect has to place.</p>
+  
+  <article><h1>Claims and debates — Domino Data Lab</h1>
+<p><strong>Community of readers:</strong> Aaron in self-study toward Expert AI Architect, briefing a room that will ask where this platform belongs, what it quietly assumes, and what would change the recommendation.</p>
+<p><strong>Skill:</strong> <em>research-craft</em> · <strong>Recipe:</strong> <em>72 - Research Craft for Architects</em> · <strong>Ledger:</strong> <a href="source-ledger.html">source-ledger</a></p>
+<h2>Business Explanation</h2>
+<div class="callout info" markdown="0"><div class="callout-title">Business Explanation</div><p>Domino is easy to collect facts about and easy to over-claim. This note holds the live debates an architect has to walk into a room with: system of record versus hosted Jupyter, "any tool" versus lock-in, IL5 logos versus an authorization, briefing percentages versus a contract, Nexus hybrid versus one lakehouse, and Apps versus exporting the model. Every claim is tied to the ledger. Tests that would change anyone's mind stay on the page until they are run.</p></div>
+
+<h2>Research problem</h2>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Statement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Practical problem</td>
+<td>Teams buy a notebook host when they needed a system of record, or they buy Domino when Databricks, SageMaker, OpenShift AI, or Kubeflow already owns the job. Both mistakes cost years of platform tax.</td>
+</tr>
+<tr>
+<td>Research problem</td>
+<td>The pack already knows what Domino <em>is</em>. It still has to say which public claims are definitional, which are causal architecture stories, which are analogies from nearby MLOps papers, and which are briefing color.</td>
+</tr>
+<tr>
+<td>So what?</td>
+<td>A placement that cannot name its warrant will not survive a design review.</td>
+</tr>
+</tbody>
+</table>
+<h2>How to read a debate</h2>
+<p>A <strong>claim</strong> is what you want a reader to accept. <strong>Evidence</strong> is the support. A <strong>warrant</strong> is the general principle that makes the evidence relevant (<em>If X, then Y</em>). <strong>Qualifications</strong> limit scope and certainty. <strong>Hidden assumptions</strong> are the unstated conditions the warrant needs. <strong>Evidence to run</strong> is designed to challenge every side, including the side this pack currently prefers.</p>
+<p>NotebookLM ratings, if they arrive later, are tertiary. The ledger wins.</p>
+<h2>Live debates</h2>
+<h3>Debate 1 — The product is the system of record</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>Domino's product is the recorded context: code, Environment, hardware, datasets, and parameters tied to an experiment and a model card, not the IDE window. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=nWYtj1Rj6GQ" target="_blank" rel="noopener" title="Jarrod Vawdrey, RevX 2025 MLOps">S13</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>What users feel is a hosted Jupyter / VS Code / RStudio on a GPU. Without that workspace, the registry is a form. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>]</code></td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td>Architecture splits control plane (metadata, registry, image builder) from data plane (workspaces, jobs, apps, endpoints) <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code>. Registry docs say lineage is recorded automatically <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/3b6ae5/manage-models-with-model-registry/" target="_blank" rel="noopener" title="Manage models with model registry">S4</a>]</code>. Vawdrey: stop treating work as a laptop research project <code>[<a class="cite" href="https://www.youtube.com/watch?v=nWYtj1Rj6GQ" target="_blank" rel="noopener" title="Jarrod Vawdrey, RevX 2025 MLOps">S13</a>]</code>. This pack has not reconstructed a named run from a model card.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td><strong>Definitional + causal.</strong> If the reconstructable unit is the recorded context, then the IDE is a client of that unit. If users only ever open Workspaces and never open a card, the causal story that "governance is the product" is unearned.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>Lineage actually captures the data version that was read, not only a dataset name. People will look at the card. The Environment revision that trained the model still exists.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>Both readings can be true in one deployment. This pack does not claim every tenant uses the registry.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>Support A (unrun, desk then lab):</strong> from official docs, list every field a model card stores; then, with a tenant GO, rebuild a run from a card alone. <strong>Support B (unrun, lab):</strong> time-to-first-notebook versus time-to-first-registered-model for a new user. <strong>Weaken both (unrun, desk):</strong> find a documented path where a Workspace run is <em>not</em> associated with an experiment.</td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 2 — "Any tool" means no lock-in</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>Domino is an open host: bring Jupyter, R, SAS, MATLAB, Spark, Ray, Dash, Streamlit. Export models to SageMaker, Snowflake, Databricks, or a Docker image. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>Work, Environments, hardware tiers, and Launchpad live <em>in</em> Domino. Leaving means rebuilding that system of record somewhere else. "Open" is not "free to walk away." <code>[<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code></td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td>Overview catalogs IDEs and data sources <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71a047/overview/" target="_blank" rel="noopener" title="User-guide overview (docs 6.2)">S1</a>]</code>. Deploy-to-production names export targets <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</code>. Environments are Docker images rebuilt on each edit <code>[<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>]</code>. No source measures migration cost off Domino.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td><strong>Definitional vs analogical.</strong> If a tool runs as a container image Domino schedules, that is "supported," not "you do not depend on Domino." Exporting an artifact is not exporting the platform.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>Export includes the Environment, data access, and review workflow, not only a pickle. IT is willing to operate two systems during a move.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>Openness is real for <em>entry</em> (bring your IDE). Exit cost is an empirical question this pack has not measured.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>Support A (unrun, desk):</strong> from docs, list export formats and which lineage travels with them. <strong>Support B (unrun, desk):</strong> list what is <em>only</em> in Domino metadata stores (Mongo/Postgres per <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/a0b173/architecture/" target="_blank" rel="noopener" title="Domino architecture (control plane vs data plane)">S2</a>]</code>). <strong>Weaken both (unrun, lab):</strong> export one Model API to SageMaker and run inference; record what broke.</td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 3 — IL5 and compliance logos are the closed-lab answer</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>Marketing states ISO 27001, ISO 9001, SOC 2, HIPAA, GDPR, 21 CFR Part 11 / Annex 11 support, and that Domino "is deployed in DoD IL5 environments." <code>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>A logo is not an authorization for <em>this</em> program. IL5 is a DISA Provisional Authorization of a named cloud service offering, plus the program's own ATO. Nearby MLOps papers are not a Domino eval. <code>[<a class="cite" href="https://doi.org/10.48550/arXiv.2302.12691" target="_blank" rel="noopener" title="Reproducibility of Machine Learning (Albertoni et al. 2023)">S15</a>]</code> plus the Elicit pass.</td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td>The sentence lives on the platform marketing page <code>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</code>. This pack has no DISA PA letter, no FedRAMP package, and no docs.dominodatalab.com IL5 architecture page. Elicit light found MLflow and reproducibility papers, not a Domino classified-lab eval (<a href="elicit.html">elicit-light-research</a>).</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td><strong>Authority, scoped.</strong> If DISA issued a PA for a named offering, that offering may host IL5 <em>data in that offering</em>. A vendor homepage does not warrant "our lab is approved." Analogical transfer from MLflow papers is invalid as certification.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>"Deployed in IL5 environments" means Domino holds the PA, not that a customer dropped Domino into someone else's IL5 cluster. Air-gap and Nexus data-plane feature gaps still apply <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/cece0f/deployment-offerings/" target="_blank" rel="noopener" title="Deployment offerings">S9</a>]</code>.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>Compliance <em>program</em> claim, not ATO. Self-managed / on-prem <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/cece0f/deployment-offerings/" target="_blank" rel="noopener" title="Deployment offerings">S9</a>]</code> is a proposal for data locality, not a classified authorization.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>Support A (unrun, desk):</strong> find a primary compliance or DISA page; add <code>[S#]</code> only if it is primary. <strong>Support B (run 2026-10-11, desk):</strong> Elicit returned no Domino product eval; keep <code>[<a class="cite" href="https://doi.org/10.1145/3399579.3399867" target="_blank" rel="noopener" title="Developments in MLflow (DEEM@SIGMOD 2020)">S14</a>]</code> <code>[<a class="cite" href="https://doi.org/10.48550/arXiv.2302.12691" target="_blank" rel="noopener" title="Reproducibility of Machine Learning (Albertoni et al. 2023)">S15</a>]</code> labeled nearby work. <strong>Weaken both (unrun, desk):</strong> compare remote data-plane feature gaps <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code> with an IL5 isolation story.</td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 4 — Speed and cost multiples are the product</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>Self-serve Environments, hardware tiers, and a recorded lifecycle should beat a laptop-plus-ticket-queue. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/786d3c/develop-and-train-models/" target="_blank" rel="noopener" title="Develop and train models">S6</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/cloud/user_guide/f51038/manage-compute-environments/" target="_blank" rel="noopener" title="Manage Compute Environments">S5</a>]</code> <code>[<a class="cite" href="https://www.youtube.com/watch?v=nWYtj1Rj6GQ" target="_blank" rel="noopener" title="Jarrod Vawdrey, RevX 2025 MLOps">S13</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>50% lifecycle reduction, 6× faster development, 40% infra savings, 75% faster onboarding are briefing lines on <code>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</code>, not an SLA.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td><strong>Causal vs authority.</strong> Cache of Environments and elastic hardware <em>can</em> cut wait time. A homepage percentage is a claim about unnamed customers.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>Hardware tiers are actually available (GPUs not queued). People stop the Workspace when idle. Chargeback is enforced.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>Teach the mechanism (self-serve tier + recorded Job). Repeat a percentage only after measuring your queue.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>Support A (unrun, desk):</strong> from docs, describe pause/resume and autoscaling Apps. <strong>Support B (unrun, desk):</strong> find the study behind 6× / 40% or mark unverified. <strong>Weaken both (unrun, lab):</strong> leave a GPU Workspace idle and read the cost dashboard.</td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 5 — Nexus makes one lakehouse unnecessary</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>Control plane plus data planes lets compute move to the data across clouds and on-prem. That is the hybrid job Databricks-in-one-region or SageMaker-in-one-account does not own. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code> <code>[<a class="cite" href="https://domino.ai/nexus" target="_blank" rel="noopener" title="Domino Nexus (product page)">S11</a>]</code> <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/cece0f/deployment-offerings/" target="_blank" rel="noopener" title="Deployment offerings">S9</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>If work already lives in Databricks, SageMaker, OpenShift AI, or Kubeflow on one cluster, Nexus is a second control plane. Remote data planes historically could not run Model APIs, Apps, or Datasets. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code></td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td>Nexus admin guide: control plane Kubernetes cluster + data plane clusters <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code>. Deployment offerings: Nexus is optional <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/cece0f/deployment-offerings/" target="_blank" rel="noopener" title="Deployment offerings">S9</a>]</code>. Feature-gap note is on the 5.7/6.2 Nexus page — verify before treating as current.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td><strong>Causal, scoped to locality.</strong> If data cannot move, moving the workspace to that plane is the point. If data already sits next to the lakehouse, the extra plane is coordination cost.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>Network path from control plane to data plane is approved. File sync disabled still lets people work. Feature gaps have closed in the installed version.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>Nexus is optional. "Single pane of glass" is the product page <code>[<a class="cite" href="https://domino.ai/nexus" target="_blank" rel="noopener" title="Domino Nexus (product page)">S11</a>]</code>; the contract is <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/admin_guide/c65074/nexus-hybrid-architecture/" target="_blank" rel="noopener" title="Nexus hybrid architecture">S3</a>]</code>.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>Support A (unrun, desk):</strong> current 6.2 Nexus page: which workloads run on remote planes. <strong>Support B (unrun, desk):</strong> competitor architecture pages for one-cluster defaults. <strong>Weaken both (unrun, lab):</strong> attach a second plane and publish an App there; record what the UI forbids.</td>
+</tr>
+</tbody>
+</table>
+<h3>Debate 6 — App Hub / Apps are how AI reaches users</h3>
+<table>
+<thead>
+<tr>
+<th>Cell</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claim A</td>
+<td>Publishing a Streamlit / Dash / Shiny / Flask App (or an agent on the same host) is the path from a Project to thousands of users, with auth and a hardware tier. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</code> <code>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</code></td>
+</tr>
+<tr>
+<td>Claim B</td>
+<td>Many enterprises already serve models as SageMaker endpoints, OpenShift routes, or a custom gateway. A Domino App is another URL to govern. Model APIs package Flask/Plumber inside Domino. <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</code></td>
+</tr>
+<tr>
+<td>Evidence on the table</td>
+<td>Publish Apps docs: frameworks, Launchpad, data-plane hardware tier <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</code>. Marketing App Hub <code>[<a class="cite" href="https://domino.ai/platform" target="_blank" rel="noopener" title="Enterprise AI platform (marketing)">S10</a>]</code>. Deploy-to-production includes native endpoints and export <code>[<a class="cite" href="https://docs.dominodatalab.com/en/5.8/user_guide/67333d/deploy-to-production/" target="_blank" rel="noopener" title="Deploy to production / model governance">S7</a>]</code>.</td>
+</tr>
+<tr>
+<td>Warrant</td>
+<td><strong>Causal.</strong> If the consumer is a person with a browser inside the same identity domain, an App is the shorter path. If the consumer is another system, an endpoint or export is the shorter path.</td>
+</tr>
+<tr>
+<td>Hidden assumptions</td>
+<td>Apps serve port 8888 and the identity flag is on. "Anyone can access" is not used on sensitive data <code>[<a class="cite" href="https://docs.dominodatalab.com/en/6.2/user_guide/71635d/publish-apps/" target="_blank" rel="noopener" title="Publish Apps">S8</a>]</code>.</td>
+</tr>
+<tr>
+<td>Qualifications</td>
+<td>App Hub on the homepage is the product name. The contract is the Apps user guide. Agents share App hosting in later docs — verify version.</td>
+</tr>
+<tr>
+<td>Evidence that would change the picture</td>
+<td><strong>Support A (unrun, desk):</strong> Launchpad vs project Deployments: who sees what. <strong>Support B (unrun, desk):</strong> Model API vs App: process model and auth. <strong>Weaken both (unrun, lab):</strong> publish a Streamlit App and a Model API from one Project; compare isolation.</td>
+</tr>
+</tbody>
+</table>
+<h2>Cross-cutting hidden assumptions</h2>
+<ul>
+<li>A recorded Environment revision still exists when you need to rebuild.</li>
+<li>"Hybrid" includes the feature set of the <em>remote</em> plane, not only the local plane.</li>
+<li>Idle Workspaces are someone's budget problem.</li>
+<li>Compliance logos transfer to this tenant.</li>
+<li>Nearby MLflow / reproducibility papers transfer to this product.</li>
+</ul>
+<h2>What this pack still cannot claim</h2>
+<ul>
+<li>Domino is approved for classified or IL5 data in Aaron's lab.</li>
+<li>50% / 6× / 40% / 75% as a contract.</li>
+<li>Remote data planes have the same features as the local plane without checking the installed version.</li>
+<li>Any Elicit deep report; only the light search exists.</li>
+<li>App Hub as a separate product from Domino Apps without a current primary docs page that splits them.</li>
+</ul>
+<p>Designed tests stay <strong>unrun</strong> until a sitting logs results. Job ticket: <a href="handoff-evidence.html">AGENT-HANDOFF - Evidence sittings</a>. Follow-on: <code>research-craft</code> step 7 → this note → <code>/learn-console</code> (<code>#/debates</code>).</p>
+<h2>Evidence tracker</h2>
+<p>IDs are stable. Desk tests need no tenant. Lab tests wait for a tenant / install GO (original study day is explain-and-sketch).</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Debate</th>
+<th>Side</th>
+<th>Kind</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1A</td>
+<td>1</td>
+<td>A</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E1B</td>
+<td>1</td>
+<td>B</td>
+<td>lab-local</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E1W</td>
+<td>1</td>
+<td>weaken</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E2A</td>
+<td>2</td>
+<td>A</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E2B</td>
+<td>2</td>
+<td>B</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E2W</td>
+<td>2</td>
+<td>weaken</td>
+<td>lab-compare</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E3A</td>
+<td>3</td>
+<td>A</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E3B</td>
+<td>3</td>
+<td>B</td>
+<td>desk</td>
+<td><strong>run 2026-10-11</strong> (Elicit light: no Domino product eval)</td>
+</tr>
+<tr>
+<td>E3W</td>
+<td>3</td>
+<td>weaken</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E4A</td>
+<td>4</td>
+<td>A</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E4B</td>
+<td>4</td>
+<td>B</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E4W</td>
+<td>4</td>
+<td>weaken</td>
+<td>lab-local</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E5A</td>
+<td>5</td>
+<td>A</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E5B</td>
+<td>5</td>
+<td>B</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E5W</td>
+<td>5</td>
+<td>weaken</td>
+<td>lab-local</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E6A</td>
+<td>6</td>
+<td>A</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E6B</td>
+<td>6</td>
+<td>B</td>
+<td>desk</td>
+<td>unrun</td>
+</tr>
+<tr>
+<td>E6W</td>
+<td>6</td>
+<td>weaken</td>
+<td>lab-local</td>
+<td>unrun</td>
+</tr>
+</tbody>
+</table>
+<p>Next sitting: E3A, E4B, E5A (desk). Lab waits for a tenant GO.</p>
+<h2>Changelog</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Agent</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-10-11</td>
+<td>grok</td>
+<td>First draft from the ledger, architecture page, Nexus, registry, Apps, and Elicit light. E3B already run.</td>
+</tr>
+</tbody>
+</table></article>
+  <footer class="docfoot">
+    Rendered from <code>Learning\one-day-mastery\dominoai\CLAIMS-AND-DEBATES.md</code>. The Obsidian vault is the source of truth. Study material only. Citations <span class="cite">S#</span> link to the Learn Domino AI source ledger.
+    <div class="prevnext"><a href="source-ledger.html">&larr; Previous</a><a href="resources.html">Next &rarr;</a></div>
+  </footer>
+</main>
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+const dark=(document.documentElement.getAttribute("data-theme")||"").endsWith("dark");
+mermaid.initialize({startOnLoad:true,theme:dark?"dark":"default",securityLevel:"strict"});
+</script>
+</body>
+</html>
