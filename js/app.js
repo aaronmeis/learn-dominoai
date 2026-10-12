@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    UI ENGINE & ROUTING
    ============================================================ */
 const $=(s,r=document)=>r.querySelector(s);
@@ -48,17 +48,18 @@ function renderDashboard(){
   const totalRungs=DATA.ladder.reduce((a,l)=>a+l.r.length,0);
   const fmDone=DATA.checklist.filter((_,i)=>LS.get(KEY+"cl:"+i,false)).length;
   const libCount=(window.LIBRARY||[]).length;
-  const pillar=(img,title,sub,color)=>`<div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:12px">
-      <img src="assets/${img}.jpg" alt="" style="width:48px;height:48px;border-radius:10px;border:1px solid ${color};object-fit:cover;flex-shrink:0">
+  const pillar=(rung,title,sub,color)=>`<div style="background:var(--card-bg);border:1px solid var(--border-color);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:12px">
+      <div aria-hidden="true" style="width:48px;height:48px;border-radius:10px;border:1px solid ${color};background:color-mix(in srgb,${color} 18%,transparent);color:${color};display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0;letter-spacing:.02em">${rung}</div>
       <div><div style="font-weight:700;font-size:.88rem;color:var(--text-primary)">${title}</div><div style="font-size:.74rem;color:var(--text-dim)">${sub}</div></div></div>`;
   let h=`<span class="badge">STUDY CONSOLE</span>
   <h1 style="margin-top:.9rem">Domino Data Lab: Enterprise AI Platform</h1>
-  <p class="lead">A working-fluency day on Domino: Project as unit of work, control plane versus data plane, model cards, Apps, Nexus, and the competitor that already owns the job. Claims trace to the 15-row source ledger. IL5 is not an ATO. Homepage percentages are not an SLA.</p>
+  <p class="lead">A working-fluency day on Domino: Project as unit of work, control plane versus data plane, model cards, Apps, Nexus, and the competitor that already owns the job. Claims trace to the ${SOURCES.length}-row source ledger. IL5 is not an ATO. Homepage percentages are not an SLA.</p>
+  <p class="note" style="margin-top:.6rem">Checked against Domino 6.3 (Sept 2026) on 2026-10-11.</p>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-bottom:1.5rem">
     ${pillar("100","Placement","Governed lifecycle, not a notebook host","var(--r100)")}
     ${pillar("200","Lifecycle","Project, Environment, card, App","var(--r200)")}
     ${pillar("300","Hybrid","Control plane and data planes","var(--r300)")}
-    ${pillar("hero","Trust","Logos, lineage, briefing numbers","var(--warn)")}
+    ${pillar("●","Trust","Logos, lineage, briefing numbers","var(--warn)")}
   </div>
   <div class="grid" style="margin-bottom:1.5rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
     <div class="statcard"><div class="num">${pct}%</div><div class="lbl">curriculum complete (${done}/${mods.length} modules)</div>
@@ -73,7 +74,7 @@ function renderDashboard(){
     <div class="card"><h3>Views</h3><p style="color:var(--text-secondary);font-size:.86rem">Placement, lifecycle, planes, surfaces, and logos versus authorization.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('views')">Open views →</button></div></div>
     <div class="card"><h3>Progress map</h3><p style="color:var(--text-secondary);font-size:.86rem">The 100 / 200 / 300 ladder for placement, lifecycle, hybrid, and trust.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('map')">Open map →</button></div></div>
     <div class="card"><h3>Flashcards and quiz</h3><p style="color:var(--text-secondary);font-size:.86rem">${DATA.glossary.length} spaced-repetition cards and the ${DATA.quiz.length}-question design-review quiz bank.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('flash')">Flashcards →</button><button class="b" onclick="go('quiz')">Quiz →</button></div></div>
-    <div class="card"><h3>Shorts and media</h3><p style="color:var(--text-secondary);font-size:.86rem">Six planned shorts and a narrated deep-dive cut. MP4s land after the video agent runs.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('shorts')">Open media →</button><button class="b" onclick="go('deck')">Slide deck →</button></div></div>
+    <div class="card"><h3>Shorts and media</h3><p style="color:var(--text-secondary);font-size:.86rem">Six study shorts and the NotebookLM slide deck for the day.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('shorts')">Open media →</button><button class="b" onclick="go('deck')">Slide deck →</button></div></div>
     <div class="card"><h3>Failure modes</h3><p style="color:var(--text-secondary);font-size:.86rem">${DATA.checklist.length} failure modes across all four views: the tell, the fix, and the source.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('failures')">Failure modes →</button><button class="b" onclick="go('cheat')">Decision rules →</button></div></div>
     <div class="card"><h3>Neighbors</h3><p style="color:var(--text-secondary);font-size:.86rem">Databricks, SageMaker, OpenShift AI, Kubeflow, and Dataiku, and the job each one owns.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('ea')">Open the map →</button></div></div>
     <div class="card"><h3>On the phone</h3><p style="color:var(--text-secondary);font-size:.86rem">Talks, the O'Reilly MLOps shelf, and the source ledger.</p><div class="btnrow" style="margin:.8rem 0 0"><button class="b" onclick="go('refs')">Open references →</button></div></div>
@@ -170,8 +171,9 @@ function renderMap(){
   let h=`<h2 class="vh">Progress map (100 / 200 / 300 ladder)</h2>
   <p class="lead">Self-rate each rung. The dashboard counts your "solid" ratings.</p><div class="lanes">`;
   DATA.ladder.forEach(l=>{
+    const tile=l.tile||"100", color=tile==="100"?"var(--r100)":tile==="200"?"var(--r200)":tile==="300"?"var(--r300)":"var(--warn)";
     h+=`<div class="lane"><div style="display:flex;align-items:center;gap:10px;margin-bottom:.8rem">
-        <img src="assets/${l.img}.jpg" alt="" style="width:32px;height:32px;border-radius:6px;object-fit:cover;border:1px solid var(--border-color)">
+        <div aria-hidden="true" style="width:32px;height:32px;border-radius:6px;border:1px solid ${color};background:color-mix(in srgb,${color} 18%,transparent);color:${color};display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.72rem;flex-shrink:0">${esc(tile)}</div>
         <h3 style="margin-bottom:0">${esc(l.name)}</h3></div>`;
     l.r.forEach(r=>{
       const st=LS.get(KEY+"self:"+l.key+":"+r.n,"none");
@@ -277,9 +279,9 @@ function renderDeck(){
     ?`<iframe class="wide-player" src="${ytSrc(DEEP.youtube)}" title="Domino deep dive cut" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy" style="border:0"></iframe>`
     : DEEP.file
     ? `<video class="wide-player" controls preload="metadata" poster="assets/slides/slide-01.jpg" src="${esc(DEEP.file)}"></video>`
-    : `<p class="note">Narrated TDD cut waits on the video agent. Flip the 15 NotebookLM slides below. Six shorts are on the Shorts view.</p>`;
+    : `<p class="note">Flip the 15 NotebookLM slides below. Six shorts are on the Shorts view.</p>`;
   let h=`<h2 class="vh">Deck and deep-dive cut</h2>
-  <p class="lead">Fifteen NotebookLM slides from the W8 detailed deck. The 12-slide TDD spine is the study cut; HyperFrames and Remotion wait on the other agent. Amber outlines mark claims the source ledger does not support.</p>
+  <p class="lead">Fifteen NotebookLM slides for the study day. Amber outlines mark claims the source ledger does not support.</p>
   ${video}
   ${DEEP.youtube?`<p class="obj" style="margin-top:.4rem"><a href="https://www.youtube.com/watch?v=${DEEP.youtube}" target="_blank" rel="noopener">Open the deep-dive cut on YouTube ↗</a></p>`:""}
   <div class="note" style="margin-top:1rem"><b>Opening line.</b> ${esc(C.open||"")}<br><b>Recap.</b> ${esc(C.recap||"")}</div>
@@ -306,7 +308,7 @@ function renderQuiz(){
   const secs=Object.keys(DATA.quizSections).map(Number);
   const sel=LS.get(KEY+"quizSec",secs[0]);
   let h=`<h2 class="vh">Quiz</h2>
-  <p class="lead">${DATA.quiz.length} questions. The NotebookLM set is multiple choice. The others are short answers. ${lib("quiz-bank","Quiz bank")} · ${lib("nblm-gap-quiz","Full NotebookLM quiz")}</p>
+  <p class="lead">${DATA.quiz.length} questions. The NotebookLM set is multiple choice. The others are short answers. ${lib("quiz-bank","Quiz bank")}</p>
   <div class="btnrow">${secs.map(s=>`<button class="b ${s==sel?"on":""}" data-qs="${s}">${esc(DATA.quizSections[s])} (${DATA.quiz.filter(q=>q.section==s).length})</button>`).join("")}</div>`;
   const qs=DATA.quiz.filter(q=>q.section==sel);
   qs.forEach((q,qi)=>{
@@ -335,7 +337,7 @@ function renderGlossary(){
   const q=(LS.get(KEY+"gq","")||"").toLowerCase(), cat=LS.get(KEY+"gcat","all");
   const cats=[...new Set(DATA.glossary.map(g=>g.category))];
   let h=`<h2 class="vh">Glossary <span style="font-size:1rem;color:var(--text-dim)">${DATA.glossary.length} terms</span></h2>
-  <p class="lead">Study definitions. Rows marked gap pass take their wording from the 2026-10-11 NotebookLM data table, checked against the ledger. ${lib("glossary","Glossary note")} · ${lib("nblm-gap-table","Data table")} · ${lib("source-ledger","Source ledger")}</p>
+  <p class="lead">Study definitions. Rows marked gap pass take their wording from the 2026-10-11 NotebookLM data table, checked against the ledger. ${lib("glossary","Glossary note")} · ${lib("nblm-glossary-table","Data table")} · ${lib("source-ledger","Source ledger")}</p>
   <input class="search" id="gSearch" placeholder="filter terms…" value="${esc(q)}">
   <div class="gfilters"><button class="b ${cat==="all"?"on":""}" data-gc="all">All (${DATA.glossary.length})</button>${cats.map(c=>`<button class="b ${cat===c?"on":""}" data-gc="${esc(c)}">${esc(c)} (${DATA.glossary.filter(g=>g.category===c).length})</button>`).join("")}</div>`;
   cats.filter(c=>cat==="all"||c===cat).forEach(c=>{
@@ -413,7 +415,7 @@ function renderEA(){
   const box=(head,sub,items,color)=>`<div class="ea-box"><h4>${esc(head)}</h4><div style="font-weight:600;font-size:.8rem;color:${color||"var(--accent-color)"};margin-bottom:.4rem">${esc(sub)}</div><ul>${(items||[]).map(i=>`<li>${ec(i)}</li>`).join("")}</ul></div>`;
   const tabs=[["all","All"],["conceptual","Conceptual"],["logical","Logical"],["physical","Physical"],["integration","Integration"],["trust","Trust"],["alt","Altitude"],["table","Cross-walk"]];
   let h=`<h2 class="vh">EA mapping</h2>
-  <p class="lead">${esc(E.note||"")} ${lib("competitors","Competitors and closed lab")} · ${lib("deep-dive","Deep dive")}</p>
+  <p class="lead">${esc(E.note||"")} ${lib("deep-dive","Deep dive")}</p>
   <div class="ea-subnav">${tabs.map(([k,l])=>`<button class="ea-tab-btn ${tab===k?"active":""}" data-eatab="${k}">${l}</button>`).join("")}</div>`;
   if(tab==="all"||tab==="conceptual") h+=`<div class="ea-card"><h3>Conceptual</h3><div class="ea-grid">${(E.conceptual||[]).map(t=>box(t.phase,t.t,t.items)).join("")}</div></div>`;
   if(tab==="all"||tab==="logical") h+=`<div class="ea-card"><h3>Logical</h3><div class="ea-grid">${(E.logical||[]).map(t=>box(t.phase,t.t,t.items)).join("")}</div></div>`;
@@ -504,7 +506,7 @@ function renderReferences(){
       <a class="b" href="${esc(b.url)}" target="_blank" rel="noopener" style="font-size:.76rem;flex-shrink:0">Open ↗</a></div>`;
   });
   h+=`<h2 class="vh" style="margin-top:1.6rem">Source ledger <span style="font-size:1rem;color:var(--text-dim)">${SOURCES.length} sources</span></h2>
-  <p class="lead">Thirteen sources. Official docs and the SIGMOD paper are high trust. Smaug and BiTDB are nearby TEE papers about other engines. ${lib("source-ledger","Ledger note")} · ${lib("resources","Reading order")}</p>
+  <p class="lead">${SOURCES.length} sources. Official docs and the SIGMOD paper are high trust. Smaug and BiTDB are nearby TEE papers about other engines. ${lib("source-ledger","Ledger note")} · ${lib("resources","Reading order")}</p>
   <input class="search" id="refSearch" placeholder="filter by title, URL, or type…" value="${esc(q)}">
   <div class="gfilters"><button class="b ${sel==="all"?"on":""}" data-rcat="all">All (${SOURCES.length})</button>${cats.map(c=>`<button class="b ${sel===c?"on":""}" data-rcat="${esc(c)}">${esc(c)} (${SOURCES.filter(s=>s.g===c).length})</button>`).join("")}</div>`;
   cats.filter(c=>sel==="all"||sel===c).forEach(c=>{
@@ -525,16 +527,18 @@ function renderReferences(){
 
 /* ---- Theme engine (keys shared with library pages) ---- */
 function applyTheme(palette,mode){
-  document.documentElement.setAttribute("data-theme",palette+"-"+mode);
-  LS.set("appPalette",palette); LS.set("appMode",mode);
-  $("#themeToggleIcon").textContent=mode==="dark"?"🌙":"☀️";
-  $("#themeToggleText").textContent=mode==="dark"?"Dark":"Light";
-  $("#themeSelect").value=palette;
+  // House palette only; ignore legacy palette names from localStorage
+  document.documentElement.setAttribute("data-theme","house-"+mode);
+  LS.set("appPalette","house"); LS.set("appMode",mode);
+  const btn=$("#themeToggleBtn");
+  if($("#themeToggleIcon")) $("#themeToggleIcon").textContent=mode==="dark"?"🌙":"☀️";
+  if($("#themeToggleText")) $("#themeToggleText").textContent=mode==="dark"?"Dark":"Light";
+  if(btn) btn.setAttribute("aria-label", mode==="dark"?"Switch to light theme":"Switch to dark theme");
 }
 function initTheme(){
-  applyTheme(LS.get("appPalette","github"),LS.get("appMode",defaultMode()));
-  $("#themeToggleBtn").onclick=()=>applyTheme(LS.get("appPalette","github"),LS.get("appMode","dark")==="dark"?"light":"dark");
-  $("#themeSelect").onchange=()=>applyTheme($("#themeSelect").value,LS.get("appMode","dark"));
+  applyTheme("house", LS.get("appMode",defaultMode()));
+  const btn=$("#themeToggleBtn");
+  if(btn) btn.onclick=()=>applyTheme("house", LS.get("appMode","dark")==="dark"?"light":"dark");
 }
 
 function defaultMode(){try{return window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";}catch(e){return "dark";}}

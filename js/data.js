@@ -113,12 +113,12 @@ const DATA = {
      obj:"Say when hybrid is the point, and when it is a second control plane.",
      deliv:"One sentence for locality, one for a lakehouse that already owns the job.",
      mods:[
-       {t:"Nexus contract [S3]",rl:"hybrid · 300", action:"Write local plane versus remote plane.", whyMatters:"Desk test E5A: re-read the 6.2 page before repeating the gap."},
+       {t:"Nexus contract [S3]",rl:"hybrid · 300", action:"Write local plane versus remote plane.", whyMatters:"Re-read the installed docs page before repeating a remote-plane gap."},
        {t:"Offerings [S9]",rl:"hybrid · 200", action:"Name SaaS, self-managed VPC, on-prem.", whyMatters:"On-prem is a locality proposal, not an ATO."}
      ],
      vids:[{s:3},{s:11}]},
     {n:9,title:"Compliance logos vs ATO",time:"20 min",rungs:"300",lib:"elicit",
-     opener:"Marketing states ISO, SOC 2, HIPAA, GDPR, 21 CFR Part 11 support, and 'deployed in DoD IL5 environments' [S10]. Elicit found no Domino product paper (E3B, 2026-10-11).",
+     opener:"Marketing states ISO, SOC 2, HIPAA, GDPR, 21 CFR Part 11 support, and 'deployed in DoD IL5 environments' [S10][S17]. Elicit found no Domino product paper (2026-10-11).",
      obj:"Separate a program claim from an authorization.",
      deliv:"The IL5 sentence rewritten as a claim, plus what would make it acceptable.",
      mods:[
@@ -127,14 +127,14 @@ const DATA = {
      ],
      vids:[{s:10},{s:15}]},
     {n:10,title:"Speed and lock-in",time:"20 min",rungs:"300",lib:"claims-debates",
-     opener:"50% / 6× / 40% / 75% are briefing lines [S10]. 'Any tool' means Domino hosts IDEs; Environments and metadata still live in Domino [S1][S5].",
+     opener:"50% / 6× / 40% / 75% are briefing lines on the home page [S18]. 'Any tool' means Domino hosts IDEs; Environments and metadata still live in Domino [S1][S5].",
      obj:"Name a mechanism you can teach, and a percentage you will not quote as a contract.",
      deliv:"One mechanism (self-serve tier). One export that does not move the platform.",
      mods:[
-       {t:"Briefing numbers [S10]",rl:"trust · 300", action:"Circle 6× and write 'unverified until a study URL'.", whyMatters:"Desk test E4B."},
+       {t:"Briefing numbers [S18]",rl:"trust · 300", action:"Circle 6× and write 'unverified until a study URL'.", whyMatters:"The four figures have no study URL on the page."},
        {t:"Exit cost [S5][S2]",rl:"trust · 300", action:"List what stays in Mongo/Postgres when you export a model.", whyMatters:"Debate 2."}
      ],
-     vids:[{s:10},{s:5}]},
+     vids:[{s:18},{s:5}]},
     {n:11,title:"Decision packet",time:"25 min",rungs:"200",lib:"block-07-application",
      opener:"Sketch Project → Workspace / Job → Experiment → Registry → Endpoint or App. Name the plane, the record, and the competitor you refuse.",
      obj:"Walk into a design review with a placement, not a feature list.",
@@ -147,10 +147,10 @@ const DATA = {
      vids:[{s:2},{s:13}]}
   ],
   ladder:[
-    {key:"place",name:"Placement",img:"100",r:[{n:100,t:"Say what Domino is and name the unit of work."},{n:200,t:"Place it against Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku."},{n:300,t:"Defend one choice in a design review."}]},
-    {key:"lifecycle",name:"Lifecycle",img:"200",r:[{n:100,t:"Project, Workspace, Environment."},{n:200,t:"Job, experiment, model card, endpoint or App."},{n:300,t:"Reconstruct a run from the card fields you can name."}]},
-    {key:"hybrid",name:"Hybrid",img:"300",r:[{n:100,t:"Control plane versus data plane."},{n:200,t:"Nexus as extra data planes."},{n:300,t:"Remote-plane feature gaps on the installed version."}]},
-    {key:"trust",name:"Trust",img:"300",r:[{n:100,t:"Lineage on the card."},{n:200,t:"Sentry and monitoring."},{n:300,t:"Logos are not an ATO. Percentages are not an SLA."}]}
+    {key:"place",name:"Placement",tile:"100",r:[{n:100,t:"Say what Domino is and name the unit of work."},{n:200,t:"Place it against Databricks, SageMaker, OpenShift AI, Kubeflow, Dataiku."},{n:300,t:"Defend one choice in a design review."}]},
+    {key:"lifecycle",name:"Lifecycle",tile:"200",r:[{n:100,t:"Project, Workspace, Environment."},{n:200,t:"Job, experiment, model card, endpoint or App."},{n:300,t:"Reconstruct a run from the card fields you can name."}]},
+    {key:"hybrid",name:"Hybrid",tile:"300",r:[{n:100,t:"Control plane versus data plane."},{n:200,t:"Nexus as extra data planes."},{n:300,t:"Remote-plane feature gaps on the installed version."}]},
+    {key:"trust",name:"Trust",tile:"●",r:[{n:100,t:"Lineage on the card."},{n:200,t:"Sentry and monitoring."},{n:300,t:"Logos are not an ATO. Percentages are not an SLA."}]}
   ],
   miniModules:[
     {name:"Databricks",t:"Lakehouse plus Unity Catalog. Wins when that already owns data and registry."},
@@ -177,9 +177,9 @@ const DATA = {
     {cat:"8 · Nexus",model:"any",desc:"One control plane, many data planes.",items:["Data cannot leave a region","Work already on one lakehouse"],
      flagship:"What is Nexus? What is optional [S9]? What must you re-read on the 6.2 Nexus page before repeating a feature gap [S3]?"},
     {cat:"9 · IL5 and logos",model:"any",desc:"A sentence is not an ATO.",items:["Homepage IL5 line","SOC 2 logo"],
-     flagship:"Rewrite 'deployed in DoD IL5 environments' as a claim. Say what a PA or ATO would add. Cite E3B: Elicit found no Domino product paper."},
+     flagship:"Rewrite 'deployed in DoD IL5 environments' as a claim. Say what a PA or ATO would add. Note that Elicit found no Domino product paper."},
     {cat:"10 · Speed and lock-in",model:"any",desc:"Mechanism versus percentage.",items:["6× on the homepage","Export to SageMaker"],
-     flagship:"Which mechanism can you teach without quoting 6×? What stays in Domino when you export a model? Cite [S10] [S5] [S2]."},
+     flagship:"Which mechanism can you teach without quoting 6×? What stays in Domino when you export a model? Cite [S18] [S5] [S2]."},
     {cat:"11 · Decision",model:"any",desc:"In, out, and measure.",items:["Design review tomorrow","Idle GPU Workspace"],
      flagship:"Write a three-line decision: when Domino is in, which platform you stop using, and one briefing number you will not treat as a contract."},
     {cat:"12 · Warrants",model:"any",desc:"Why the evidence is supposed to count.",items:["Hosted Jupyter","IL5 logo"],
@@ -201,7 +201,7 @@ const DATA = {
     {title:"IL5 logo",view:"Trust",src:"S10",
      good:"Demand a PA or ATO page for a named offering.",
      bad:"Tell: homepage sentence treated as authorization."},
-    {title:"Briefing percentages",view:"Trust",src:"S10",
+    {title:"Briefing percentages",view:"Trust",src:"S18",
      good:"Teach self-serve Environments and elastic hardware. Measure your queue.",
      bad:"Tell: 6× or 40% quoted as a contract."},
     {title:"Remote plane equals local plane",view:"Hybrid",src:"S3",
@@ -228,11 +228,11 @@ const DATA = {
     {section:2,question:"What is Domino's model registry based on?",answer:"MLflow. Chen 2020 is the nearby paper, not a Domino eval.",src:"S4"},
     {section:3,question:"What is Nexus?",answer:"One control plane plus many data planes. Optional. Remote planes may lack features the local plane has.",src:"S3"},
     {section:3,question:"Is 'deployed in DoD IL5 environments' an ATO?",answer:"No. It is a marketing sentence. A PA or ATO is a named authorization for a named offering.",src:"S10"},
-    {section:3,question:"What are 50% / 6× / 40% / 75%?",answer:"Briefing lines on the platform page. Not an SLA.",src:"S10"},
+    {section:3,question:"What are 50% / 6× / 40% / 75%?",answer:"Briefing lines on the home page. Not an SLA.",src:"S18"},
     {section:1,question:"When is Databricks the better placement?",answer:"When the work already lives on that lakehouse and Unity Catalog is the system of record.",src:"S3"},
     {section:2,question:"What port must a Domino App serve?",answer:"8888.",src:"S8"},
     {section:2,question:"How is a Model API packaged?",answer:"Flask for Python, Plumber for R, from Project files.",src:"S7"},
-    {section:3,question:"What did Elicit return for a Domino product paper?",answer:"Nothing. Nearby MLflow and reproducibility papers only. E3B run 2026-10-11.",src:"S14"},
+    {section:3,question:"What did Elicit return for a Domino product paper?",answer:"Nothing. Nearby MLflow and reproducibility papers only. Checked 2026-10-11.",src:"S14"},
     {section:2,question:"What is Model Sentry?",answer:"Human-in-the-loop review before production.",src:"S7"},
     {section:1,question:"Name three deployment offerings.",answer:"Managed SaaS, self-managed VPC, on-prem. Nexus data planes are optional.",src:"S9"},
     {section:2,question:"What is Launchpad?",answer:"The catalog where users find published Apps.",src:"S8"},
@@ -262,7 +262,7 @@ const DATA = {
     {category:"Compliance",term:"ISO 9001",rung:300,definition:"Quality-management standard. Program claim, not a certificate for this lab. [S10]",source:"ledger"},
     {category:"Compliance",term:"JWT",rung:300,definition:"JSON Web Token. Identity tokens the control plane can issue or consume. This pack has no tenant config.",source:"study",see_also:"JSON Web Token"},
     {category:"Compliance",term:"PA",rung:300,definition:"DISA Provisional Authorization for a named cloud service offering. This pack has no PA letter on the ledger. Demand the PA page. [S38]",source:"ledger",see_also:"Provisional Authorization"},
-    {category:"Compliance",term:"SLA",rung:300,definition:"A contractual service promise. Homepage percentages are not one. 50% / 6x / 40% / 75% are briefing lines, not an SLA. [S10]",source:"ledger",see_also:"Service level agreement"},
+    {category:"Compliance",term:"SLA",rung:300,definition:"A contractual service promise. Homepage percentages are not one. 50% / 6x / 40% / 75% are briefing lines, not an SLA. [S18]",source:"ledger",see_also:"Service level agreement"},
     {category:"Compliance",term:"SOC 2",rung:300,definition:"An auditing standard for managing customer data based on security, availability, processing integrity, confidentiality, and privacy. Program claim on the product home, not evidence for this lab. [S10]",source:"ledger",see_also:"Service Organization Control 2"},
     {category:"Hybrid",term:"CLI",rung:200,definition:"Command-Line Interface; client tool allowing users to interact with Domino programmatically. Dataset CLI stays local in hybrid configurations",source:"study",see_also:"Command-line interface"},
     {category:"Hybrid",term:"Control plane",rung:200,essential:true,definition:"UI, API, metadata, orchestration. Secrets Vault, Identity, Mongo/Postgres, Experiment Manager, Image Builder, Model Registry. The GPU does not live here. [S2] Does not directly run heavy compute workloads; those execute on the data plane.",source:"ledger"},
@@ -328,7 +328,7 @@ const DATA = {
     {category:"Serving",term:"Shiny",rung:200,definition:"R web framework. Host it as a Domino App on port 8888. [S8]",source:"ledger"},
     {category:"Serving",term:"Streamlit",rung:200,definition:"Python web framework for rapid data application development hosted as a Domino App running on data plane pods. Must bind and serve on internal port 8888.",source:"study"},
     {category:"Trust",term:"Any-tool claim",rung:300,definition:"Domino hosts many IDEs and frameworks. Hosting is not zero lock-in. Debate 2. Export the artifact. Metadata stores stay. [S1] [S5]",source:"ledger"},
-    {category:"Trust",term:"Briefing percentages",rung:300,essential:true,definition:"50% lifecycle, 6x development, 40% infra, 75% onboarding on the product home. Not an SLA. Briefing lines. Debate 4. [S10]",source:"ledger"},
+    {category:"Trust",term:"Briefing percentages",rung:300,essential:true,definition:"50% lifecycle, 6x development, 40% infra, 75% onboarding on the product home. Not an SLA. Briefing lines. Debate 4. [S18]",source:"ledger"},
     {category:"Trust",term:"Governance",rung:300,definition:"The frameworks, policy checks, and visibility tools used to enforce compliance and security across assets. Compliance documentation reflects platform capabilities, not an automatic grant of authority to operate.",source:"study"},
     {category:"Trust",term:"HITL",rung:300,essential:true,definition:"Human in the loop. A person must approve before the next step. Model Sentry is the pack's example. [S7]",source:"ledger",see_also:"Human in the Loop"},
     {category:"Trust",term:"Idle GPU",rung:300,definition:"A Workspace left open on a GPU tier. Someone's budget. Trap, not a vendor claim. [S6]",source:"ledger"},
@@ -386,7 +386,7 @@ const DATA = {
       {name:"Logical",q:"How does a run move?",allowed:"Lifecycle and card.",forbidden:"IL5 as ATO.",lib:"block-03-active-practice"},
       {name:"Physical",q:"Which plane?",allowed:"Control versus data, Nexus.",forbidden:"Homepage percentages.",lib:"deep-dive"},
       {name:"Integration",q:"How does it enter and leave?",allowed:"IDEs, export, Apps.",forbidden:"Classified-lab approval.",lib:"block-07-application"},
-      {name:"Trust",q:"What is not an authorization?",allowed:"Logos, E3B, briefing numbers.",forbidden:"Slide speed as an SLA.",lib:"elicit"}
+      {name:"Trust",q:"What is not an authorization?",allowed:"Logos, Elicit gap, briefing numbers.",forbidden:"Slide speed as an SLA.",lib:"elicit"}
     ],
     table:[
       ["Concern","View","Owner","Out"],
@@ -394,7 +394,7 @@ const DATA = {
       ["Model card","Logical","Registry [S4]","Tracking files without an Environment revision"],
       ["Two planes","Physical","Architecture [S2]","Assuming remote Nexus equals local"],
       ["App port 8888","Integration","Publish Apps [S8]","App Hub as a separate product"],
-      ["IL5 sentence","Trust","Platform page [S10], E3B","Calling a logo an ATO"]
+      ["IL5 sentence","Trust","Platform page [S10]","Calling a logo an ATO"]
     ]
   },
   deckFlags:{
@@ -420,7 +420,7 @@ DATA.cut = {
     "Slide 12 is the decision. Sketch the lifecycle. Name the plane, the record, and the tool you refuse. Measure your queue.",
     "Slides 13–15 are extra NotebookLM detailed-deck pages. Ledger and debates win where they differ. IL5 and 6× stay qualifications.",
     "NotebookLM detailed deck, continued. Vault gallery: Presentation slides.md. The PowerPoint file stays in heavy output, off the public site.",
-    "Last NotebookLM slide. The 12-slide TDD spine is the study cut; this 15-page deck is the W8 export."
+    "Last NotebookLM slide. Use the first twelve as the study spine; slides 13–15 are extra detail."
   ],
   cards: [
     {question:"What is the unit of work?",detail:"A Project, not the IDE window.",why:"The reconstructable unit is the recorded context.",example:"Files, Environment, experiments, models, Apps.",cardSlide:2},
@@ -431,7 +431,7 @@ DATA.cut = {
     {question:"What does a model card record?",detail:"Code, Environment, workspace settings, datasets.",why:"That is the system of record.",example:"Rebuild last week's run from the card.",cardSlide:7},
     {question:"App or Model API for a person with a browser?",detail:"App, port 8888, Launchpad.",why:"Another system wants an endpoint.",example:"Streamlit versus Flask Model API.",cardSlide:8},
     {question:"What is Nexus?",detail:"One control plane plus many data planes. Optional.",why:"Locality is the warrant.",example:"Compute next to data that cannot move.",cardSlide:9},
-    {question:"Is the IL5 sentence an ATO?",detail:"No. It is a homepage claim.",why:"A PA names an offering. A lab still issues an ATO.",example:"E3B: no Domino product paper.",cardSlide:10},
+    {question:"Is the IL5 sentence an ATO?",detail:"No. It is a homepage claim.",why:"A PA names an offering. A lab still issues an ATO.",example:"Elicit found no Domino product paper.",cardSlide:10},
     {question:"When is Databricks better?",detail:"When the lakehouse already owns data and registry.",why:"Nexus would be a second control plane.",example:"Unity Catalog as system of record.",cardSlide:11},
     {question:"What is the day's falsifier?",detail:"A feature tour with no system of record, no planes, and no refusal.",why:"The mission is a design-review placement.",example:"In, out, and measure.",cardSlide:12}
   ]
@@ -447,8 +447,8 @@ DATA.looks = {
   "6:0": "<p>Registry is MLflow-based. Card fields: code, Environment, workspace settings, datasets. Chen 2020 is nearby work, not a Domino eval.</p>",
   "7:0": "<table class='tbl'><thead><tr><th></th><th>Model API</th><th>App</th></tr></thead><tbody><tr><td>Packaging</td><td>Flask / Plumber</td><td>Dash / Streamlit / Shiny / HTTP</td></tr><tr><td>Port</td><td>endpoint</td><td>8888</td></tr><tr><td>Consumer</td><td>Another system</td><td>A person</td></tr></tbody></table>",
   "8:0": "<p>Nexus: one control plane, many data planes, optional. Remote planes may lack Model APIs, Apps, Datasets. Check 6.2 before repeating.</p>",
-  "9:0": "<p>Elicit returned no Domino product paper (E3B, 2026-10-11). 'Deployed in DoD IL5 environments' is not a PA. S14 and S15 are nearby work.</p>",
-  "10:0": "<p>50% / 6× / 40% / 75% are briefing lines. 'Any tool' is entry, not exit. Exporting a pickle is not exporting Mongo and the Environment catalog.</p>",
+  "9:0": "<p>Elicit returned no Domino product paper (2026-10-11). 'Deployed in DoD IL5 environments' is not a PA. S14 and S15 are nearby work.</p>",
+  "10:0": "<p>50% / 6× / 40% / 75% are briefing lines on the home page [S18]. 'Any tool' is entry, not exit. Exporting a pickle is not exporting Mongo and the Environment catalog.</p>",
   "11:0": "<ol><li>Sketch Project → Workspace / Job → Experiment → Registry → Endpoint or App.</li><li>Name the plane and the record.</li><li>Name the competitor you refuse.</li><li>Do not quote IL5 or 6× as a contract.</li></ol>"
 };
 
@@ -495,7 +495,7 @@ DATA.fromReports = [
   {slug:"deep-dive",title:"Learning deep dive",point:"Control plane records. Data plane runs. Put the GPU and the model card on the correct plane."},
   {slug:"ref-arch",title:"Reference architecture",point:"One control plane, many data planes. Project is the unit of work. MLflow is opt-in."},
   {slug:"claims-debates",title:"Claims and debates",point:"A warrant is the If X then Y that makes a source count. An IL5 sentence does not warrant an ATO. A homepage 6× does not warrant an SLA."},
-  {slug:"elicit",title:"Elicit light",point:"E3B run 2026-10-11: no Domino product paper. MLflow 2020 and Albertoni 2023 are nearby work."},
+  {slug:"elicit",title:"Elicit light",point:"2026-10-11: no Domino product paper. MLflow 2020 and Albertoni 2023 are nearby work."},
   {slug:"source-ledger",title:"Source ledger",point:"S1–S42. Official architecture and user-guide pages win. Marketing is on the ledger so it can be qualified. Next unused id is 43."},
   {slug:"glossary",title:"Glossary",point:"99 study terms and acronyms. Flashcards use the same list."},
   {slug:"nblm-glossary-table",title:"Glossary data table",point:"NotebookLM table, reviewed. Ledger wins where they differ."},
@@ -594,8 +594,8 @@ DATA.drills = {
     items:[
       {p:"Deployed in DoD IL5 environments on the homepage",a:1,why:"Marketing sentence. Not a PA letter.",src:"S10"},
       {p:"SOC 2 / HIPAA logos",a:1,why:"Evidence of a program, not of this lab.",src:"S10"},
-      {p:"50% lifecycle reduction",a:2,why:"Treat as briefing until you measure.",src:"S10"},
-      {p:"A DISA PA URL for a named offering (not yet on the ledger)",a:0,why:"That would be the desk test E3A result if found.",src:"S10"}
+      {p:"50% lifecycle reduction",a:2,why:"Treat as briefing until you measure.",src:"S18"},
+      {p:"A DISA PA URL for a named offering (not yet on the ledger)",a:0,why:"That would be primary evidence if found.",src:"S10"}
     ]},
   altitude:{title:"Which idea is this?",ask:"Which layer does this belong to?",
     options:["Placement","Lifecycle","Hybrid","Trust"],
