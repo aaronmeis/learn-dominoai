@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    Engagement layer: hash routing, Today + daily architecture
    challenge, Shorts feed, mobile tab bar and sheets, search
    palette, streaks. Ported from learn-ai-law; loads after
@@ -297,7 +297,7 @@ function destroyAllPlayers(){Array.from(players).forEach(p=>p.destroy());}
 function tileHTML(it,idx,active){
   const w=Store.watched()[it.id];
   return h`<button type="button" class="sx-tile ${active?"active":""} ${w?"watched":""}" data-id="${esc(it.id)}" aria-label="${esc(it.title)}${w?" (watched)":""}">
-    <span class="sx-thumb"><img src="${esc(it.poster||"")}" alt="" loading="lazy" decoding="async">${it.duration?`<span class="sx-dur">${fmtDur(it.duration)}</span>`:""}${w?`<span class="sx-check" aria-hidden="true">✓</span>`:""}</span>
+    <span class="sx-thumb">${it.poster?`<img src="${esc(it.poster)}" alt="" loading="lazy" decoding="async">`:""}${it.duration?`<span class="sx-dur">${fmtDur(it.duration)}</span>`:""}${w?`<span class="sx-check" aria-hidden="true">✓</span>`:""}</span>
     <span class="sx-tt">${esc(it.title)}</span>
     <span class="sx-pl">${esc(it.pillar||"")}</span>
   </button>`;
@@ -361,7 +361,7 @@ window.renderShorts = function(){
   const w=Store.watched(); const nW=shortItems.filter(s=>w[s.id]).length;
   const list=filteredShorts();
   el.innerHTML=h`<h2 class="vh">Shorts <span class="vh-sub">${nW} of ${shortItems.length} watched</span></h2>
-  <div class="note danger" style="margin-bottom:1rem"><b>Secondary source.</b> NotebookLM can overstate speed. The 10x line and the billion-row timing are slide claims. The concurrency contract is the official concurrency page.</div>
+  <div class="note danger" style="margin-bottom:1rem"><b>Secondary source.</b> NotebookLM can overstate speed. Homepage percentages and the IL5 line are claims, not an SLA or ATO.</div>
   <div class="sx-layout">
     <div class="sx-main">
       <div class="sx-player" id="sxPlayer"></div>
@@ -419,7 +419,7 @@ function renderFeed(el){
   el.innerHTML=`<div class="sx-feed" id="sxFeed" aria-label="Shorts feed">`+list.map(it=>{
     const w=Store.watched()[it.id];
     return h`<article class="sx-slide ${w?"watched":""}" data-id="${esc(it.id)}" aria-label="${esc(it.title)}">
-      <img class="sx-bg" src="${esc(it.poster||"")}" alt="" loading="lazy" decoding="async">
+      ${it.poster?`<img class="sx-bg" src="${esc(it.poster)}" alt="" loading="lazy" decoding="async">`:""}
       <div class="sx-host"></div>
       <button type="button" class="sx-sound" aria-label="Turn sound on">Tap for sound</button>
       <div class="sx-overlay">
@@ -531,7 +531,7 @@ function renderToday(){
   ${challengeHTML()}
   <div class="today-grid">
     ${cs?h`<a class="hero-card" href="#/shorts/${encodeURIComponent(cs.id)}">
-      <span class="hero-thumb"><img src="${esc(cs.poster||"")}" alt=""><span class="sx-dur">${fmtDur(cs.duration)}</span><span class="hero-play" aria-hidden="true">▶</span></span>
+      <span class="hero-thumb">${cs.poster?`<img src="${esc(cs.poster)}" alt="">`:""}<span class="sx-dur">${fmtDur(cs.duration)}</span><span class="hero-play" aria-hidden="true">▶</span></span>
       <span class="hero-body"><span class="hero-kicker">${w[cs.id]?"Rewatch":"Up next"} · ${esc(cs.pillar||"")}</span><span class="hero-title">${esc(cs.title)}</span>
       <span class="hero-cta">Watch, then check yourself →</span></span></a>`:`<div class="hero-card"><span class="hero-body">Loading Shorts…</span></div>`}
     <div class="goal-card"><h3>Today's goal</h3><div class="rings">${ring(answered,GOAL.challenge,"rounds","challenge")}${ring(t.shorts||0,GOAL.shorts,"Short","watched")}${ring(reviews,GOAL.reviews,"reviews","cards + questions")}</div></div>
